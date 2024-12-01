@@ -16,7 +16,7 @@ from src.visualization.plotting import Plotter
 from src.training.utils import ModelUtils, DataUtils
 
 # Import configurations
-from config import DATASET_DIR, RESULTS_DIR, TRAIN_CONFIG, MODEL_CONFIG, DATASET_CONFIG
+from config import DATASET_DIR, RESULTS_DIR, TRAIN_CONFIG, MODEL_CONFIG, DATASET_CONFIG, BASE_DIR
 
 # Configure logging
 logging.basicConfig(
@@ -72,9 +72,10 @@ def main():
         train_split_dir = run_dir / 'train_splits'
         splitter = ImageSplitter(train_dir, train_split_dir, DATASET_CONFIG['grid_size'])
         train_metadata_path = splitter.process_dataset()
-        
+
         # 3. Setup Cross-Validation
         dataset_manager = DatasetManager(train_split_dir)
+        dataset_manager.gather_data()
         kf = KFold(
             n_splits=DATASET_CONFIG['n_splits'],
             shuffle=True,
@@ -86,7 +87,7 @@ def main():
         fold_metrics = []
         trainer = YOLOTrainer()
         plotter = Plotter(run_dir)
-        
+
         # 4. Train and Validate Each Fold
         for fold, (train_idx, val_idx) in enumerate(kf.split(dataset_manager.all_images), 1):
             logger.info(f"\nProcessing Fold {fold}/{DATASET_CONFIG['n_splits']}")
@@ -94,9 +95,9 @@ def main():
             # Setup fold directory structure
             fold_dir = run_dir / f'fold_{fold}'
             yaml_path = dataset_manager.setup_fold(train_idx, val_idx, fold)
-            
+
             # Train model
-            model, results = trainer.train_fold(yaml_path, fold)
+            model, results = trainer.train_fold(Path(BASE_DIR / 'data.yaml'), fold)
             
             # Validate model
             val_results = trainer.validate(yaml_path)

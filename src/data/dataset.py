@@ -4,12 +4,13 @@ import yaml
 from config import BASE_DIR, TEMP_DIR, DATASET_DIR
 
 class DatasetManager:
-    def __init__(self):
+    def __init__(self, train_split_dir):
         self.base_dir = BASE_DIR
         self.temp_dir = TEMP_DIR
+        self.train_split_dir = train_split_dir
         self.dataset_dir = DATASET_DIR
-        self.images_dir = self.dataset_dir / 'images'
-        self.labels_dir = self.dataset_dir / 'labels'
+        self.images_dir = train_split_dir / 'images'
+        self.labels_dir = train_split_dir / 'labels'
         self.all_images = []
         self.all_labels = []
 
@@ -80,7 +81,7 @@ class DatasetManager:
             'names': ['Box']  # Class names
         }
         
-        yaml_path = fold_dir / 'data.yaml'
+        yaml_path = BASE_DIR / 'data.yaml'
         with open(yaml_path, 'w') as f:
             yaml.dump(yaml_content, f, default_flow_style=False)
         
