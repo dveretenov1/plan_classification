@@ -1,6 +1,5 @@
-path: ${PROJECT_ROOT}/dataset  # Will be replaced during runtime
-train: images
-val: images
-nc: 1  # number of classes
-names:
-  - Box  # class names
+names: [Box]
+nc: 1
+path: C:\Users\Chem's bbi\Downloads\MKGT4604\plan_classification\temp\fold_1
+train: train\images
+val: valid\images

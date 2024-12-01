@@ -1,9 +1,10 @@
 from pathlib import Path
 
 # Base paths - modify for Discovery
-BASE_DIR = Path('/courses/DS4420.202510/students/veretenov.d/MKTG_project')  # Adjust path
+BASE_DIR = Path('.')  # Adjust path
 RESULTS_DIR = BASE_DIR / 'results'
 DATASET_DIR = BASE_DIR / 'dataset'
+TEMP_DIR = BASE_DIR / 'temp'
 
 # Training configuration
 TRAIN_CONFIG = {
