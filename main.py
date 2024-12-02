@@ -14,9 +14,18 @@ from src.training.trainer import YOLOTrainer
 from src.visualization.metrics import MetricsManager
 from src.visualization.plotting import Plotter
 from src.training.utils import ModelUtils, DataUtils
+from src.data.prediction_reconstructor import PredictionReconstructor
 
 # Import configurations
-from config import DATASET_DIR, RESULTS_DIR, TRAIN_CONFIG, MODEL_CONFIG, DATASET_CONFIG, BASE_DIR
+from config import (
+    DATASET_DIR, 
+    RESULTS_DIR, 
+    TRAIN_CONFIG, 
+    MODEL_CONFIG, 
+    DATASET_CONFIG, 
+    BASE_DIR,
+    IMAGE_CONFIG
+)
 
 # Configure logging
 logging.basicConfig(
@@ -29,17 +38,46 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+def find_best_model(run_dir, best_fold):
+    """
+    Find the best model weights by checking multiple possible locations.
+    Returns the path if found, raises FileNotFoundError if not found.
+    """
+    possible_paths = [
+        RESULTS_DIR / f'fold_{best_fold}' / 'weights' / 'best.pt',  # Primary YOLOv8 path
+        run_dir / f'fold_{best_fold}' / 'weights' / 'best.pt',
+        run_dir / f'fold_{best_fold}' / 'training' / 'weights' / 'best.pt',
+        run_dir / f'fold_{best_fold}' / 'best.pt',
+    ]
+    
+    for path in possible_paths:
+        logger.debug(f"Checking for model at: {path}")
+        if path.exists():
+            logger.info(f"Found best model at: {path}")
+            return path
+            
+    paths_tried = '\n'.join([f"- {p}" for p in possible_paths])
+    raise FileNotFoundError(
+        f"Best model not found. Tried the following paths:\n{paths_tried}"
+    )
+
 def main():
     try:
         # Create timestamp for this run
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         run_dir = RESULTS_DIR / f'run_{timestamp}'
         run_dir.mkdir(parents=True, exist_ok=True)
+        logger.info(f"Created run directory: {run_dir}")
         
         # 1. First split into train and test sets
         logger.info("Step 1: Splitting dataset into train and test sets")
+        logger.info(f"Processing large images up to {IMAGE_CONFIG['original_sizes']['max_width']}x{IMAGE_CONFIG['original_sizes']['max_height']} pixels")
+        
         data_utils = DataUtils()
         all_images = sorted(list((DATASET_DIR / 'images').glob('*.jpg')))
+        
+        if not all_images:
+            raise FileNotFoundError(f"No images found in {DATASET_DIR / 'images'}")
         
         train_images, test_images = train_test_split(
             all_images,
@@ -70,7 +108,12 @@ def main():
         # 2. Split training images into grid
         logger.info("Step 2: Splitting training images into grid")
         train_split_dir = run_dir / 'train_splits'
-        splitter = ImageSplitter(train_dir, train_split_dir, DATASET_CONFIG['grid_size'])
+        splitter = ImageSplitter(
+            train_dir, 
+            train_split_dir, 
+            DATASET_CONFIG['grid_size'],
+            overlap=DATASET_CONFIG.get('overlap', 0.1)
+        )
         train_metadata_path = splitter.process_dataset()
 
         # 3. Setup Cross-Validation
@@ -92,21 +135,31 @@ def main():
         for fold, (train_idx, val_idx) in enumerate(kf.split(dataset_manager.all_images), 1):
             logger.info(f"\nProcessing Fold {fold}/{DATASET_CONFIG['n_splits']}")
             
-            # Setup fold directory structure
-            fold_dir = run_dir / f'fold_{fold}'
-            yaml_path = dataset_manager.setup_fold(train_idx, val_idx, fold)
-
-            # Train model
-            model, results = trainer.train_fold(Path(BASE_DIR / 'data.yaml'), fold)
-            
-            # Validate model
-            val_results = trainer.validate(yaml_path)
-            metrics = metrics_manager.save_fold_metrics(val_results, fold)
-            fold_metrics.append(metrics)
-            
-            # Plot metrics
-            plotter.plot_fold_metrics(metrics, fold)
-            plotter.plot_training_history(results, fold)
+            try:
+                # Setup fold directory structure
+                yaml_path = dataset_manager.setup_fold(train_idx, val_idx, fold)
+                
+                # Train model
+                model, results = trainer.train_fold(yaml_path, fold)
+                
+                # Validate model
+                val_results = trainer.validate(yaml_path)
+                metrics = metrics_manager.save_fold_metrics(val_results, fold)
+                fold_metrics.append(metrics)
+                
+                # Plot metrics
+                plotter.plot_fold_metrics(metrics, fold)
+                if results is not None:  # Only plot if training succeeded
+                    plotter.plot_training_history(results, fold)
+                
+                logger.info(f"Completed fold {fold} training")
+                
+            except Exception as e:
+                logger.error(f"Error in fold {fold}: {str(e)}")
+                continue
+        
+        if not fold_metrics:
+            raise RuntimeError("No successful folds completed")
         
         # 5. Analyze Results and Select Best Model
         stats = metrics_manager.summarize_results(fold_metrics)
@@ -118,22 +171,47 @@ def main():
         # 6. Process Test Set
         logger.info("\nProcessing test set")
         test_split_dir = run_dir / 'test_splits'
-        test_splitter = ImageSplitter(test_dir, test_split_dir, DATASET_CONFIG['grid_size'])
+        test_splitter = ImageSplitter(
+            test_dir, 
+            test_split_dir, 
+            DATASET_CONFIG['grid_size'],
+            overlap=DATASET_CONFIG.get('overlap', 0.1)
+        )
         test_metadata_path = test_splitter.process_dataset()
         
         # Load best model
-        best_model_path = run_dir / f'fold_{best_fold}/training/weights/best.pt'
-        model = ModelUtils.load_model(best_model_path)
+        try:
+            best_model_path = find_best_model(run_dir, best_fold)
+            logger.info(f"Loading best model from {best_model_path}")
+            model = ModelUtils.load_model(best_model_path)
+        except FileNotFoundError as e:
+            logger.error(str(e))
+            raise
         
         # Run predictions on test splits
         predictions_dir = run_dir / 'predictions'
+        predictions_dir.mkdir(parents=True, exist_ok=True)
+        
         results = model.predict(
             source=str(test_split_dir / 'images'),
             conf=MODEL_CONFIG['conf_threshold'],
+            iou=MODEL_CONFIG['iou_threshold'],
             save=True,
             save_txt=True,
             project=str(predictions_dir),
             name='test_predictions'
+        )
+        
+        # Reconstruct predictions for full images
+        reconstructor = PredictionReconstructor(
+            test_metadata_path,
+            iou_threshold=MODEL_CONFIG['iou_threshold']
+        )
+        
+        final_predictions = reconstructor.reconstruct_predictions(
+            predictions_dir / 'test_predictions' / 'labels',
+            run_dir / 'final_predictions',
+            test_dir / 'images'
         )
         
         # Save predictions visualization
