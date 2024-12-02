@@ -34,36 +34,56 @@ class Plotter:
         plt.savefig(metrics_dir / 'metrics_summary.png', dpi=300, bbox_inches='tight')
         plt.close()
 
-        # 2. Confidence distribution plot (if available)
-        if 'confidences' in metrics:
-            plt.figure(figsize=(10, 6))
-            sns.histplot(metrics['confidences'], bins=30, kde=True)
-            plt.title(f'Detection Confidence Distribution - Fold {fold_num}')
-            plt.xlabel('Confidence Score')
-            plt.ylabel('Count')
-            plt.savefig(metrics_dir / 'confidence_distribution.png', dpi=300, bbox_inches='tight')
-            plt.close()
-
-    def plot_training_history(self, history, fold_num):
+    def plot_training_history(self, results, fold_num):
         """Plot training history metrics"""
         history_dir = self.results_dir / f'fold_{fold_num}' / 'history'
         history_dir.mkdir(parents=True, exist_ok=True)
 
-        metrics = ['box_loss', 'cls_loss', 'dfl_loss']
-        plt.figure(figsize=(15, 5))
-        
-        for i, metric in enumerate(metrics, 1):
-            plt.subplot(1, 3, i)
-            plt.plot(history[metric], label=metric)
-            plt.title(f'{metric} Over Time')
-            plt.xlabel('Epoch')
-            plt.ylabel('Loss')
-            plt.grid(True)
-            plt.legend()
-        
-        plt.tight_layout()
-        plt.savefig(history_dir / 'training_history.png', dpi=300, bbox_inches='tight')
-        plt.close()
+        # Extract metrics from results
+        try:
+            # Get the results dictionary
+            results_dict = results.results_dict
+            
+            # Plot losses
+            plt.figure(figsize=(15, 5))
+            
+            # Plot box_loss
+            plt.subplot(1, 3, 1)
+            if 'metrics/box_loss' in results_dict:
+                plt.plot(results_dict['metrics/box_loss'], label='box_loss')
+                plt.title('Box Loss Over Time')
+                plt.xlabel('Epoch')
+                plt.ylabel('Loss')
+                plt.grid(True)
+                plt.legend()
+            
+            # Plot cls_loss
+            plt.subplot(1, 3, 2)
+            if 'metrics/cls_loss' in results_dict:
+                plt.plot(results_dict['metrics/cls_loss'], label='cls_loss')
+                plt.title('Classification Loss Over Time')
+                plt.xlabel('Epoch')
+                plt.ylabel('Loss')
+                plt.grid(True)
+                plt.legend()
+            
+            # Plot dfl_loss
+            plt.subplot(1, 3, 3)
+            if 'metrics/dfl_loss' in results_dict:
+                plt.plot(results_dict['metrics/dfl_loss'], label='dfl_loss')
+                plt.title('DFL Loss Over Time')
+                plt.xlabel('Epoch')
+                plt.ylabel('Loss')
+                plt.grid(True)
+                plt.legend()
+            
+            plt.tight_layout()
+            plt.savefig(history_dir / 'training_history.png', dpi=300, bbox_inches='tight')
+            plt.close()
+            
+        except Exception as e:
+            print(f"Warning: Could not plot training history for fold {fold_num}: {str(e)}")
+            # Continue execution even if plotting fails
 
     def plot_summary(self, stats):
         """Plot comprehensive summary of all folds"""

@@ -1,0 +1,810 @@
+2024-12-01 20:03:54,160 - INFO - Step 1: Splitting dataset into train and test sets
+2024-12-01 20:03:54,200 - INFO - Step 2: Splitting training images into grid
+2024-12-01 20:03:54,200 - INFO - Starting dataset splitting process...
+2024-12-01 20:03:54,201 - INFO - Found 15 images to process
+2024-12-01 20:03:54,201 - INFO - Processing MCPS-Crown10_jpg.rf.68e42e7b9aabd4819d22a746033c8199.jpg
+2024-12-01 20:03:54,548 - INFO - Completed processing MCPS-Crown10_jpg.rf.68e42e7b9aabd4819d22a746033c8199.jpg
+2024-12-01 20:03:54,549 - INFO - Processing MCPS-Crown11_jpg.rf.c7bcfe0ab31c8e2db068d14873f7585b.jpg
+2024-12-01 20:03:54,903 - INFO - Completed processing MCPS-Crown11_jpg.rf.c7bcfe0ab31c8e2db068d14873f7585b.jpg
+2024-12-01 20:03:54,903 - INFO - Processing MCPS-Crown12_jpg.rf.7b04d4de6e8e14b3210418c48837ab5b.jpg
+2024-12-01 20:03:55,249 - INFO - Completed processing MCPS-Crown12_jpg.rf.7b04d4de6e8e14b3210418c48837ab5b.jpg
+2024-12-01 20:03:55,250 - INFO - Processing MCPS-Crown14_jpg.rf.b3f22739a63ae4adef5dba675b3fb4db.jpg
+2024-12-01 20:03:55,535 - INFO - Completed processing MCPS-Crown14_jpg.rf.b3f22739a63ae4adef5dba675b3fb4db.jpg
+2024-12-01 20:03:55,536 - INFO - Processing MCPS-Crown15_jpg.rf.4b54dd4502a00000e2088e0e0100d36b.jpg
+2024-12-01 20:03:55,876 - INFO - Completed processing MCPS-Crown15_jpg.rf.4b54dd4502a00000e2088e0e0100d36b.jpg
+2024-12-01 20:03:55,877 - INFO - Processing MCPS-Crown16_jpg.rf.564bef363ffa840130eb8d0426a4a89a.jpg
+2024-12-01 20:03:56,266 - INFO - Completed processing MCPS-Crown16_jpg.rf.564bef363ffa840130eb8d0426a4a89a.jpg
+2024-12-01 20:03:56,266 - INFO - Processing MCPS-Crown17_jpg.rf.6a56113369c0ed9109df8f0288f36f00.jpg
+2024-12-01 20:03:56,634 - INFO - Completed processing MCPS-Crown17_jpg.rf.6a56113369c0ed9109df8f0288f36f00.jpg
+2024-12-01 20:03:56,634 - INFO - Processing MCPS-Crown18_jpg.rf.fc08679c0de1525e21179a7051d2c7eb.jpg
+2024-12-01 20:03:56,924 - INFO - Completed processing MCPS-Crown18_jpg.rf.fc08679c0de1525e21179a7051d2c7eb.jpg
+2024-12-01 20:03:56,924 - INFO - Processing MCPS-Crown6_jpg.rf.d012d326ac6e01dc3baf2b33b0980cf3.jpg
+2024-12-01 20:03:57,231 - INFO - Completed processing MCPS-Crown6_jpg.rf.d012d326ac6e01dc3baf2b33b0980cf3.jpg
+2024-12-01 20:03:57,231 - INFO - Processing MCPS-Crown7_jpg.rf.c3f2312f60f450e7d3d85bcab96e912b.jpg
+2024-12-01 20:03:57,553 - INFO - Completed processing MCPS-Crown7_jpg.rf.c3f2312f60f450e7d3d85bcab96e912b.jpg
+2024-12-01 20:03:57,554 - INFO - Processing MCPS-Crown8_jpg.rf.f24e1aa3e6609a8ba1131a4c2f0c9963.jpg
+2024-12-01 20:03:57,888 - INFO - Completed processing MCPS-Crown8_jpg.rf.f24e1aa3e6609a8ba1131a4c2f0c9963.jpg
+2024-12-01 20:03:57,889 - INFO - Processing MCPS-Crown9_jpg.rf.64f5b451d92c164f60eff1bf1bf9fb13.jpg
+2024-12-01 20:03:58,218 - INFO - Completed processing MCPS-Crown9_jpg.rf.64f5b451d92c164f60eff1bf1bf9fb13.jpg
+2024-12-01 20:03:58,218 - INFO - Processing mech1_jpg.rf.dbfd19088506fd61e8ddc13f5ebc0136.jpg
+2024-12-01 20:03:58,572 - INFO - Completed processing mech1_jpg.rf.dbfd19088506fd61e8ddc13f5ebc0136.jpg
+2024-12-01 20:03:58,572 - INFO - Processing mech2_jpg.rf.9dc40f0f06462d6e4badc4d39670dc9d.jpg
+2024-12-01 20:03:58,857 - INFO - Completed processing mech2_jpg.rf.9dc40f0f06462d6e4badc4d39670dc9d.jpg
+2024-12-01 20:03:58,858 - INFO - Processing oncology_jpg.rf.f36c2a0435c4aa0d14399913857fe72e.jpg
+2024-12-01 20:03:59,240 - INFO - Completed processing oncology_jpg.rf.f36c2a0435c4aa0d14399913857fe72e.jpg
+2024-12-01 20:03:59,242 - INFO - Dataset splitting completed. Metadata saved to results/run_20241201_200354/train_splits/metadata.json
+2024-12-01 20:03:59,244 - INFO - 
+Processing Fold 1/5
+2024-12-01 20:03:59,580 - ERROR - An error occurred: Dataset 'data.yaml' error ❌ 
+Dataset 'data.yaml' images not found ⚠️, missing path '/home/daniel/Documents/Fall2024/datasets/C:\Users\Chem's bbi\Downloads\MKGT4604\plan_classification\temp\fold_1/valid\images'
+Note dataset download directory is '/home/daniel/Documents/Fall2024/datasets'. You can update this in '/home/daniel/.config/Ultralytics/settings.json'
+Traceback (most recent call last):
+  File "/home/daniel/Documents/Fall2024/plan_classification/venv/lib/python3.10/site-packages/ultralytics/engine/trainer.py", line 562, in get_dataset
+    data = check_det_dataset(self.args.data)
+  File "/home/daniel/Documents/Fall2024/plan_classification/venv/lib/python3.10/site-packages/ultralytics/data/utils.py", line 329, in check_det_dataset
+    raise FileNotFoundError(m)
+FileNotFoundError: 
+Dataset 'data.yaml' images not found ⚠️, missing path '/home/daniel/Documents/Fall2024/datasets/C:\Users\Chem's bbi\Downloads\MKGT4604\plan_classification\temp\fold_1/valid\images'
+Note dataset download directory is '/home/daniel/Documents/Fall2024/datasets'. You can update this in '/home/daniel/.config/Ultralytics/settings.json'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/daniel/Documents/Fall2024/plan_classification/main.py", line 100, in main
+    model, results = trainer.train_fold(Path(BASE_DIR / 'data.yaml'), fold)
+  File "/home/daniel/Documents/Fall2024/plan_classification/src/training/trainer.py", line 15, in train_fold
+    self.results = self.model.train(
+  File "/home/daniel/Documents/Fall2024/plan_classification/venv/lib/python3.10/site-packages/ultralytics/engine/model.py", line 796, in train
+    self.trainer = (trainer or self._smart_load("trainer"))(overrides=args, _callbacks=self.callbacks)
+  File "/home/daniel/Documents/Fall2024/plan_classification/venv/lib/python3.10/site-packages/ultralytics/engine/trainer.py", line 133, in __init__
+    self.trainset, self.testset = self.get_dataset()
+  File "/home/daniel/Documents/Fall2024/plan_classification/venv/lib/python3.10/site-packages/ultralytics/engine/trainer.py", line 566, in get_dataset
+    raise RuntimeError(emojis(f"Dataset '{clean_url(self.args.data)}' error ❌ {e}")) from e
+RuntimeError: Dataset 'data.yaml' error ❌ 
+Dataset 'data.yaml' images not found ⚠️, missing path '/home/daniel/Documents/Fall2024/datasets/C:\Users\Chem's bbi\Downloads\MKGT4604\plan_classification\temp\fold_1/valid\images'
+Note dataset download directory is '/home/daniel/Documents/Fall2024/datasets'. You can update this in '/home/daniel/.config/Ultralytics/settings.json'
+2024-12-01 20:04:44,153 - INFO - Step 1: Splitting dataset into train and test sets
+2024-12-01 20:04:44,193 - INFO - Step 2: Splitting training images into grid
+2024-12-01 20:04:44,193 - INFO - Starting dataset splitting process...
+2024-12-01 20:04:44,193 - INFO - Found 15 images to process
+2024-12-01 20:04:44,193 - INFO - Processing MCPS-Crown10_jpg.rf.68e42e7b9aabd4819d22a746033c8199.jpg
+2024-12-01 20:04:44,529 - INFO - Completed processing MCPS-Crown10_jpg.rf.68e42e7b9aabd4819d22a746033c8199.jpg
+2024-12-01 20:04:44,529 - INFO - Processing MCPS-Crown11_jpg.rf.c7bcfe0ab31c8e2db068d14873f7585b.jpg
+2024-12-01 20:04:44,879 - INFO - Completed processing MCPS-Crown11_jpg.rf.c7bcfe0ab31c8e2db068d14873f7585b.jpg
+2024-12-01 20:04:44,879 - INFO - Processing MCPS-Crown12_jpg.rf.7b04d4de6e8e14b3210418c48837ab5b.jpg
+2024-12-01 20:04:45,234 - INFO - Completed processing MCPS-Crown12_jpg.rf.7b04d4de6e8e14b3210418c48837ab5b.jpg
+2024-12-01 20:04:45,234 - INFO - Processing MCPS-Crown14_jpg.rf.b3f22739a63ae4adef5dba675b3fb4db.jpg
+2024-12-01 20:04:45,522 - INFO - Completed processing MCPS-Crown14_jpg.rf.b3f22739a63ae4adef5dba675b3fb4db.jpg
+2024-12-01 20:04:45,522 - INFO - Processing MCPS-Crown15_jpg.rf.4b54dd4502a00000e2088e0e0100d36b.jpg
+2024-12-01 20:04:45,856 - INFO - Completed processing MCPS-Crown15_jpg.rf.4b54dd4502a00000e2088e0e0100d36b.jpg
+2024-12-01 20:04:45,857 - INFO - Processing MCPS-Crown16_jpg.rf.564bef363ffa840130eb8d0426a4a89a.jpg
+2024-12-01 20:04:46,263 - INFO - Completed processing MCPS-Crown16_jpg.rf.564bef363ffa840130eb8d0426a4a89a.jpg
+2024-12-01 20:04:46,264 - INFO - Processing MCPS-Crown17_jpg.rf.6a56113369c0ed9109df8f0288f36f00.jpg
+2024-12-01 20:04:46,635 - INFO - Completed processing MCPS-Crown17_jpg.rf.6a56113369c0ed9109df8f0288f36f00.jpg
+2024-12-01 20:04:46,635 - INFO - Processing MCPS-Crown18_jpg.rf.fc08679c0de1525e21179a7051d2c7eb.jpg
+2024-12-01 20:04:46,932 - INFO - Completed processing MCPS-Crown18_jpg.rf.fc08679c0de1525e21179a7051d2c7eb.jpg
+2024-12-01 20:04:46,933 - INFO - Processing MCPS-Crown6_jpg.rf.d012d326ac6e01dc3baf2b33b0980cf3.jpg
+2024-12-01 20:04:47,240 - INFO - Completed processing MCPS-Crown6_jpg.rf.d012d326ac6e01dc3baf2b33b0980cf3.jpg
+2024-12-01 20:04:47,241 - INFO - Processing MCPS-Crown7_jpg.rf.c3f2312f60f450e7d3d85bcab96e912b.jpg
+2024-12-01 20:04:47,572 - INFO - Completed processing MCPS-Crown7_jpg.rf.c3f2312f60f450e7d3d85bcab96e912b.jpg
+2024-12-01 20:04:47,572 - INFO - Processing MCPS-Crown8_jpg.rf.f24e1aa3e6609a8ba1131a4c2f0c9963.jpg
+2024-12-01 20:04:47,914 - INFO - Completed processing MCPS-Crown8_jpg.rf.f24e1aa3e6609a8ba1131a4c2f0c9963.jpg
+2024-12-01 20:04:47,914 - INFO - Processing MCPS-Crown9_jpg.rf.64f5b451d92c164f60eff1bf1bf9fb13.jpg
+2024-12-01 20:04:48,245 - INFO - Completed processing MCPS-Crown9_jpg.rf.64f5b451d92c164f60eff1bf1bf9fb13.jpg
+2024-12-01 20:04:48,246 - INFO - Processing mech1_jpg.rf.dbfd19088506fd61e8ddc13f5ebc0136.jpg
+2024-12-01 20:04:48,599 - INFO - Completed processing mech1_jpg.rf.dbfd19088506fd61e8ddc13f5ebc0136.jpg
+2024-12-01 20:04:48,600 - INFO - Processing mech2_jpg.rf.9dc40f0f06462d6e4badc4d39670dc9d.jpg
+2024-12-01 20:04:48,890 - INFO - Completed processing mech2_jpg.rf.9dc40f0f06462d6e4badc4d39670dc9d.jpg
+2024-12-01 20:04:48,891 - INFO - Processing oncology_jpg.rf.f36c2a0435c4aa0d14399913857fe72e.jpg
+2024-12-01 20:04:49,277 - INFO - Completed processing oncology_jpg.rf.f36c2a0435c4aa0d14399913857fe72e.jpg
+2024-12-01 20:04:49,279 - INFO - Dataset splitting completed. Metadata saved to results/run_20241201_200444/train_splits/metadata.json
+2024-12-01 20:04:49,280 - INFO - 
+Processing Fold 1/5
+2024-12-01 20:04:49,643 - ERROR - An error occurred: Dataset 'data.yaml' error ❌ 
+Dataset 'data.yaml' images not found ⚠️, missing path '/home/daniel/Documents/Fall2024/datasets/\temp\fold_1/valid\images'
+Note dataset download directory is '/home/daniel/Documents/Fall2024/datasets'. You can update this in '/home/daniel/.config/Ultralytics/settings.json'
+Traceback (most recent call last):
+  File "/home/daniel/Documents/Fall2024/plan_classification/venv/lib/python3.10/site-packages/ultralytics/engine/trainer.py", line 562, in get_dataset
+    data = check_det_dataset(self.args.data)
+  File "/home/daniel/Documents/Fall2024/plan_classification/venv/lib/python3.10/site-packages/ultralytics/data/utils.py", line 329, in check_det_dataset
+    raise FileNotFoundError(m)
+FileNotFoundError: 
+Dataset 'data.yaml' images not found ⚠️, missing path '/home/daniel/Documents/Fall2024/datasets/\temp\fold_1/valid\images'
+Note dataset download directory is '/home/daniel/Documents/Fall2024/datasets'. You can update this in '/home/daniel/.config/Ultralytics/settings.json'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/daniel/Documents/Fall2024/plan_classification/main.py", line 100, in main
+    model, results = trainer.train_fold(Path(BASE_DIR / 'data.yaml'), fold)
+  File "/home/daniel/Documents/Fall2024/plan_classification/src/training/trainer.py", line 15, in train_fold
+    self.results = self.model.train(
+  File "/home/daniel/Documents/Fall2024/plan_classification/venv/lib/python3.10/site-packages/ultralytics/engine/model.py", line 796, in train
+    self.trainer = (trainer or self._smart_load("trainer"))(overrides=args, _callbacks=self.callbacks)
+  File "/home/daniel/Documents/Fall2024/plan_classification/venv/lib/python3.10/site-packages/ultralytics/engine/trainer.py", line 133, in __init__
+    self.trainset, self.testset = self.get_dataset()
+  File "/home/daniel/Documents/Fall2024/plan_classification/venv/lib/python3.10/site-packages/ultralytics/engine/trainer.py", line 566, in get_dataset
+    raise RuntimeError(emojis(f"Dataset '{clean_url(self.args.data)}' error ❌ {e}")) from e
+RuntimeError: Dataset 'data.yaml' error ❌ 
+Dataset 'data.yaml' images not found ⚠️, missing path '/home/daniel/Documents/Fall2024/datasets/\temp\fold_1/valid\images'
+Note dataset download directory is '/home/daniel/Documents/Fall2024/datasets'. You can update this in '/home/daniel/.config/Ultralytics/settings.json'
+2024-12-01 20:07:51,526 - INFO - Step 1: Splitting dataset into train and test sets
+2024-12-01 20:07:51,566 - INFO - Step 2: Splitting training images into grid
+2024-12-01 20:07:51,566 - INFO - Starting dataset splitting process...
+2024-12-01 20:07:51,566 - INFO - Found 15 images to process
+2024-12-01 20:07:51,566 - INFO - Processing MCPS-Crown10_jpg.rf.68e42e7b9aabd4819d22a746033c8199.jpg
+2024-12-01 20:07:51,910 - INFO - Completed processing MCPS-Crown10_jpg.rf.68e42e7b9aabd4819d22a746033c8199.jpg
+2024-12-01 20:07:51,910 - INFO - Processing MCPS-Crown11_jpg.rf.c7bcfe0ab31c8e2db068d14873f7585b.jpg
+2024-12-01 20:07:52,272 - INFO - Completed processing MCPS-Crown11_jpg.rf.c7bcfe0ab31c8e2db068d14873f7585b.jpg
+2024-12-01 20:07:52,273 - INFO - Processing MCPS-Crown12_jpg.rf.7b04d4de6e8e14b3210418c48837ab5b.jpg
+2024-12-01 20:07:52,618 - INFO - Completed processing MCPS-Crown12_jpg.rf.7b04d4de6e8e14b3210418c48837ab5b.jpg
+2024-12-01 20:07:52,618 - INFO - Processing MCPS-Crown14_jpg.rf.b3f22739a63ae4adef5dba675b3fb4db.jpg
+2024-12-01 20:07:52,913 - INFO - Completed processing MCPS-Crown14_jpg.rf.b3f22739a63ae4adef5dba675b3fb4db.jpg
+2024-12-01 20:07:52,913 - INFO - Processing MCPS-Crown15_jpg.rf.4b54dd4502a00000e2088e0e0100d36b.jpg
+2024-12-01 20:07:53,264 - INFO - Completed processing MCPS-Crown15_jpg.rf.4b54dd4502a00000e2088e0e0100d36b.jpg
+2024-12-01 20:07:53,265 - INFO - Processing MCPS-Crown16_jpg.rf.564bef363ffa840130eb8d0426a4a89a.jpg
+2024-12-01 20:07:53,683 - INFO - Completed processing MCPS-Crown16_jpg.rf.564bef363ffa840130eb8d0426a4a89a.jpg
+2024-12-01 20:07:53,683 - INFO - Processing MCPS-Crown17_jpg.rf.6a56113369c0ed9109df8f0288f36f00.jpg
+2024-12-01 20:07:54,066 - INFO - Completed processing MCPS-Crown17_jpg.rf.6a56113369c0ed9109df8f0288f36f00.jpg
+2024-12-01 20:07:54,067 - INFO - Processing MCPS-Crown18_jpg.rf.fc08679c0de1525e21179a7051d2c7eb.jpg
+2024-12-01 20:07:54,366 - INFO - Completed processing MCPS-Crown18_jpg.rf.fc08679c0de1525e21179a7051d2c7eb.jpg
+2024-12-01 20:07:54,367 - INFO - Processing MCPS-Crown6_jpg.rf.d012d326ac6e01dc3baf2b33b0980cf3.jpg
+2024-12-01 20:07:54,679 - INFO - Completed processing MCPS-Crown6_jpg.rf.d012d326ac6e01dc3baf2b33b0980cf3.jpg
+2024-12-01 20:07:54,679 - INFO - Processing MCPS-Crown7_jpg.rf.c3f2312f60f450e7d3d85bcab96e912b.jpg
+2024-12-01 20:07:55,011 - INFO - Completed processing MCPS-Crown7_jpg.rf.c3f2312f60f450e7d3d85bcab96e912b.jpg
+2024-12-01 20:07:55,012 - INFO - Processing MCPS-Crown8_jpg.rf.f24e1aa3e6609a8ba1131a4c2f0c9963.jpg
+2024-12-01 20:07:55,372 - INFO - Completed processing MCPS-Crown8_jpg.rf.f24e1aa3e6609a8ba1131a4c2f0c9963.jpg
+2024-12-01 20:07:55,372 - INFO - Processing MCPS-Crown9_jpg.rf.64f5b451d92c164f60eff1bf1bf9fb13.jpg
+2024-12-01 20:07:55,717 - INFO - Completed processing MCPS-Crown9_jpg.rf.64f5b451d92c164f60eff1bf1bf9fb13.jpg
+2024-12-01 20:07:55,717 - INFO - Processing mech1_jpg.rf.dbfd19088506fd61e8ddc13f5ebc0136.jpg
+2024-12-01 20:07:56,079 - INFO - Completed processing mech1_jpg.rf.dbfd19088506fd61e8ddc13f5ebc0136.jpg
+2024-12-01 20:07:56,080 - INFO - Processing mech2_jpg.rf.9dc40f0f06462d6e4badc4d39670dc9d.jpg
+2024-12-01 20:07:56,371 - INFO - Completed processing mech2_jpg.rf.9dc40f0f06462d6e4badc4d39670dc9d.jpg
+2024-12-01 20:07:56,371 - INFO - Processing oncology_jpg.rf.f36c2a0435c4aa0d14399913857fe72e.jpg
+2024-12-01 20:07:56,764 - INFO - Completed processing oncology_jpg.rf.f36c2a0435c4aa0d14399913857fe72e.jpg
+2024-12-01 20:07:56,766 - INFO - Dataset splitting completed. Metadata saved to results/run_20241201_200751/train_splits/metadata.json
+2024-12-01 20:07:56,768 - INFO - 
+Processing Fold 1/5
+2024-12-01 20:07:57,091 - ERROR - An error occurred: Dataset 'data.yaml' error ❌ 
+Dataset 'data.yaml' images not found ⚠️, missing path '/home/daniel/Documents/Fall2024/datasets/\temp\fold_1/valid\images'
+Note dataset download directory is '/home/daniel/Documents/Fall2024/datasets'. You can update this in '/home/daniel/.config/Ultralytics/settings.json'
+Traceback (most recent call last):
+  File "/home/daniel/Documents/Fall2024/plan_classification/venv/lib/python3.10/site-packages/ultralytics/engine/trainer.py", line 562, in get_dataset
+    data = check_det_dataset(self.args.data)
+  File "/home/daniel/Documents/Fall2024/plan_classification/venv/lib/python3.10/site-packages/ultralytics/data/utils.py", line 329, in check_det_dataset
+    raise FileNotFoundError(m)
+FileNotFoundError: 
+Dataset 'data.yaml' images not found ⚠️, missing path '/home/daniel/Documents/Fall2024/datasets/\temp\fold_1/valid\images'
+Note dataset download directory is '/home/daniel/Documents/Fall2024/datasets'. You can update this in '/home/daniel/.config/Ultralytics/settings.json'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/daniel/Documents/Fall2024/plan_classification/main.py", line 100, in main
+    model, results = trainer.train_fold(Path(BASE_DIR / 'data.yaml'), fold)
+  File "/home/daniel/Documents/Fall2024/plan_classification/src/training/trainer.py", line 15, in train_fold
+    self.results = self.model.train(
+  File "/home/daniel/Documents/Fall2024/plan_classification/venv/lib/python3.10/site-packages/ultralytics/engine/model.py", line 796, in train
+    self.trainer = (trainer or self._smart_load("trainer"))(overrides=args, _callbacks=self.callbacks)
+  File "/home/daniel/Documents/Fall2024/plan_classification/venv/lib/python3.10/site-packages/ultralytics/engine/trainer.py", line 133, in __init__
+    self.trainset, self.testset = self.get_dataset()
+  File "/home/daniel/Documents/Fall2024/plan_classification/venv/lib/python3.10/site-packages/ultralytics/engine/trainer.py", line 566, in get_dataset
+    raise RuntimeError(emojis(f"Dataset '{clean_url(self.args.data)}' error ❌ {e}")) from e
+RuntimeError: Dataset 'data.yaml' error ❌ 
+Dataset 'data.yaml' images not found ⚠️, missing path '/home/daniel/Documents/Fall2024/datasets/\temp\fold_1/valid\images'
+Note dataset download directory is '/home/daniel/Documents/Fall2024/datasets'. You can update this in '/home/daniel/.config/Ultralytics/settings.json'
+2024-12-01 20:08:43,311 - INFO - Step 1: Splitting dataset into train and test sets
+2024-12-01 20:08:43,350 - INFO - Step 2: Splitting training images into grid
+2024-12-01 20:08:43,350 - INFO - Starting dataset splitting process...
+2024-12-01 20:08:43,351 - INFO - Found 15 images to process
+2024-12-01 20:08:43,351 - INFO - Processing MCPS-Crown10_jpg.rf.68e42e7b9aabd4819d22a746033c8199.jpg
+2024-12-01 20:08:43,688 - INFO - Completed processing MCPS-Crown10_jpg.rf.68e42e7b9aabd4819d22a746033c8199.jpg
+2024-12-01 20:08:43,689 - INFO - Processing MCPS-Crown11_jpg.rf.c7bcfe0ab31c8e2db068d14873f7585b.jpg
+2024-12-01 20:08:44,036 - INFO - Completed processing MCPS-Crown11_jpg.rf.c7bcfe0ab31c8e2db068d14873f7585b.jpg
+2024-12-01 20:08:44,037 - INFO - Processing MCPS-Crown12_jpg.rf.7b04d4de6e8e14b3210418c48837ab5b.jpg
+2024-12-01 20:08:44,383 - INFO - Completed processing MCPS-Crown12_jpg.rf.7b04d4de6e8e14b3210418c48837ab5b.jpg
+2024-12-01 20:08:44,384 - INFO - Processing MCPS-Crown14_jpg.rf.b3f22739a63ae4adef5dba675b3fb4db.jpg
+2024-12-01 20:08:44,681 - INFO - Completed processing MCPS-Crown14_jpg.rf.b3f22739a63ae4adef5dba675b3fb4db.jpg
+2024-12-01 20:08:44,682 - INFO - Processing MCPS-Crown15_jpg.rf.4b54dd4502a00000e2088e0e0100d36b.jpg
+2024-12-01 20:08:45,027 - INFO - Completed processing MCPS-Crown15_jpg.rf.4b54dd4502a00000e2088e0e0100d36b.jpg
+2024-12-01 20:08:45,028 - INFO - Processing MCPS-Crown16_jpg.rf.564bef363ffa840130eb8d0426a4a89a.jpg
+2024-12-01 20:08:45,416 - INFO - Completed processing MCPS-Crown16_jpg.rf.564bef363ffa840130eb8d0426a4a89a.jpg
+2024-12-01 20:08:45,417 - INFO - Processing MCPS-Crown17_jpg.rf.6a56113369c0ed9109df8f0288f36f00.jpg
+2024-12-01 20:08:45,785 - INFO - Completed processing MCPS-Crown17_jpg.rf.6a56113369c0ed9109df8f0288f36f00.jpg
+2024-12-01 20:08:45,786 - INFO - Processing MCPS-Crown18_jpg.rf.fc08679c0de1525e21179a7051d2c7eb.jpg
+2024-12-01 20:08:46,088 - INFO - Completed processing MCPS-Crown18_jpg.rf.fc08679c0de1525e21179a7051d2c7eb.jpg
+2024-12-01 20:08:46,088 - INFO - Processing MCPS-Crown6_jpg.rf.d012d326ac6e01dc3baf2b33b0980cf3.jpg
+2024-12-01 20:08:46,417 - INFO - Completed processing MCPS-Crown6_jpg.rf.d012d326ac6e01dc3baf2b33b0980cf3.jpg
+2024-12-01 20:08:46,417 - INFO - Processing MCPS-Crown7_jpg.rf.c3f2312f60f450e7d3d85bcab96e912b.jpg
+2024-12-01 20:08:46,743 - INFO - Completed processing MCPS-Crown7_jpg.rf.c3f2312f60f450e7d3d85bcab96e912b.jpg
+2024-12-01 20:08:46,743 - INFO - Processing MCPS-Crown8_jpg.rf.f24e1aa3e6609a8ba1131a4c2f0c9963.jpg
+2024-12-01 20:08:47,087 - INFO - Completed processing MCPS-Crown8_jpg.rf.f24e1aa3e6609a8ba1131a4c2f0c9963.jpg
+2024-12-01 20:08:47,087 - INFO - Processing MCPS-Crown9_jpg.rf.64f5b451d92c164f60eff1bf1bf9fb13.jpg
+2024-12-01 20:08:47,422 - INFO - Completed processing MCPS-Crown9_jpg.rf.64f5b451d92c164f60eff1bf1bf9fb13.jpg
+2024-12-01 20:08:47,423 - INFO - Processing mech1_jpg.rf.dbfd19088506fd61e8ddc13f5ebc0136.jpg
+2024-12-01 20:08:47,775 - INFO - Completed processing mech1_jpg.rf.dbfd19088506fd61e8ddc13f5ebc0136.jpg
+2024-12-01 20:08:47,775 - INFO - Processing mech2_jpg.rf.9dc40f0f06462d6e4badc4d39670dc9d.jpg
+2024-12-01 20:08:48,065 - INFO - Completed processing mech2_jpg.rf.9dc40f0f06462d6e4badc4d39670dc9d.jpg
+2024-12-01 20:08:48,066 - INFO - Processing oncology_jpg.rf.f36c2a0435c4aa0d14399913857fe72e.jpg
+2024-12-01 20:08:48,469 - INFO - Completed processing oncology_jpg.rf.f36c2a0435c4aa0d14399913857fe72e.jpg
+2024-12-01 20:08:48,471 - INFO - Dataset splitting completed. Metadata saved to results/run_20241201_200843/train_splits/metadata.json
+2024-12-01 20:08:48,472 - INFO - 
+Processing Fold 1/5
+2024-12-01 20:08:48,828 - ERROR - An error occurred: Dataset 'data.yaml' error ❌ 
+Dataset 'data.yaml' images not found ⚠️, missing path '/home/daniel/Documents/Fall2024/datasets/temp/fold_1/valid/images'
+Note dataset download directory is '/home/daniel/Documents/Fall2024/datasets'. You can update this in '/home/daniel/.config/Ultralytics/settings.json'
+Traceback (most recent call last):
+  File "/home/daniel/Documents/Fall2024/plan_classification/venv/lib/python3.10/site-packages/ultralytics/engine/trainer.py", line 562, in get_dataset
+    data = check_det_dataset(self.args.data)
+  File "/home/daniel/Documents/Fall2024/plan_classification/venv/lib/python3.10/site-packages/ultralytics/data/utils.py", line 329, in check_det_dataset
+    raise FileNotFoundError(m)
+FileNotFoundError: 
+Dataset 'data.yaml' images not found ⚠️, missing path '/home/daniel/Documents/Fall2024/datasets/temp/fold_1/valid/images'
+Note dataset download directory is '/home/daniel/Documents/Fall2024/datasets'. You can update this in '/home/daniel/.config/Ultralytics/settings.json'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/daniel/Documents/Fall2024/plan_classification/main.py", line 100, in main
+    model, results = trainer.train_fold(Path(BASE_DIR / 'data.yaml'), fold)
+  File "/home/daniel/Documents/Fall2024/plan_classification/src/training/trainer.py", line 15, in train_fold
+    self.results = self.model.train(
+  File "/home/daniel/Documents/Fall2024/plan_classification/venv/lib/python3.10/site-packages/ultralytics/engine/model.py", line 796, in train
+    self.trainer = (trainer or self._smart_load("trainer"))(overrides=args, _callbacks=self.callbacks)
+  File "/home/daniel/Documents/Fall2024/plan_classification/venv/lib/python3.10/site-packages/ultralytics/engine/trainer.py", line 133, in __init__
+    self.trainset, self.testset = self.get_dataset()
+  File "/home/daniel/Documents/Fall2024/plan_classification/venv/lib/python3.10/site-packages/ultralytics/engine/trainer.py", line 566, in get_dataset
+    raise RuntimeError(emojis(f"Dataset '{clean_url(self.args.data)}' error ❌ {e}")) from e
+RuntimeError: Dataset 'data.yaml' error ❌ 
+Dataset 'data.yaml' images not found ⚠️, missing path '/home/daniel/Documents/Fall2024/datasets/temp/fold_1/valid/images'
+Note dataset download directory is '/home/daniel/Documents/Fall2024/datasets'. You can update this in '/home/daniel/.config/Ultralytics/settings.json'
+2024-12-01 20:12:03,537 - INFO - Step 1: Splitting dataset into train and test sets
+2024-12-01 20:12:03,578 - INFO - Step 2: Splitting training images into grid
+2024-12-01 20:12:03,578 - INFO - Starting dataset splitting process...
+2024-12-01 20:12:03,578 - INFO - Found 15 images to process
+2024-12-01 20:12:03,578 - INFO - Processing MCPS-Crown10_jpg.rf.68e42e7b9aabd4819d22a746033c8199.jpg
+2024-12-01 20:12:03,928 - INFO - Completed processing MCPS-Crown10_jpg.rf.68e42e7b9aabd4819d22a746033c8199.jpg
+2024-12-01 20:12:03,929 - INFO - Processing MCPS-Crown11_jpg.rf.c7bcfe0ab31c8e2db068d14873f7585b.jpg
+2024-12-01 20:12:04,283 - INFO - Completed processing MCPS-Crown11_jpg.rf.c7bcfe0ab31c8e2db068d14873f7585b.jpg
+2024-12-01 20:12:04,284 - INFO - Processing MCPS-Crown12_jpg.rf.7b04d4de6e8e14b3210418c48837ab5b.jpg
+2024-12-01 20:12:04,642 - INFO - Completed processing MCPS-Crown12_jpg.rf.7b04d4de6e8e14b3210418c48837ab5b.jpg
+2024-12-01 20:12:04,643 - INFO - Processing MCPS-Crown14_jpg.rf.b3f22739a63ae4adef5dba675b3fb4db.jpg
+2024-12-01 20:12:04,940 - INFO - Completed processing MCPS-Crown14_jpg.rf.b3f22739a63ae4adef5dba675b3fb4db.jpg
+2024-12-01 20:12:04,941 - INFO - Processing MCPS-Crown15_jpg.rf.4b54dd4502a00000e2088e0e0100d36b.jpg
+2024-12-01 20:12:05,294 - INFO - Completed processing MCPS-Crown15_jpg.rf.4b54dd4502a00000e2088e0e0100d36b.jpg
+2024-12-01 20:12:05,294 - INFO - Processing MCPS-Crown16_jpg.rf.564bef363ffa840130eb8d0426a4a89a.jpg
+2024-12-01 20:12:05,692 - INFO - Completed processing MCPS-Crown16_jpg.rf.564bef363ffa840130eb8d0426a4a89a.jpg
+2024-12-01 20:12:05,692 - INFO - Processing MCPS-Crown17_jpg.rf.6a56113369c0ed9109df8f0288f36f00.jpg
+2024-12-01 20:12:06,068 - INFO - Completed processing MCPS-Crown17_jpg.rf.6a56113369c0ed9109df8f0288f36f00.jpg
+2024-12-01 20:12:06,068 - INFO - Processing MCPS-Crown18_jpg.rf.fc08679c0de1525e21179a7051d2c7eb.jpg
+2024-12-01 20:12:06,363 - INFO - Completed processing MCPS-Crown18_jpg.rf.fc08679c0de1525e21179a7051d2c7eb.jpg
+2024-12-01 20:12:06,364 - INFO - Processing MCPS-Crown6_jpg.rf.d012d326ac6e01dc3baf2b33b0980cf3.jpg
+2024-12-01 20:12:06,676 - INFO - Completed processing MCPS-Crown6_jpg.rf.d012d326ac6e01dc3baf2b33b0980cf3.jpg
+2024-12-01 20:12:06,676 - INFO - Processing MCPS-Crown7_jpg.rf.c3f2312f60f450e7d3d85bcab96e912b.jpg
+2024-12-01 20:12:07,009 - INFO - Completed processing MCPS-Crown7_jpg.rf.c3f2312f60f450e7d3d85bcab96e912b.jpg
+2024-12-01 20:12:07,010 - INFO - Processing MCPS-Crown8_jpg.rf.f24e1aa3e6609a8ba1131a4c2f0c9963.jpg
+2024-12-01 20:12:07,349 - INFO - Completed processing MCPS-Crown8_jpg.rf.f24e1aa3e6609a8ba1131a4c2f0c9963.jpg
+2024-12-01 20:12:07,350 - INFO - Processing MCPS-Crown9_jpg.rf.64f5b451d92c164f60eff1bf1bf9fb13.jpg
+2024-12-01 20:12:07,681 - INFO - Completed processing MCPS-Crown9_jpg.rf.64f5b451d92c164f60eff1bf1bf9fb13.jpg
+2024-12-01 20:12:07,682 - INFO - Processing mech1_jpg.rf.dbfd19088506fd61e8ddc13f5ebc0136.jpg
+2024-12-01 20:12:08,036 - INFO - Completed processing mech1_jpg.rf.dbfd19088506fd61e8ddc13f5ebc0136.jpg
+2024-12-01 20:12:08,036 - INFO - Processing mech2_jpg.rf.9dc40f0f06462d6e4badc4d39670dc9d.jpg
+2024-12-01 20:12:08,325 - INFO - Completed processing mech2_jpg.rf.9dc40f0f06462d6e4badc4d39670dc9d.jpg
+2024-12-01 20:12:08,326 - INFO - Processing oncology_jpg.rf.f36c2a0435c4aa0d14399913857fe72e.jpg
+2024-12-01 20:12:08,713 - INFO - Completed processing oncology_jpg.rf.f36c2a0435c4aa0d14399913857fe72e.jpg
+2024-12-01 20:12:08,715 - INFO - Dataset splitting completed. Metadata saved to results/run_20241201_201203/train_splits/metadata.json
+2024-12-01 20:12:08,716 - INFO - 
+Processing Fold 1/5
+2024-12-01 20:16:13,700 - ERROR - An error occurred: 'DetMetrics' object is not subscriptable
+Traceback (most recent call last):
+  File "/home/daniel/Documents/Fall2024/plan_classification/main.py", line 109, in main
+    plotter.plot_training_history(results, fold)
+  File "/home/daniel/Documents/Fall2024/plan_classification/src/visualization/plotting.py", line 57, in plot_training_history
+    plt.plot(history[metric], label=metric)
+TypeError: 'DetMetrics' object is not subscriptable
+2024-12-01 20:17:56,381 - INFO - Step 1: Splitting dataset into train and test sets
+2024-12-01 20:17:56,421 - INFO - Step 2: Splitting training images into grid
+2024-12-01 20:17:56,421 - INFO - Starting dataset splitting process...
+2024-12-01 20:17:56,421 - INFO - Found 15 images to process
+2024-12-01 20:17:56,421 - INFO - Processing MCPS-Crown10_jpg.rf.68e42e7b9aabd4819d22a746033c8199.jpg
+2024-12-01 20:17:56,763 - INFO - Completed processing MCPS-Crown10_jpg.rf.68e42e7b9aabd4819d22a746033c8199.jpg
+2024-12-01 20:17:56,764 - INFO - Processing MCPS-Crown11_jpg.rf.c7bcfe0ab31c8e2db068d14873f7585b.jpg
+2024-12-01 20:17:57,118 - INFO - Completed processing MCPS-Crown11_jpg.rf.c7bcfe0ab31c8e2db068d14873f7585b.jpg
+2024-12-01 20:17:57,118 - INFO - Processing MCPS-Crown12_jpg.rf.7b04d4de6e8e14b3210418c48837ab5b.jpg
+2024-12-01 20:17:57,463 - INFO - Completed processing MCPS-Crown12_jpg.rf.7b04d4de6e8e14b3210418c48837ab5b.jpg
+2024-12-01 20:17:57,463 - INFO - Processing MCPS-Crown14_jpg.rf.b3f22739a63ae4adef5dba675b3fb4db.jpg
+2024-12-01 20:17:57,751 - INFO - Completed processing MCPS-Crown14_jpg.rf.b3f22739a63ae4adef5dba675b3fb4db.jpg
+2024-12-01 20:17:57,752 - INFO - Processing MCPS-Crown15_jpg.rf.4b54dd4502a00000e2088e0e0100d36b.jpg
+2024-12-01 20:17:58,089 - INFO - Completed processing MCPS-Crown15_jpg.rf.4b54dd4502a00000e2088e0e0100d36b.jpg
+2024-12-01 20:17:58,090 - INFO - Processing MCPS-Crown16_jpg.rf.564bef363ffa840130eb8d0426a4a89a.jpg
+2024-12-01 20:17:58,479 - INFO - Completed processing MCPS-Crown16_jpg.rf.564bef363ffa840130eb8d0426a4a89a.jpg
+2024-12-01 20:17:58,480 - INFO - Processing MCPS-Crown17_jpg.rf.6a56113369c0ed9109df8f0288f36f00.jpg
+2024-12-01 20:17:58,850 - INFO - Completed processing MCPS-Crown17_jpg.rf.6a56113369c0ed9109df8f0288f36f00.jpg
+2024-12-01 20:17:58,851 - INFO - Processing MCPS-Crown18_jpg.rf.fc08679c0de1525e21179a7051d2c7eb.jpg
+2024-12-01 20:17:59,145 - INFO - Completed processing MCPS-Crown18_jpg.rf.fc08679c0de1525e21179a7051d2c7eb.jpg
+2024-12-01 20:17:59,146 - INFO - Processing MCPS-Crown6_jpg.rf.d012d326ac6e01dc3baf2b33b0980cf3.jpg
+2024-12-01 20:17:59,456 - INFO - Completed processing MCPS-Crown6_jpg.rf.d012d326ac6e01dc3baf2b33b0980cf3.jpg
+2024-12-01 20:17:59,457 - INFO - Processing MCPS-Crown7_jpg.rf.c3f2312f60f450e7d3d85bcab96e912b.jpg
+2024-12-01 20:17:59,786 - INFO - Completed processing MCPS-Crown7_jpg.rf.c3f2312f60f450e7d3d85bcab96e912b.jpg
+2024-12-01 20:17:59,786 - INFO - Processing MCPS-Crown8_jpg.rf.f24e1aa3e6609a8ba1131a4c2f0c9963.jpg
+2024-12-01 20:18:00,129 - INFO - Completed processing MCPS-Crown8_jpg.rf.f24e1aa3e6609a8ba1131a4c2f0c9963.jpg
+2024-12-01 20:18:00,129 - INFO - Processing MCPS-Crown9_jpg.rf.64f5b451d92c164f60eff1bf1bf9fb13.jpg
+2024-12-01 20:18:00,464 - INFO - Completed processing MCPS-Crown9_jpg.rf.64f5b451d92c164f60eff1bf1bf9fb13.jpg
+2024-12-01 20:18:00,465 - INFO - Processing mech1_jpg.rf.dbfd19088506fd61e8ddc13f5ebc0136.jpg
+2024-12-01 20:18:00,824 - INFO - Completed processing mech1_jpg.rf.dbfd19088506fd61e8ddc13f5ebc0136.jpg
+2024-12-01 20:18:00,824 - INFO - Processing mech2_jpg.rf.9dc40f0f06462d6e4badc4d39670dc9d.jpg
+2024-12-01 20:18:01,116 - INFO - Completed processing mech2_jpg.rf.9dc40f0f06462d6e4badc4d39670dc9d.jpg
+2024-12-01 20:18:01,116 - INFO - Processing oncology_jpg.rf.f36c2a0435c4aa0d14399913857fe72e.jpg
+2024-12-01 20:18:01,504 - INFO - Completed processing oncology_jpg.rf.f36c2a0435c4aa0d14399913857fe72e.jpg
+2024-12-01 20:18:01,506 - INFO - Dataset splitting completed. Metadata saved to results/run_20241201_201756/train_splits/metadata.json
+2024-12-01 20:18:01,508 - INFO - 
+Processing Fold 1/5
+2024-12-01 20:21:57,192 - INFO - 
+Processing Fold 2/5
+2024-12-01 20:25:52,798 - INFO - 
+Processing Fold 3/5
+2024-12-01 20:32:28,596 - INFO - 
+Processing Fold 4/5
+2024-12-01 20:39:09,039 - INFO - 
+Processing Fold 5/5
+2024-12-01 20:45:45,876 - INFO - Best performing model was from fold 2
+2024-12-01 20:45:45,876 - INFO - 
+Processing test set
+2024-12-01 20:45:45,876 - INFO - Starting dataset splitting process...
+2024-12-01 20:45:45,876 - INFO - Found 4 images to process
+2024-12-01 20:45:45,876 - INFO - Processing Boland_jpg.rf.fe2c57a372feddb77aa7de8c731a2c8e.jpg
+2024-12-01 20:45:46,393 - INFO - Completed processing Boland_jpg.rf.fe2c57a372feddb77aa7de8c731a2c8e.jpg
+2024-12-01 20:45:46,394 - INFO - Processing Inovapage_jpg.rf.a065feb8d350dcb6e14f54494fd7918a.jpg
+2024-12-01 20:45:46,732 - INFO - Completed processing Inovapage_jpg.rf.a065feb8d350dcb6e14f54494fd7918a.jpg
+2024-12-01 20:45:46,732 - INFO - Processing MCPS-Crown13_jpg.rf.288d9f847fa68775df9f56b5613e3fc7.jpg
+2024-12-01 20:45:47,045 - INFO - Completed processing MCPS-Crown13_jpg.rf.288d9f847fa68775df9f56b5613e3fc7.jpg
+2024-12-01 20:45:47,045 - INFO - Processing MCPS-Crown20_jpg.rf.b7418300e157387c826d1fb5050c740e.jpg
+2024-12-01 20:45:47,447 - INFO - Completed processing MCPS-Crown20_jpg.rf.b7418300e157387c826d1fb5050c740e.jpg
+2024-12-01 20:45:47,448 - INFO - Dataset splitting completed. Metadata saved to results/run_20241201_201756/test_splits/metadata.json
+2024-12-01 20:45:47,677 - ERROR - An error occurred: [Errno 2] No such file or directory: 'results/run_20241201_201756/fold_2/training/weights/best.pt'
+Traceback (most recent call last):
+  File "/home/daniel/Documents/Fall2024/plan_classification/main.py", line 126, in main
+    model = ModelUtils.load_model(best_model_path)
+  File "/home/daniel/Documents/Fall2024/plan_classification/src/training/utils.py", line 48, in load_model
+    return YOLO(path)
+  File "/home/daniel/Documents/Fall2024/plan_classification/venv/lib/python3.10/site-packages/ultralytics/models/yolo/model.py", line 23, in __init__
+    super().__init__(model=model, task=task, verbose=verbose)
+  File "/home/daniel/Documents/Fall2024/plan_classification/venv/lib/python3.10/site-packages/ultralytics/engine/model.py", line 145, in __init__
+    self._load(model, task=task)
+  File "/home/daniel/Documents/Fall2024/plan_classification/venv/lib/python3.10/site-packages/ultralytics/engine/model.py", line 285, in _load
+    self.model, self.ckpt = attempt_load_one_weight(weights)
+  File "/home/daniel/Documents/Fall2024/plan_classification/venv/lib/python3.10/site-packages/ultralytics/nn/tasks.py", line 910, in attempt_load_one_weight
+    ckpt, weight = torch_safe_load(weight)  # load ckpt
+  File "/home/daniel/Documents/Fall2024/plan_classification/venv/lib/python3.10/site-packages/ultralytics/nn/tasks.py", line 837, in torch_safe_load
+    ckpt = torch.load(file, map_location="cpu")
+  File "/home/daniel/Documents/Fall2024/plan_classification/venv/lib/python3.10/site-packages/ultralytics/utils/patches.py", line 86, in torch_load
+    return _torch_load(*args, **kwargs)
+  File "/home/daniel/Documents/Fall2024/plan_classification/venv/lib/python3.10/site-packages/torch/serialization.py", line 1319, in load
+    with _open_file_like(f, "rb") as opened_file:
+  File "/home/daniel/Documents/Fall2024/plan_classification/venv/lib/python3.10/site-packages/torch/serialization.py", line 659, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/home/daniel/Documents/Fall2024/plan_classification/venv/lib/python3.10/site-packages/torch/serialization.py", line 640, in __init__
+    super().__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: 'results/run_20241201_201756/fold_2/training/weights/best.pt'
+2024-12-01 20:59:28,864 - INFO - Step 1: Splitting dataset into train and test sets
+2024-12-01 20:59:28,864 - INFO - Processing large images up to 14400x10800 pixels
+2024-12-01 20:59:28,906 - INFO - Step 2: Splitting training images into grid
+2024-12-01 20:59:28,907 - INFO - Initialized ImageSplitter with grid size (4, 4) and 10.0% overlap
+2024-12-01 20:59:28,907 - INFO - Starting dataset splitting process...
+2024-12-01 20:59:28,907 - INFO - Found 15 images to process
+2024-12-01 20:59:28,908 - INFO - Processing MCPS-Crown10_jpg.rf.68e42e7b9aabd4819d22a746033c8199.jpg
+2024-12-01 20:59:29,353 - INFO - Completed processing MCPS-Crown10_jpg.rf.68e42e7b9aabd4819d22a746033c8199.jpg
+2024-12-01 20:59:29,354 - INFO - Processing MCPS-Crown11_jpg.rf.c7bcfe0ab31c8e2db068d14873f7585b.jpg
+2024-12-01 20:59:29,800 - INFO - Completed processing MCPS-Crown11_jpg.rf.c7bcfe0ab31c8e2db068d14873f7585b.jpg
+2024-12-01 20:59:29,801 - INFO - Processing MCPS-Crown12_jpg.rf.7b04d4de6e8e14b3210418c48837ab5b.jpg
+2024-12-01 20:59:30,257 - INFO - Completed processing MCPS-Crown12_jpg.rf.7b04d4de6e8e14b3210418c48837ab5b.jpg
+2024-12-01 20:59:30,258 - INFO - Processing MCPS-Crown14_jpg.rf.b3f22739a63ae4adef5dba675b3fb4db.jpg
+2024-12-01 20:59:30,671 - INFO - Completed processing MCPS-Crown14_jpg.rf.b3f22739a63ae4adef5dba675b3fb4db.jpg
+2024-12-01 20:59:30,672 - INFO - Processing MCPS-Crown15_jpg.rf.4b54dd4502a00000e2088e0e0100d36b.jpg
+2024-12-01 20:59:31,097 - INFO - Completed processing MCPS-Crown15_jpg.rf.4b54dd4502a00000e2088e0e0100d36b.jpg
+2024-12-01 20:59:31,098 - INFO - Processing MCPS-Crown16_jpg.rf.564bef363ffa840130eb8d0426a4a89a.jpg
+2024-12-01 20:59:31,588 - INFO - Completed processing MCPS-Crown16_jpg.rf.564bef363ffa840130eb8d0426a4a89a.jpg
+2024-12-01 20:59:31,588 - INFO - Processing MCPS-Crown17_jpg.rf.6a56113369c0ed9109df8f0288f36f00.jpg
+2024-12-01 20:59:32,053 - INFO - Completed processing MCPS-Crown17_jpg.rf.6a56113369c0ed9109df8f0288f36f00.jpg
+2024-12-01 20:59:32,054 - INFO - Processing MCPS-Crown18_jpg.rf.fc08679c0de1525e21179a7051d2c7eb.jpg
+2024-12-01 20:59:32,431 - INFO - Completed processing MCPS-Crown18_jpg.rf.fc08679c0de1525e21179a7051d2c7eb.jpg
+2024-12-01 20:59:32,431 - INFO - Processing MCPS-Crown6_jpg.rf.d012d326ac6e01dc3baf2b33b0980cf3.jpg
+2024-12-01 20:59:32,815 - INFO - Completed processing MCPS-Crown6_jpg.rf.d012d326ac6e01dc3baf2b33b0980cf3.jpg
+2024-12-01 20:59:32,816 - INFO - Processing MCPS-Crown7_jpg.rf.c3f2312f60f450e7d3d85bcab96e912b.jpg
+2024-12-01 20:59:33,238 - INFO - Completed processing MCPS-Crown7_jpg.rf.c3f2312f60f450e7d3d85bcab96e912b.jpg
+2024-12-01 20:59:33,238 - INFO - Processing MCPS-Crown8_jpg.rf.f24e1aa3e6609a8ba1131a4c2f0c9963.jpg
+2024-12-01 20:59:33,684 - INFO - Completed processing MCPS-Crown8_jpg.rf.f24e1aa3e6609a8ba1131a4c2f0c9963.jpg
+2024-12-01 20:59:33,685 - INFO - Processing MCPS-Crown9_jpg.rf.64f5b451d92c164f60eff1bf1bf9fb13.jpg
+2024-12-01 20:59:34,133 - INFO - Completed processing MCPS-Crown9_jpg.rf.64f5b451d92c164f60eff1bf1bf9fb13.jpg
+2024-12-01 20:59:34,133 - INFO - Processing mech1_jpg.rf.dbfd19088506fd61e8ddc13f5ebc0136.jpg
+2024-12-01 20:59:34,579 - INFO - Completed processing mech1_jpg.rf.dbfd19088506fd61e8ddc13f5ebc0136.jpg
+2024-12-01 20:59:34,579 - INFO - Processing mech2_jpg.rf.9dc40f0f06462d6e4badc4d39670dc9d.jpg
+2024-12-01 20:59:34,952 - INFO - Completed processing mech2_jpg.rf.9dc40f0f06462d6e4badc4d39670dc9d.jpg
+2024-12-01 20:59:34,952 - INFO - Processing oncology_jpg.rf.f36c2a0435c4aa0d14399913857fe72e.jpg
+2024-12-01 20:59:35,434 - INFO - Completed processing oncology_jpg.rf.f36c2a0435c4aa0d14399913857fe72e.jpg
+2024-12-01 20:59:35,436 - INFO - Dataset splitting completed. Metadata saved to results/run_20241201_205928/train_splits/metadata.json
+2024-12-01 20:59:35,438 - INFO - 
+Processing Fold 1/5
+2024-12-01 20:59:59,857 - INFO - 
+Processing Fold 2/5
+2024-12-01 21:00:22,928 - INFO - 
+Processing Fold 3/5
+2024-12-01 21:03:27,149 - INFO - 
+Processing Fold 4/5
+2024-12-01 21:06:32,009 - INFO - 
+Processing Fold 5/5
+2024-12-01 21:09:38,298 - INFO - Best performing model was from fold 5
+2024-12-01 21:09:38,298 - INFO - 
+Processing test set
+2024-12-01 21:09:38,298 - INFO - Initialized ImageSplitter with grid size (4, 4) and 10.0% overlap
+2024-12-01 21:09:38,298 - INFO - Starting dataset splitting process...
+2024-12-01 21:09:38,299 - INFO - Found 4 images to process
+2024-12-01 21:09:38,299 - INFO - Processing Boland_jpg.rf.fe2c57a372feddb77aa7de8c731a2c8e.jpg
+2024-12-01 21:09:38,998 - INFO - Completed processing Boland_jpg.rf.fe2c57a372feddb77aa7de8c731a2c8e.jpg
+2024-12-01 21:09:38,999 - INFO - Processing Inovapage_jpg.rf.a065feb8d350dcb6e14f54494fd7918a.jpg
+2024-12-01 21:09:39,424 - INFO - Completed processing Inovapage_jpg.rf.a065feb8d350dcb6e14f54494fd7918a.jpg
+2024-12-01 21:09:39,425 - INFO - Processing MCPS-Crown13_jpg.rf.288d9f847fa68775df9f56b5613e3fc7.jpg
+2024-12-01 21:09:39,853 - INFO - Completed processing MCPS-Crown13_jpg.rf.288d9f847fa68775df9f56b5613e3fc7.jpg
+2024-12-01 21:09:39,854 - INFO - Processing MCPS-Crown20_jpg.rf.b7418300e157387c826d1fb5050c740e.jpg
+2024-12-01 21:09:40,371 - INFO - Completed processing MCPS-Crown20_jpg.rf.b7418300e157387c826d1fb5050c740e.jpg
+2024-12-01 21:09:40,373 - INFO - Dataset splitting completed. Metadata saved to results/run_20241201_205928/test_splits/metadata.json
+2024-12-01 21:09:40,373 - ERROR - An error occurred: Best model not found at results/run_20241201_205928/fold_5/weights/best.pt
+Traceback (most recent call last):
+  File "/home/daniel/Documents/Fall2024/plan_classification/main.py", line 159, in main
+    raise FileNotFoundError(f"Best model not found at {best_model_path}")
+FileNotFoundError: Best model not found at results/run_20241201_205928/fold_5/weights/best.pt
+2024-12-01 21:12:07,224 - INFO - Step 1: Splitting dataset into train and test sets
+2024-12-01 21:12:07,224 - INFO - Processing large images up to 14400x10800 pixels
+2024-12-01 21:12:07,265 - INFO - Step 2: Splitting training images into grid
+2024-12-01 21:12:07,265 - INFO - Initialized ImageSplitter with grid size (4, 4) and 10.0% overlap
+2024-12-01 21:12:07,265 - INFO - Starting dataset splitting process...
+2024-12-01 21:12:07,265 - INFO - Found 15 images to process
+2024-12-01 21:12:07,266 - INFO - Processing MCPS-Crown10_jpg.rf.68e42e7b9aabd4819d22a746033c8199.jpg
+2024-12-01 21:12:07,704 - INFO - Completed processing MCPS-Crown10_jpg.rf.68e42e7b9aabd4819d22a746033c8199.jpg
+2024-12-01 21:12:07,704 - INFO - Processing MCPS-Crown11_jpg.rf.c7bcfe0ab31c8e2db068d14873f7585b.jpg
+2024-12-01 21:12:08,160 - INFO - Completed processing MCPS-Crown11_jpg.rf.c7bcfe0ab31c8e2db068d14873f7585b.jpg
+2024-12-01 21:12:08,161 - INFO - Processing MCPS-Crown12_jpg.rf.7b04d4de6e8e14b3210418c48837ab5b.jpg
+2024-12-01 21:12:08,619 - INFO - Completed processing MCPS-Crown12_jpg.rf.7b04d4de6e8e14b3210418c48837ab5b.jpg
+2024-12-01 21:12:08,620 - INFO - Processing MCPS-Crown14_jpg.rf.b3f22739a63ae4adef5dba675b3fb4db.jpg
+2024-12-01 21:12:09,034 - INFO - Completed processing MCPS-Crown14_jpg.rf.b3f22739a63ae4adef5dba675b3fb4db.jpg
+2024-12-01 21:12:09,034 - INFO - Processing MCPS-Crown15_jpg.rf.4b54dd4502a00000e2088e0e0100d36b.jpg
+2024-12-01 21:12:09,456 - INFO - Completed processing MCPS-Crown15_jpg.rf.4b54dd4502a00000e2088e0e0100d36b.jpg
+2024-12-01 21:12:09,457 - INFO - Processing MCPS-Crown16_jpg.rf.564bef363ffa840130eb8d0426a4a89a.jpg
+2024-12-01 21:12:09,942 - INFO - Completed processing MCPS-Crown16_jpg.rf.564bef363ffa840130eb8d0426a4a89a.jpg
+2024-12-01 21:12:09,943 - INFO - Processing MCPS-Crown17_jpg.rf.6a56113369c0ed9109df8f0288f36f00.jpg
+2024-12-01 21:12:10,403 - INFO - Completed processing MCPS-Crown17_jpg.rf.6a56113369c0ed9109df8f0288f36f00.jpg
+2024-12-01 21:12:10,404 - INFO - Processing MCPS-Crown18_jpg.rf.fc08679c0de1525e21179a7051d2c7eb.jpg
+2024-12-01 21:12:10,780 - INFO - Completed processing MCPS-Crown18_jpg.rf.fc08679c0de1525e21179a7051d2c7eb.jpg
+2024-12-01 21:12:10,781 - INFO - Processing MCPS-Crown6_jpg.rf.d012d326ac6e01dc3baf2b33b0980cf3.jpg
+2024-12-01 21:12:11,168 - INFO - Completed processing MCPS-Crown6_jpg.rf.d012d326ac6e01dc3baf2b33b0980cf3.jpg
+2024-12-01 21:12:11,169 - INFO - Processing MCPS-Crown7_jpg.rf.c3f2312f60f450e7d3d85bcab96e912b.jpg
+2024-12-01 21:12:11,586 - INFO - Completed processing MCPS-Crown7_jpg.rf.c3f2312f60f450e7d3d85bcab96e912b.jpg
+2024-12-01 21:12:11,587 - INFO - Processing MCPS-Crown8_jpg.rf.f24e1aa3e6609a8ba1131a4c2f0c9963.jpg
+2024-12-01 21:12:12,031 - INFO - Completed processing MCPS-Crown8_jpg.rf.f24e1aa3e6609a8ba1131a4c2f0c9963.jpg
+2024-12-01 21:12:12,031 - INFO - Processing MCPS-Crown9_jpg.rf.64f5b451d92c164f60eff1bf1bf9fb13.jpg
+2024-12-01 21:12:12,477 - INFO - Completed processing MCPS-Crown9_jpg.rf.64f5b451d92c164f60eff1bf1bf9fb13.jpg
+2024-12-01 21:12:12,478 - INFO - Processing mech1_jpg.rf.dbfd19088506fd61e8ddc13f5ebc0136.jpg
+2024-12-01 21:12:12,923 - INFO - Completed processing mech1_jpg.rf.dbfd19088506fd61e8ddc13f5ebc0136.jpg
+2024-12-01 21:12:12,924 - INFO - Processing mech2_jpg.rf.9dc40f0f06462d6e4badc4d39670dc9d.jpg
+2024-12-01 21:12:13,295 - INFO - Completed processing mech2_jpg.rf.9dc40f0f06462d6e4badc4d39670dc9d.jpg
+2024-12-01 21:12:13,296 - INFO - Processing oncology_jpg.rf.f36c2a0435c4aa0d14399913857fe72e.jpg
+2024-12-01 21:12:13,776 - INFO - Completed processing oncology_jpg.rf.f36c2a0435c4aa0d14399913857fe72e.jpg
+2024-12-01 21:12:13,779 - INFO - Dataset splitting completed. Metadata saved to results/run_20241201_211207/train_splits/metadata.json
+2024-12-01 21:12:13,780 - INFO - 
+Processing Fold 1/5
+2024-12-01 21:12:38,265 - INFO - 
+Processing Fold 2/5
+2024-12-01 21:13:01,222 - INFO - 
+Processing Fold 3/5
+2024-12-01 21:16:04,502 - INFO - 
+Processing Fold 4/5
+2024-12-01 21:19:07,661 - INFO - 
+Processing Fold 5/5
+2024-12-01 21:22:11,675 - INFO - Best performing model was from fold 5
+2024-12-01 21:22:11,675 - INFO - 
+Processing test set
+2024-12-01 21:22:11,675 - INFO - Initialized ImageSplitter with grid size (4, 4) and 10.0% overlap
+2024-12-01 21:22:11,675 - INFO - Starting dataset splitting process...
+2024-12-01 21:22:11,676 - INFO - Found 4 images to process
+2024-12-01 21:22:11,676 - INFO - Processing Boland_jpg.rf.fe2c57a372feddb77aa7de8c731a2c8e.jpg
+2024-12-01 21:22:12,341 - INFO - Completed processing Boland_jpg.rf.fe2c57a372feddb77aa7de8c731a2c8e.jpg
+2024-12-01 21:22:12,342 - INFO - Processing Inovapage_jpg.rf.a065feb8d350dcb6e14f54494fd7918a.jpg
+2024-12-01 21:22:12,748 - INFO - Completed processing Inovapage_jpg.rf.a065feb8d350dcb6e14f54494fd7918a.jpg
+2024-12-01 21:22:12,749 - INFO - Processing MCPS-Crown13_jpg.rf.288d9f847fa68775df9f56b5613e3fc7.jpg
+2024-12-01 21:22:13,154 - INFO - Completed processing MCPS-Crown13_jpg.rf.288d9f847fa68775df9f56b5613e3fc7.jpg
+2024-12-01 21:22:13,155 - INFO - Processing MCPS-Crown20_jpg.rf.b7418300e157387c826d1fb5050c740e.jpg
+2024-12-01 21:22:13,639 - INFO - Completed processing MCPS-Crown20_jpg.rf.b7418300e157387c826d1fb5050c740e.jpg
+2024-12-01 21:22:13,640 - INFO - Dataset splitting completed. Metadata saved to results/run_20241201_211207/test_splits/metadata.json
+2024-12-01 21:22:13,640 - ERROR - An error occurred: Best model not found at results/run_20241201_211207/fold_5/training/weights/best.pt
+Traceback (most recent call last):
+  File "/home/daniel/Documents/Fall2024/plan_classification/main.py", line 159, in main
+    raise FileNotFoundError(f"Best model not found at {best_model_path}")
+FileNotFoundError: Best model not found at results/run_20241201_211207/fold_5/training/weights/best.pt
+2024-12-01 21:27:46,971 - INFO - Step 1: Splitting dataset into train and test sets
+2024-12-01 21:27:46,971 - INFO - Processing large images up to 14400x10800 pixels
+2024-12-01 21:27:47,014 - INFO - Step 2: Splitting training images into grid
+2024-12-01 21:27:47,014 - INFO - Initialized ImageSplitter with grid size (4, 4) and 10.0% overlap
+2024-12-01 21:27:47,014 - INFO - Starting dataset splitting process...
+2024-12-01 21:27:47,014 - INFO - Found 15 images to process
+2024-12-01 21:27:47,015 - INFO - Processing MCPS-Crown10_jpg.rf.68e42e7b9aabd4819d22a746033c8199.jpg
+2024-12-01 21:27:47,477 - INFO - Completed processing MCPS-Crown10_jpg.rf.68e42e7b9aabd4819d22a746033c8199.jpg
+2024-12-01 21:27:47,477 - INFO - Processing MCPS-Crown11_jpg.rf.c7bcfe0ab31c8e2db068d14873f7585b.jpg
+2024-12-01 21:27:47,933 - INFO - Completed processing MCPS-Crown11_jpg.rf.c7bcfe0ab31c8e2db068d14873f7585b.jpg
+2024-12-01 21:27:47,934 - INFO - Processing MCPS-Crown12_jpg.rf.7b04d4de6e8e14b3210418c48837ab5b.jpg
+2024-12-01 21:27:48,394 - INFO - Completed processing MCPS-Crown12_jpg.rf.7b04d4de6e8e14b3210418c48837ab5b.jpg
+2024-12-01 21:27:48,395 - INFO - Processing MCPS-Crown14_jpg.rf.b3f22739a63ae4adef5dba675b3fb4db.jpg
+2024-12-01 21:27:48,804 - INFO - Completed processing MCPS-Crown14_jpg.rf.b3f22739a63ae4adef5dba675b3fb4db.jpg
+2024-12-01 21:27:48,804 - INFO - Processing MCPS-Crown15_jpg.rf.4b54dd4502a00000e2088e0e0100d36b.jpg
+2024-12-01 21:27:49,228 - INFO - Completed processing MCPS-Crown15_jpg.rf.4b54dd4502a00000e2088e0e0100d36b.jpg
+2024-12-01 21:27:49,229 - INFO - Processing MCPS-Crown16_jpg.rf.564bef363ffa840130eb8d0426a4a89a.jpg
+2024-12-01 21:27:49,713 - INFO - Completed processing MCPS-Crown16_jpg.rf.564bef363ffa840130eb8d0426a4a89a.jpg
+2024-12-01 21:27:49,714 - INFO - Processing MCPS-Crown17_jpg.rf.6a56113369c0ed9109df8f0288f36f00.jpg
+2024-12-01 21:27:50,174 - INFO - Completed processing MCPS-Crown17_jpg.rf.6a56113369c0ed9109df8f0288f36f00.jpg
+2024-12-01 21:27:50,175 - INFO - Processing MCPS-Crown18_jpg.rf.fc08679c0de1525e21179a7051d2c7eb.jpg
+2024-12-01 21:27:50,550 - INFO - Completed processing MCPS-Crown18_jpg.rf.fc08679c0de1525e21179a7051d2c7eb.jpg
+2024-12-01 21:27:50,551 - INFO - Processing MCPS-Crown6_jpg.rf.d012d326ac6e01dc3baf2b33b0980cf3.jpg
+2024-12-01 21:27:50,934 - INFO - Completed processing MCPS-Crown6_jpg.rf.d012d326ac6e01dc3baf2b33b0980cf3.jpg
+2024-12-01 21:27:50,934 - INFO - Processing MCPS-Crown7_jpg.rf.c3f2312f60f450e7d3d85bcab96e912b.jpg
+2024-12-01 21:27:51,348 - INFO - Completed processing MCPS-Crown7_jpg.rf.c3f2312f60f450e7d3d85bcab96e912b.jpg
+2024-12-01 21:27:51,349 - INFO - Processing MCPS-Crown8_jpg.rf.f24e1aa3e6609a8ba1131a4c2f0c9963.jpg
+2024-12-01 21:27:51,784 - INFO - Completed processing MCPS-Crown8_jpg.rf.f24e1aa3e6609a8ba1131a4c2f0c9963.jpg
+2024-12-01 21:27:51,785 - INFO - Processing MCPS-Crown9_jpg.rf.64f5b451d92c164f60eff1bf1bf9fb13.jpg
+2024-12-01 21:27:52,227 - INFO - Completed processing MCPS-Crown9_jpg.rf.64f5b451d92c164f60eff1bf1bf9fb13.jpg
+2024-12-01 21:27:52,227 - INFO - Processing mech1_jpg.rf.dbfd19088506fd61e8ddc13f5ebc0136.jpg
+2024-12-01 21:27:52,667 - INFO - Completed processing mech1_jpg.rf.dbfd19088506fd61e8ddc13f5ebc0136.jpg
+2024-12-01 21:27:52,668 - INFO - Processing mech2_jpg.rf.9dc40f0f06462d6e4badc4d39670dc9d.jpg
+2024-12-01 21:27:53,038 - INFO - Completed processing mech2_jpg.rf.9dc40f0f06462d6e4badc4d39670dc9d.jpg
+2024-12-01 21:27:53,039 - INFO - Processing oncology_jpg.rf.f36c2a0435c4aa0d14399913857fe72e.jpg
+2024-12-01 21:27:53,530 - INFO - Completed processing oncology_jpg.rf.f36c2a0435c4aa0d14399913857fe72e.jpg
+2024-12-01 21:27:53,532 - INFO - Dataset splitting completed. Metadata saved to results/run_20241201_212746/train_splits/metadata.json
+2024-12-01 21:27:53,534 - INFO - 
+Processing Fold 1/5
+2024-12-01 21:28:15,502 - ERROR - Error in fold 1: PosixPath('results/fold_1/weights/best.pt') and PosixPath('results/fold_1/weights/best.pt') are the same file
+2024-12-01 21:28:15,502 - INFO - 
+Processing Fold 2/5
+2024-12-01 21:29:17,768 - ERROR - Error in fold 2: PosixPath('results/fold_2/weights/best.pt') and PosixPath('results/fold_2/weights/best.pt') are the same file
+2024-12-01 21:29:17,768 - INFO - 
+Processing Fold 3/5
+2024-12-01 21:31:40,690 - ERROR - Error in fold 3: PosixPath('results/fold_3/weights/best.pt') and PosixPath('results/fold_3/weights/best.pt') are the same file
+2024-12-01 21:31:40,691 - INFO - 
+Processing Fold 4/5
+2024-12-01 21:34:02,679 - ERROR - Error in fold 4: PosixPath('results/fold_4/weights/best.pt') and PosixPath('results/fold_4/weights/best.pt') are the same file
+2024-12-01 21:34:02,679 - INFO - 
+Processing Fold 5/5
+2024-12-01 21:36:24,762 - ERROR - Error in fold 5: PosixPath('results/fold_5/weights/best.pt') and PosixPath('results/fold_5/weights/best.pt') are the same file
+2024-12-01 21:36:24,762 - ERROR - An error occurred: No successful folds completed
+Traceback (most recent call last):
+  File "/home/daniel/Documents/Fall2024/plan_classification/main.py", line 159, in main
+    raise RuntimeError("No successful folds completed")
+RuntimeError: No successful folds completed
+2024-12-01 21:40:06,417 - INFO - Created run directory: results/run_20241201_214006
+2024-12-01 21:40:06,417 - INFO - Step 1: Splitting dataset into train and test sets
+2024-12-01 21:40:06,417 - INFO - Processing large images up to 14400x10800 pixels
+2024-12-01 21:40:06,457 - INFO - Step 2: Splitting training images into grid
+2024-12-01 21:40:06,457 - INFO - Initialized ImageSplitter with grid size (4, 4) and 10.0% overlap
+2024-12-01 21:40:06,458 - INFO - Starting dataset splitting process...
+2024-12-01 21:40:06,458 - INFO - Found 15 images to process
+2024-12-01 21:40:06,459 - INFO - Processing MCPS-Crown10_jpg.rf.68e42e7b9aabd4819d22a746033c8199.jpg
+2024-12-01 21:40:06,897 - INFO - Completed processing MCPS-Crown10_jpg.rf.68e42e7b9aabd4819d22a746033c8199.jpg
+2024-12-01 21:40:06,898 - INFO - Processing MCPS-Crown11_jpg.rf.c7bcfe0ab31c8e2db068d14873f7585b.jpg
+2024-12-01 21:40:07,343 - INFO - Completed processing MCPS-Crown11_jpg.rf.c7bcfe0ab31c8e2db068d14873f7585b.jpg
+2024-12-01 21:40:07,344 - INFO - Processing MCPS-Crown12_jpg.rf.7b04d4de6e8e14b3210418c48837ab5b.jpg
+2024-12-01 21:40:07,799 - INFO - Completed processing MCPS-Crown12_jpg.rf.7b04d4de6e8e14b3210418c48837ab5b.jpg
+2024-12-01 21:40:07,800 - INFO - Processing MCPS-Crown14_jpg.rf.b3f22739a63ae4adef5dba675b3fb4db.jpg
+2024-12-01 21:40:08,212 - INFO - Completed processing MCPS-Crown14_jpg.rf.b3f22739a63ae4adef5dba675b3fb4db.jpg
+2024-12-01 21:40:08,213 - INFO - Processing MCPS-Crown15_jpg.rf.4b54dd4502a00000e2088e0e0100d36b.jpg
+2024-12-01 21:40:08,635 - INFO - Completed processing MCPS-Crown15_jpg.rf.4b54dd4502a00000e2088e0e0100d36b.jpg
+2024-12-01 21:40:08,636 - INFO - Processing MCPS-Crown16_jpg.rf.564bef363ffa840130eb8d0426a4a89a.jpg
+2024-12-01 21:40:09,120 - INFO - Completed processing MCPS-Crown16_jpg.rf.564bef363ffa840130eb8d0426a4a89a.jpg
+2024-12-01 21:40:09,121 - INFO - Processing MCPS-Crown17_jpg.rf.6a56113369c0ed9109df8f0288f36f00.jpg
+2024-12-01 21:40:09,587 - INFO - Completed processing MCPS-Crown17_jpg.rf.6a56113369c0ed9109df8f0288f36f00.jpg
+2024-12-01 21:40:09,587 - INFO - Processing MCPS-Crown18_jpg.rf.fc08679c0de1525e21179a7051d2c7eb.jpg
+2024-12-01 21:40:09,967 - INFO - Completed processing MCPS-Crown18_jpg.rf.fc08679c0de1525e21179a7051d2c7eb.jpg
+2024-12-01 21:40:09,967 - INFO - Processing MCPS-Crown6_jpg.rf.d012d326ac6e01dc3baf2b33b0980cf3.jpg
+2024-12-01 21:40:10,360 - INFO - Completed processing MCPS-Crown6_jpg.rf.d012d326ac6e01dc3baf2b33b0980cf3.jpg
+2024-12-01 21:40:10,361 - INFO - Processing MCPS-Crown7_jpg.rf.c3f2312f60f450e7d3d85bcab96e912b.jpg
+2024-12-01 21:40:10,777 - INFO - Completed processing MCPS-Crown7_jpg.rf.c3f2312f60f450e7d3d85bcab96e912b.jpg
+2024-12-01 21:40:10,778 - INFO - Processing MCPS-Crown8_jpg.rf.f24e1aa3e6609a8ba1131a4c2f0c9963.jpg
+2024-12-01 21:40:11,215 - INFO - Completed processing MCPS-Crown8_jpg.rf.f24e1aa3e6609a8ba1131a4c2f0c9963.jpg
+2024-12-01 21:40:11,215 - INFO - Processing MCPS-Crown9_jpg.rf.64f5b451d92c164f60eff1bf1bf9fb13.jpg
+2024-12-01 21:40:11,657 - INFO - Completed processing MCPS-Crown9_jpg.rf.64f5b451d92c164f60eff1bf1bf9fb13.jpg
+2024-12-01 21:40:11,657 - INFO - Processing mech1_jpg.rf.dbfd19088506fd61e8ddc13f5ebc0136.jpg
+2024-12-01 21:40:12,100 - INFO - Completed processing mech1_jpg.rf.dbfd19088506fd61e8ddc13f5ebc0136.jpg
+2024-12-01 21:40:12,101 - INFO - Processing mech2_jpg.rf.9dc40f0f06462d6e4badc4d39670dc9d.jpg
+2024-12-01 21:40:12,469 - INFO - Completed processing mech2_jpg.rf.9dc40f0f06462d6e4badc4d39670dc9d.jpg
+2024-12-01 21:40:12,470 - INFO - Processing oncology_jpg.rf.f36c2a0435c4aa0d14399913857fe72e.jpg
+2024-12-01 21:40:12,949 - INFO - Completed processing oncology_jpg.rf.f36c2a0435c4aa0d14399913857fe72e.jpg
+2024-12-01 21:40:12,951 - INFO - Dataset splitting completed. Metadata saved to results/run_20241201_214006/train_splits/metadata.json
+2024-12-01 21:40:12,953 - INFO - 
+Processing Fold 1/5
+2024-12-01 21:40:29,506 - INFO - Completed fold 1 training
+2024-12-01 21:40:29,506 - INFO - 
+Processing Fold 2/5
+2024-12-01 21:40:44,565 - INFO - Completed fold 2 training
+2024-12-01 21:40:44,565 - INFO - 
+Processing Fold 3/5
+2024-12-01 21:43:39,732 - INFO - Completed fold 3 training
+2024-12-01 21:43:39,732 - INFO - 
+Processing Fold 4/5
+2024-12-01 21:46:35,015 - INFO - Completed fold 4 training
+2024-12-01 21:46:35,016 - INFO - 
+Processing Fold 5/5
+2024-12-01 21:49:31,029 - INFO - Completed fold 5 training
+2024-12-01 21:49:31,509 - INFO - Best performing model was from fold 5
+2024-12-01 21:49:31,509 - INFO - 
+Processing test set
+2024-12-01 21:49:31,509 - INFO - Initialized ImageSplitter with grid size (4, 4) and 10.0% overlap
+2024-12-01 21:49:31,509 - INFO - Starting dataset splitting process...
+2024-12-01 21:49:31,509 - INFO - Found 4 images to process
+2024-12-01 21:49:31,510 - INFO - Processing Boland_jpg.rf.fe2c57a372feddb77aa7de8c731a2c8e.jpg
+2024-12-01 21:49:32,245 - INFO - Completed processing Boland_jpg.rf.fe2c57a372feddb77aa7de8c731a2c8e.jpg
+2024-12-01 21:49:32,247 - INFO - Processing Inovapage_jpg.rf.a065feb8d350dcb6e14f54494fd7918a.jpg
+2024-12-01 21:49:32,694 - INFO - Completed processing Inovapage_jpg.rf.a065feb8d350dcb6e14f54494fd7918a.jpg
+2024-12-01 21:49:32,695 - INFO - Processing MCPS-Crown13_jpg.rf.288d9f847fa68775df9f56b5613e3fc7.jpg
+2024-12-01 21:49:33,171 - INFO - Completed processing MCPS-Crown13_jpg.rf.288d9f847fa68775df9f56b5613e3fc7.jpg
+2024-12-01 21:49:33,172 - INFO - Processing MCPS-Crown20_jpg.rf.b7418300e157387c826d1fb5050c740e.jpg
+2024-12-01 21:49:33,708 - INFO - Completed processing MCPS-Crown20_jpg.rf.b7418300e157387c826d1fb5050c740e.jpg
+2024-12-01 21:49:33,710 - INFO - Dataset splitting completed. Metadata saved to results/run_20241201_214006/test_splits/metadata.json
+2024-12-01 21:49:33,710 - INFO - Found best model at: results/fold_5/weights/best.pt
+2024-12-01 21:49:33,710 - INFO - Loading best model from results/fold_5/weights/best.pt
+2024-12-01 21:49:36,077 - INFO - Loaded metadata for 4 images
+2024-12-01 21:49:36,077 - INFO - Reconstructing predictions for Boland_jpg.rf.fe2c57a372feddb77aa7de8c731a2c8e
+2024-12-01 21:49:36,077 - INFO - Completed reconstruction for Boland_jpg.rf.fe2c57a372feddb77aa7de8c731a2c8e
+2024-12-01 21:49:36,077 - INFO - Reconstructing predictions for Inovapage_jpg.rf.a065feb8d350dcb6e14f54494fd7918a
+2024-12-01 21:49:36,077 - INFO - Completed reconstruction for Inovapage_jpg.rf.a065feb8d350dcb6e14f54494fd7918a
+2024-12-01 21:49:36,077 - INFO - Reconstructing predictions for MCPS-Crown13_jpg.rf.288d9f847fa68775df9f56b5613e3fc7
+2024-12-01 21:49:36,077 - INFO - Completed reconstruction for MCPS-Crown13_jpg.rf.288d9f847fa68775df9f56b5613e3fc7
+2024-12-01 21:49:36,077 - INFO - Reconstructing predictions for MCPS-Crown20_jpg.rf.b7418300e157387c826d1fb5050c740e
+2024-12-01 21:49:36,077 - INFO - Completed reconstruction for MCPS-Crown20_jpg.rf.b7418300e157387c826d1fb5050c740e
+2024-12-01 21:49:36,078 - INFO - Pipeline completed successfully! Results saved in results/run_20241201_214006
+2024-12-01 21:54:30,093 - INFO - Created run directory: results/run_20241201_215430
+2024-12-01 21:54:30,093 - INFO - Cleaning up temporary directory: temp
+2024-12-01 21:54:30,093 - INFO - Cleanup completed successfully
+2024-12-01 21:54:30,093 - INFO - Step 1: Splitting dataset into train and test sets
+2024-12-01 21:54:30,093 - INFO - Processing large images up to 14400x10800 pixels
+2024-12-01 21:54:30,135 - INFO - Step 2: Splitting training images into grid
+2024-12-01 21:54:30,135 - INFO - Initialized ImageSplitter with grid size (4, 4) and 15.0% overlap
+2024-12-01 21:54:30,135 - INFO - Starting dataset splitting process...
+2024-12-01 21:54:30,136 - INFO - Found 15 images to process
+2024-12-01 21:54:30,136 - INFO - Processing MCPS-Crown10_jpg.rf.68e42e7b9aabd4819d22a746033c8199.jpg
+2024-12-01 21:54:30,609 - INFO - Completed processing MCPS-Crown10_jpg.rf.68e42e7b9aabd4819d22a746033c8199.jpg
+2024-12-01 21:54:30,610 - INFO - Processing MCPS-Crown11_jpg.rf.c7bcfe0ab31c8e2db068d14873f7585b.jpg
+2024-12-01 21:54:31,138 - INFO - Completed processing MCPS-Crown11_jpg.rf.c7bcfe0ab31c8e2db068d14873f7585b.jpg
+2024-12-01 21:54:31,140 - INFO - Processing MCPS-Crown12_jpg.rf.7b04d4de6e8e14b3210418c48837ab5b.jpg
+2024-12-01 21:54:31,659 - INFO - Completed processing MCPS-Crown12_jpg.rf.7b04d4de6e8e14b3210418c48837ab5b.jpg
+2024-12-01 21:54:31,661 - INFO - Processing MCPS-Crown14_jpg.rf.b3f22739a63ae4adef5dba675b3fb4db.jpg
+2024-12-01 21:54:32,113 - INFO - Completed processing MCPS-Crown14_jpg.rf.b3f22739a63ae4adef5dba675b3fb4db.jpg
+2024-12-01 21:54:32,114 - INFO - Processing MCPS-Crown15_jpg.rf.4b54dd4502a00000e2088e0e0100d36b.jpg
+2024-12-01 21:54:32,581 - INFO - Completed processing MCPS-Crown15_jpg.rf.4b54dd4502a00000e2088e0e0100d36b.jpg
+2024-12-01 21:54:32,583 - INFO - Processing MCPS-Crown16_jpg.rf.564bef363ffa840130eb8d0426a4a89a.jpg
+2024-12-01 21:54:33,124 - INFO - Completed processing MCPS-Crown16_jpg.rf.564bef363ffa840130eb8d0426a4a89a.jpg
+2024-12-01 21:54:33,126 - INFO - Processing MCPS-Crown17_jpg.rf.6a56113369c0ed9109df8f0288f36f00.jpg
+2024-12-01 21:54:33,661 - INFO - Completed processing MCPS-Crown17_jpg.rf.6a56113369c0ed9109df8f0288f36f00.jpg
+2024-12-01 21:54:33,662 - INFO - Processing MCPS-Crown18_jpg.rf.fc08679c0de1525e21179a7051d2c7eb.jpg
+2024-12-01 21:54:34,087 - INFO - Completed processing MCPS-Crown18_jpg.rf.fc08679c0de1525e21179a7051d2c7eb.jpg
+2024-12-01 21:54:34,088 - INFO - Processing MCPS-Crown6_jpg.rf.d012d326ac6e01dc3baf2b33b0980cf3.jpg
+2024-12-01 21:54:34,509 - INFO - Completed processing MCPS-Crown6_jpg.rf.d012d326ac6e01dc3baf2b33b0980cf3.jpg
+2024-12-01 21:54:34,510 - INFO - Processing MCPS-Crown7_jpg.rf.c3f2312f60f450e7d3d85bcab96e912b.jpg
+2024-12-01 21:54:35,013 - INFO - Completed processing MCPS-Crown7_jpg.rf.c3f2312f60f450e7d3d85bcab96e912b.jpg
+2024-12-01 21:54:35,014 - INFO - Processing MCPS-Crown8_jpg.rf.f24e1aa3e6609a8ba1131a4c2f0c9963.jpg
+2024-12-01 21:54:35,511 - INFO - Completed processing MCPS-Crown8_jpg.rf.f24e1aa3e6609a8ba1131a4c2f0c9963.jpg
+2024-12-01 21:54:35,512 - INFO - Processing MCPS-Crown9_jpg.rf.64f5b451d92c164f60eff1bf1bf9fb13.jpg
+2024-12-01 21:54:36,046 - INFO - Completed processing MCPS-Crown9_jpg.rf.64f5b451d92c164f60eff1bf1bf9fb13.jpg
+2024-12-01 21:54:36,047 - INFO - Processing mech1_jpg.rf.dbfd19088506fd61e8ddc13f5ebc0136.jpg
+2024-12-01 21:54:36,532 - INFO - Completed processing mech1_jpg.rf.dbfd19088506fd61e8ddc13f5ebc0136.jpg
+2024-12-01 21:54:36,533 - INFO - Processing mech2_jpg.rf.9dc40f0f06462d6e4badc4d39670dc9d.jpg
+2024-12-01 21:54:36,936 - INFO - Completed processing mech2_jpg.rf.9dc40f0f06462d6e4badc4d39670dc9d.jpg
+2024-12-01 21:54:36,937 - INFO - Processing oncology_jpg.rf.f36c2a0435c4aa0d14399913857fe72e.jpg
+2024-12-01 21:54:37,464 - INFO - Completed processing oncology_jpg.rf.f36c2a0435c4aa0d14399913857fe72e.jpg
+2024-12-01 21:54:37,467 - INFO - Dataset splitting completed. Metadata saved to results/run_20241201_215430/train_splits/metadata.json
+2024-12-01 21:54:37,469 - INFO - 
+Processing Fold 1/5
+2024-12-01 21:55:04,263 - ERROR - Error in fold 1: CUDA out of memory. Tried to allocate 144.00 MiB. GPU 0 has a total capacity of 7.78 GiB of which 175.19 MiB is free. Including non-PyTorch memory, this process has 6.95 GiB memory in use. Of the allocated memory 6.59 GiB is allocated by PyTorch, and 141.65 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2024-12-01 21:55:04,263 - INFO - 
+Processing Fold 2/5
+2024-12-01 21:55:12,796 - ERROR - Error in fold 2: CUDA out of memory. Tried to allocate 144.00 MiB. GPU 0 has a total capacity of 7.78 GiB of which 121.00 MiB is free. Including non-PyTorch memory, this process has 6.99 GiB memory in use. Of the allocated memory 6.65 GiB is allocated by PyTorch, and 128.41 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2024-12-01 21:55:12,797 - INFO - 
+Processing Fold 3/5
+2024-12-01 21:55:21,373 - ERROR - Error in fold 3: CUDA out of memory. Tried to allocate 144.00 MiB. GPU 0 has a total capacity of 7.78 GiB of which 65.12 MiB is free. Including non-PyTorch memory, this process has 7.04 GiB memory in use. Of the allocated memory 6.71 GiB is allocated by PyTorch, and 117.74 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2024-12-01 21:55:21,373 - INFO - 
+Processing Fold 4/5
+2024-12-01 21:55:30,403 - ERROR - Error in fold 4: CUDA out of memory. Tried to allocate 144.00 MiB. GPU 0 has a total capacity of 7.78 GiB of which 146.69 MiB is free. Including non-PyTorch memory, this process has 6.95 GiB memory in use. Of the allocated memory 6.62 GiB is allocated by PyTorch, and 111.57 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2024-12-01 21:55:30,403 - INFO - 
+Processing Fold 5/5
+2024-12-01 21:55:38,714 - ERROR - Error in fold 5: CUDA out of memory. Tried to allocate 144.00 MiB. GPU 0 has a total capacity of 7.78 GiB of which 91.12 MiB is free. Including non-PyTorch memory, this process has 6.99 GiB memory in use. Of the allocated memory 6.68 GiB is allocated by PyTorch, and 101.20 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2024-12-01 21:55:38,715 - ERROR - An error occurred: No successful folds completed
+Traceback (most recent call last):
+  File "/home/daniel/Documents/Fall2024/plan_classification/main.py", line 189, in main
+    raise RuntimeError("No successful folds completed")
+RuntimeError: No successful folds completed
+2024-12-01 21:55:38,715 - INFO - Cleaning up failed run directory: results/run_20241201_215430
+2024-12-01 21:55:38,756 - INFO - Failed run cleanup completed successfully
+2024-12-01 21:55:38,757 - INFO - Cleaning up temporary directory: temp
+2024-12-01 21:55:38,851 - INFO - Cleanup completed successfully
+2024-12-01 21:59:35,027 - INFO - Created run directory: results/run_20241201_215935
+2024-12-01 21:59:35,027 - INFO - Cleaning up temporary directory: temp
+2024-12-01 21:59:35,027 - INFO - Cleanup completed successfully
+2024-12-01 21:59:35,027 - INFO - Step 1: Splitting dataset into train and test sets
+2024-12-01 21:59:35,027 - INFO - Processing large images up to 14400x10800 pixels
+2024-12-01 21:59:35,068 - INFO - Step 2: Splitting training images into grid
+2024-12-01 21:59:35,068 - INFO - Initialized ImageSplitter with grid size (4, 4) and 15.0% overlap
+2024-12-01 21:59:35,068 - INFO - Starting dataset splitting process...
+2024-12-01 21:59:35,068 - INFO - Found 15 images to process
+2024-12-01 21:59:35,069 - INFO - Processing MCPS-Crown10_jpg.rf.68e42e7b9aabd4819d22a746033c8199.jpg
+2024-12-01 21:59:35,537 - INFO - Completed processing MCPS-Crown10_jpg.rf.68e42e7b9aabd4819d22a746033c8199.jpg
+2024-12-01 21:59:35,538 - INFO - Processing MCPS-Crown11_jpg.rf.c7bcfe0ab31c8e2db068d14873f7585b.jpg
+2024-12-01 21:59:36,059 - INFO - Completed processing MCPS-Crown11_jpg.rf.c7bcfe0ab31c8e2db068d14873f7585b.jpg
+2024-12-01 21:59:36,060 - INFO - Processing MCPS-Crown12_jpg.rf.7b04d4de6e8e14b3210418c48837ab5b.jpg
+2024-12-01 21:59:36,575 - INFO - Completed processing MCPS-Crown12_jpg.rf.7b04d4de6e8e14b3210418c48837ab5b.jpg
+2024-12-01 21:59:36,576 - INFO - Processing MCPS-Crown14_jpg.rf.b3f22739a63ae4adef5dba675b3fb4db.jpg
+2024-12-01 21:59:37,023 - INFO - Completed processing MCPS-Crown14_jpg.rf.b3f22739a63ae4adef5dba675b3fb4db.jpg
+2024-12-01 21:59:37,024 - INFO - Processing MCPS-Crown15_jpg.rf.4b54dd4502a00000e2088e0e0100d36b.jpg
+2024-12-01 21:59:37,486 - INFO - Completed processing MCPS-Crown15_jpg.rf.4b54dd4502a00000e2088e0e0100d36b.jpg
+2024-12-01 21:59:37,488 - INFO - Processing MCPS-Crown16_jpg.rf.564bef363ffa840130eb8d0426a4a89a.jpg
+2024-12-01 21:59:38,020 - INFO - Completed processing MCPS-Crown16_jpg.rf.564bef363ffa840130eb8d0426a4a89a.jpg
+2024-12-01 21:59:38,021 - INFO - Processing MCPS-Crown17_jpg.rf.6a56113369c0ed9109df8f0288f36f00.jpg
+2024-12-01 21:59:38,554 - INFO - Completed processing MCPS-Crown17_jpg.rf.6a56113369c0ed9109df8f0288f36f00.jpg
+2024-12-01 21:59:38,556 - INFO - Processing MCPS-Crown18_jpg.rf.fc08679c0de1525e21179a7051d2c7eb.jpg
+2024-12-01 21:59:38,985 - INFO - Completed processing MCPS-Crown18_jpg.rf.fc08679c0de1525e21179a7051d2c7eb.jpg
+2024-12-01 21:59:38,986 - INFO - Processing MCPS-Crown6_jpg.rf.d012d326ac6e01dc3baf2b33b0980cf3.jpg
+2024-12-01 21:59:39,407 - INFO - Completed processing MCPS-Crown6_jpg.rf.d012d326ac6e01dc3baf2b33b0980cf3.jpg
+2024-12-01 21:59:39,408 - INFO - Processing MCPS-Crown7_jpg.rf.c3f2312f60f450e7d3d85bcab96e912b.jpg
+2024-12-01 21:59:39,898 - INFO - Completed processing MCPS-Crown7_jpg.rf.c3f2312f60f450e7d3d85bcab96e912b.jpg
+2024-12-01 21:59:39,900 - INFO - Processing MCPS-Crown8_jpg.rf.f24e1aa3e6609a8ba1131a4c2f0c9963.jpg
+2024-12-01 21:59:40,401 - INFO - Completed processing MCPS-Crown8_jpg.rf.f24e1aa3e6609a8ba1131a4c2f0c9963.jpg
+2024-12-01 21:59:40,402 - INFO - Processing MCPS-Crown9_jpg.rf.64f5b451d92c164f60eff1bf1bf9fb13.jpg
+2024-12-01 21:59:40,936 - INFO - Completed processing MCPS-Crown9_jpg.rf.64f5b451d92c164f60eff1bf1bf9fb13.jpg
+2024-12-01 21:59:40,937 - INFO - Processing mech1_jpg.rf.dbfd19088506fd61e8ddc13f5ebc0136.jpg
+2024-12-01 21:59:41,421 - INFO - Completed processing mech1_jpg.rf.dbfd19088506fd61e8ddc13f5ebc0136.jpg
+2024-12-01 21:59:41,422 - INFO - Processing mech2_jpg.rf.9dc40f0f06462d6e4badc4d39670dc9d.jpg
+2024-12-01 21:59:41,832 - INFO - Completed processing mech2_jpg.rf.9dc40f0f06462d6e4badc4d39670dc9d.jpg
+2024-12-01 21:59:41,833 - INFO - Processing oncology_jpg.rf.f36c2a0435c4aa0d14399913857fe72e.jpg
+2024-12-01 21:59:42,403 - INFO - Completed processing oncology_jpg.rf.f36c2a0435c4aa0d14399913857fe72e.jpg
+2024-12-01 21:59:42,406 - INFO - Dataset splitting completed. Metadata saved to results/run_20241201_215935/train_splits/metadata.json
+2024-12-01 21:59:42,407 - INFO - 
+Processing Fold 1/5
+2024-12-01 22:01:12,304 - INFO - Created run directory: results/run_20241201_220112
+2024-12-01 22:01:12,304 - INFO - Cleaning up temporary directory: temp
+2024-12-01 22:01:12,320 - INFO - Cleanup completed successfully
+2024-12-01 22:01:12,320 - INFO - Step 1: Splitting dataset into train and test sets
+2024-12-01 22:01:12,320 - INFO - Processing large images up to 14400x10800 pixels
+2024-12-01 22:01:12,364 - INFO - Step 2: Splitting training images into grid
+2024-12-01 22:01:12,364 - INFO - Initialized ImageSplitter with grid size (4, 4) and 15.0% overlap
+2024-12-01 22:01:12,364 - INFO - Starting dataset splitting process...
+2024-12-01 22:01:12,364 - INFO - Found 15 images to process
+2024-12-01 22:01:12,365 - INFO - Processing MCPS-Crown10_jpg.rf.68e42e7b9aabd4819d22a746033c8199.jpg
+2024-12-01 22:01:12,847 - INFO - Completed processing MCPS-Crown10_jpg.rf.68e42e7b9aabd4819d22a746033c8199.jpg
+2024-12-01 22:01:12,848 - INFO - Processing MCPS-Crown11_jpg.rf.c7bcfe0ab31c8e2db068d14873f7585b.jpg
+2024-12-01 22:01:13,376 - INFO - Completed processing MCPS-Crown11_jpg.rf.c7bcfe0ab31c8e2db068d14873f7585b.jpg
+2024-12-01 22:01:13,377 - INFO - Processing MCPS-Crown12_jpg.rf.7b04d4de6e8e14b3210418c48837ab5b.jpg
+2024-12-01 22:01:13,901 - INFO - Completed processing MCPS-Crown12_jpg.rf.7b04d4de6e8e14b3210418c48837ab5b.jpg
+2024-12-01 22:01:13,903 - INFO - Processing MCPS-Crown14_jpg.rf.b3f22739a63ae4adef5dba675b3fb4db.jpg
+2024-12-01 22:01:14,358 - INFO - Completed processing MCPS-Crown14_jpg.rf.b3f22739a63ae4adef5dba675b3fb4db.jpg
+2024-12-01 22:01:14,359 - INFO - Processing MCPS-Crown15_jpg.rf.4b54dd4502a00000e2088e0e0100d36b.jpg
+2024-12-01 22:01:14,828 - INFO - Completed processing MCPS-Crown15_jpg.rf.4b54dd4502a00000e2088e0e0100d36b.jpg
+2024-12-01 22:01:14,830 - INFO - Processing MCPS-Crown16_jpg.rf.564bef363ffa840130eb8d0426a4a89a.jpg
+2024-12-01 22:01:15,362 - INFO - Completed processing MCPS-Crown16_jpg.rf.564bef363ffa840130eb8d0426a4a89a.jpg
+2024-12-01 22:01:15,363 - INFO - Processing MCPS-Crown17_jpg.rf.6a56113369c0ed9109df8f0288f36f00.jpg
+2024-12-01 22:01:15,906 - INFO - Completed processing MCPS-Crown17_jpg.rf.6a56113369c0ed9109df8f0288f36f00.jpg
+2024-12-01 22:01:15,907 - INFO - Processing MCPS-Crown18_jpg.rf.fc08679c0de1525e21179a7051d2c7eb.jpg
+2024-12-01 22:01:16,346 - INFO - Completed processing MCPS-Crown18_jpg.rf.fc08679c0de1525e21179a7051d2c7eb.jpg
+2024-12-01 22:01:16,347 - INFO - Processing MCPS-Crown6_jpg.rf.d012d326ac6e01dc3baf2b33b0980cf3.jpg
+2024-12-01 22:01:16,763 - INFO - Completed processing MCPS-Crown6_jpg.rf.d012d326ac6e01dc3baf2b33b0980cf3.jpg
+2024-12-01 22:01:16,764 - INFO - Processing MCPS-Crown7_jpg.rf.c3f2312f60f450e7d3d85bcab96e912b.jpg
+2024-12-01 22:01:17,267 - INFO - Completed processing MCPS-Crown7_jpg.rf.c3f2312f60f450e7d3d85bcab96e912b.jpg
+2024-12-01 22:01:17,268 - INFO - Processing MCPS-Crown8_jpg.rf.f24e1aa3e6609a8ba1131a4c2f0c9963.jpg
+2024-12-01 22:01:17,769 - INFO - Completed processing MCPS-Crown8_jpg.rf.f24e1aa3e6609a8ba1131a4c2f0c9963.jpg
+2024-12-01 22:01:17,770 - INFO - Processing MCPS-Crown9_jpg.rf.64f5b451d92c164f60eff1bf1bf9fb13.jpg
+2024-12-01 22:01:18,303 - INFO - Completed processing MCPS-Crown9_jpg.rf.64f5b451d92c164f60eff1bf1bf9fb13.jpg
+2024-12-01 22:01:18,304 - INFO - Processing mech1_jpg.rf.dbfd19088506fd61e8ddc13f5ebc0136.jpg
+2024-12-01 22:01:18,788 - INFO - Completed processing mech1_jpg.rf.dbfd19088506fd61e8ddc13f5ebc0136.jpg
+2024-12-01 22:01:18,789 - INFO - Processing mech2_jpg.rf.9dc40f0f06462d6e4badc4d39670dc9d.jpg
+2024-12-01 22:01:19,192 - INFO - Completed processing mech2_jpg.rf.9dc40f0f06462d6e4badc4d39670dc9d.jpg
+2024-12-01 22:01:19,193 - INFO - Processing oncology_jpg.rf.f36c2a0435c4aa0d14399913857fe72e.jpg
+2024-12-01 22:01:19,725 - INFO - Completed processing oncology_jpg.rf.f36c2a0435c4aa0d14399913857fe72e.jpg
+2024-12-01 22:01:19,728 - INFO - Dataset splitting completed. Metadata saved to results/run_20241201_220112/train_splits/metadata.json
+2024-12-01 22:01:19,729 - INFO - 
+Processing Fold 1/5
+2024-12-01 22:01:27,750 - ERROR - Error in fold 1: CUDA out of memory. Tried to allocate 92.00 MiB. GPU 0 has a total capacity of 7.78 GiB of which 54.56 MiB is free. Process 161060 has 3.70 GiB memory in use. Including non-PyTorch memory, this process has 3.28 GiB memory in use. Of the allocated memory 2.97 GiB is allocated by PyTorch, and 97.00 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2024-12-01 22:01:27,751 - INFO - 
+Processing Fold 2/5

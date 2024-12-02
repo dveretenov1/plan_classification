@@ -4,72 +4,118 @@ from pathlib import Path
 import json
 import shutil
 import logging
+from tqdm import tqdm
+import os
 
 logger = logging.getLogger(__name__)
 
 class ImageSplitter:
-    def __init__(self, dataset_path, output_path, grid_size=(4, 4)):
+    def __init__(self, dataset_path, output_path, grid_size=(4, 4), overlap=0.1):
+        """
+        Initialize the ImageSplitter for processing large architectural drawings.
+        
+        Args:
+            dataset_path (Path or str): Path to the dataset containing images and labels
+            output_path (Path or str): Path where split images and labels will be saved
+            grid_size (tuple): Number of rows and columns for splitting (e.g., (4,4) for 16 tiles)
+            overlap (float): Overlap between tiles as a fraction (0.1 = 10% overlap)
+        """
         self.dataset_path = Path(dataset_path)
         self.output_path = Path(output_path)
         self.grid_size = grid_size
+        self.overlap = overlap
         self.metadata = {}
         
+        # Setup output directories
         self.output_images = self.output_path / 'images'
         self.output_labels = self.output_path / 'labels'
         
+        logger.info(f"Initialized ImageSplitter with grid size {grid_size} and {overlap*100}% overlap")
+
     def setup_directories(self):
-        """Create necessary directories"""
+        """Create necessary output directories."""
         self.output_images.mkdir(parents=True, exist_ok=True)
         self.output_labels.mkdir(parents=True, exist_ok=True)
 
+    def _calculate_tile_dimensions(self, image_size, grid_dimension, overlap):
+        """Calculate dimensions and positions of tiles with overlap."""
+        base_size = image_size // grid_dimension
+        overlap_size = int(base_size * overlap)
+        
+        # Calculate positions including overlap
+        positions = []
+        for i in range(grid_dimension):
+            start = max(0, i * base_size - overlap_size)
+            end = min(image_size, (i + 1) * base_size + overlap_size)
+            positions.append((start, end))
+            
+        return positions
+
     def process_dataset(self):
-        """Process all images and labels in the dataset"""
+        """
+        Process all images in the dataset, splitting them into tiles.
+        
+        Returns:
+            Path: Path to the metadata JSON file
+        """
         logger.info("Starting dataset splitting process...")
         self.setup_directories()
         
+        # Get all image files
         image_files = list(sorted((self.dataset_path / 'images').glob('*.jpg')))
         logger.info(f"Found {len(image_files)} images to process")
         
-        for img_path in image_files:
+        # Process each image
+        for img_path in tqdm(image_files, desc="Processing images"):
             label_path = self.dataset_path / 'labels' / f"{img_path.stem}.txt"
             if not label_path.exists():
                 logger.warning(f"No label file found for {img_path.name}")
                 continue
-                
-            self.process_image_and_labels(img_path, label_path)
             
+            try:
+                self._process_single_image(img_path, label_path)
+            except Exception as e:
+                logger.error(f"Error processing {img_path.name}: {str(e)}")
+                continue
+        
+        # Save metadata
         metadata_path = self.output_path / 'metadata.json'
         with open(metadata_path, 'w') as f:
             json.dump(self.metadata, f, indent=4)
-            
+        
         logger.info(f"Dataset splitting completed. Metadata saved to {metadata_path}")
         return metadata_path
 
-    def process_image_and_labels(self, img_path, label_path):
-        """Process a single image and its labels"""
+    def _process_single_image(self, img_path, label_path):
+        """Process a single image and its corresponding label file."""
         logger.info(f"Processing {img_path.name}")
         
+        # Read image and check dimensions
         image = cv2.imread(str(img_path))
         if image is None:
-            logger.error(f"Could not read image {img_path}")
-            return
+            raise ValueError(f"Could not read image {img_path}")
             
         h, w = image.shape[:2]
+        logger.debug(f"Image dimensions: {w}x{h}")
         
+        # Store original image info
         self.metadata[img_path.stem] = {
             'width': w,
             'height': h,
             'grid_size': self.grid_size,
+            'overlap': self.overlap,
             'tiles': {}
         }
         
-        tile_w = w // self.grid_size[1]
-        tile_h = h // self.grid_size[0]
+        # Calculate tile positions with overlap
+        x_positions = self._calculate_tile_dimensions(w, self.grid_size[1], self.overlap)
+        y_positions = self._calculate_tile_dimensions(h, self.grid_size[0], self.overlap)
         
-        # Read and parse labels
+        # Read labels
         with open(label_path, 'r') as f:
             labels = [line.strip().split() for line in f.readlines()]
         
+        # Convert YOLO format to absolute coordinates
         boxes = []
         for label in labels:
             class_id = int(label[0])
@@ -84,39 +130,41 @@ class ImageSplitter:
             })
         
         # Process each tile
-        for i in range(self.grid_size[0]):
-            for j in range(self.grid_size[1]):
-                x1 = j * tile_w
-                y1 = i * tile_h
-                x2 = (j + 1) * tile_w
-                y2 = (i + 1) * tile_h
-                
+        for i, (y1, y2) in enumerate(y_positions):
+            for j, (x1, x2) in enumerate(x_positions):
                 tile_name = f"{img_path.stem}_r{i}c{j}_g{self.grid_size[0]}x{self.grid_size[1]}"
                 
+                # Store tile metadata
                 self.metadata[img_path.stem]['tiles'][f"r{i}c{j}"] = {
-                    'x1': x1,
-                    'y1': y1,
-                    'x2': x2,
-                    'y2': y2,
+                    'x1': int(x1),
+                    'y1': int(y1),
+                    'x2': int(x2),
+                    'y2': int(y2),
                     'tile_name': tile_name
                 }
                 
-                tile = image[y1:y2, x1:x2]
+                # Extract tile
+                tile = image[y1:y2, x1:x2].copy()
+                tile_w = x2 - x1
+                tile_h = y2 - y1
                 
-                # Process boxes for this tile
+                # Find boxes that intersect with this tile
                 tile_boxes = []
                 for box in boxes:
+                    # Calculate intersection
                     intersect_x1 = max(box['x1'], x1)
                     intersect_y1 = max(box['y1'], y1)
                     intersect_x2 = min(box['x2'], x2)
                     intersect_y2 = min(box['y2'], y2)
                     
                     if intersect_x1 < intersect_x2 and intersect_y1 < intersect_y2:
+                        # Convert to tile-relative coordinates
                         rel_x1 = (intersect_x1 - x1) / tile_w
                         rel_y1 = (intersect_y1 - y1) / tile_h
                         rel_x2 = (intersect_x2 - x1) / tile_w
                         rel_y2 = (intersect_y2 - y1) / tile_h
                         
+                        # Convert to YOLO format
                         center_x = (rel_x1 + rel_x2) / 2
                         center_y = (rel_y1 + rel_y2) / 2
                         width = rel_x2 - rel_x1
@@ -130,76 +178,24 @@ class ImageSplitter:
                             'h': height
                         })
                 
-                if tile_boxes:  # Only save tiles that contain objects
+                # Only save tiles that contain objects
+                if tile_boxes:
+                    # Save tile image
                     cv2.imwrite(str(self.output_images / f"{tile_name}.jpg"), tile)
                     
+                    # Save tile labels
                     with open(self.output_labels / f"{tile_name}.txt", 'w') as f:
                         for box in tile_boxes:
                             f.write(f"{box['class']} {box['x']:.6f} {box['y']:.6f} {box['w']:.6f} {box['h']:.6f}\n")
-                            
+        
         logger.info(f"Completed processing {img_path.name}")
 
-class PredictionReconstructor:
-    def __init__(self, metadata_path):
-        with open(metadata_path, 'r') as f:
-            self.metadata = json.load(f)
-
-    def reconstruct_predictions(self, predictions_dir, output_dir, original_images_dir):
-        """Reconstruct predictions from split images"""
-        logger.info("Starting prediction reconstruction")
-        
-        output_dir = Path(output_dir)
-        output_dir.mkdir(parents=True, exist_ok=True)
-        predictions_dir = Path(predictions_dir)
-        
-        reconstructed_predictions = {}
-        
-        for img_name, img_data in self.metadata.items():
-            logger.info(f"Reconstructing predictions for {img_name}")
-            
-            reconstructed_boxes = []
-            
-            for tile_id, tile_info in img_data['tiles'].items():
-                tile_name = tile_info['tile_name']
-                pred_file = predictions_dir / f"{tile_name}.txt"
-                
-                if not pred_file.exists():
-                    continue
-                
-                with open(pred_file, 'r') as f:
-                    tile_preds = [line.strip().split() for line in f.readlines()]
-                
-                tile_w = tile_info['x2'] - tile_info['x1']
-                tile_h = tile_info['y2'] - tile_info['y1']
-                
-                for pred in tile_preds:
-                    class_id = int(pred[0])
-                    conf = float(pred[5]) if len(pred) > 5 else 1.0
-                    
-                    x_center = float(pred[1]) * tile_w + tile_info['x1']
-                    y_center = float(pred[2]) * tile_h + tile_info['y1']
-                    width = float(pred[3]) * tile_w
-                    height = float(pred[4]) * tile_h
-                    
-                    reconstructed_boxes.append({
-                        'class': class_id,
-                        'x': x_center / img_data['width'],
-                        'y': y_center / img_data['height'],
-                        'w': width / img_data['width'],
-                        'h': height / img_data['height'],
-                        'conf': conf
-                    })
-            
-            # Save reconstructed predictions
-            output_file = output_dir / f"{img_name}.txt"
-            with open(output_file, 'w') as f:
-                for box in reconstructed_boxes:
-                    f.write(f"{box['class']} {box['x']:.6f} {box['y']:.6f} {box['w']:.6f} {box['h']:.6f}")
-                    if 'conf' in box:
-                        f.write(f" {box['conf']:.6f}")
-                    f.write("\n")
-            
-            reconstructed_predictions[img_name] = reconstructed_boxes
-        
-        logger.info("Prediction reconstruction completed")
-        return reconstructed_predictions
+    def cleanup_temp_files(self):
+        """Clean up any temporary files created during processing."""
+        temp_files = []  # Add any temp file patterns here
+        for pattern in temp_files:
+            for file_path in Path('.').glob(pattern):
+                try:
+                    os.remove(file_path)
+                except Exception as e:
+                    logger.warning(f"Could not remove temp file {file_path}: {e}")

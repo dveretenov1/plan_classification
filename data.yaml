@@ -1,5 +1,6 @@
-names: [Box]
+names:
+- Box
 nc: 1
-path: C:\Users\Chem's bbi\Downloads\MKGT4604\plan_classification\temp\fold_1
-train: train\images
-val: valid\images
+path: /home/daniel/Documents/Fall2024/plan_classification/temp/fold_2
+train: train/images
+val: valid/images

@@ -1,3 +1,5 @@
+from pathlib import Path
+import shutil
 from ultralytics import YOLO
 from config import TRAIN_CONFIG, MODEL_CONFIG, RESULTS_DIR
 
@@ -10,12 +12,15 @@ class YOLOTrainer:
     def train_fold(self, yaml_path, fold):
         """Train model for current fold"""
         print(f"\nTraining fold {fold}...")
+        
+        # Initialize model
         self.model = YOLO(MODEL_CONFIG['base_model'])
         
+        # Train with specific naming pattern
         self.results = self.model.train(
             data=str(yaml_path),
-            project=str(self.results_dir),
-            name=f'fold_{fold}',
+            project=str(self.results_dir),  # Parent directory for all results
+            name=f'fold_{fold}',  # This creates fold_N subdirectory
             exist_ok=True,
             device=0,
             **TRAIN_CONFIG
@@ -37,6 +42,9 @@ class YOLOTrainer:
     @staticmethod
     def load_model(weights_path):
         """Load a trained model"""
+        weights_path = Path(weights_path)
+        if not weights_path.exists():
+            raise FileNotFoundError(f"Model weights not found at {weights_path}")
         return YOLO(weights_path)
 
     def predict(self, source, conf=None):

@@ -44,11 +44,11 @@ class DatasetManager:
         """Setup directory structure for current fold"""
         print(f"Setting up fold {fold}...")
         
-        # Create fold directory structure
-        fold_dir = self.temp_dir / f'fold_{fold}'
+        # Create fold directory structure directly in BASE_DIR/temp
+        fold_dir = self.base_dir / 'temp' / f'fold_{fold}'
         train_img_dir = fold_dir / 'train' / 'images'
         train_label_dir = fold_dir / 'train' / 'labels'
-        val_img_dir = fold_dir / 'valid' / 'images'
+        val_img_dir = fold_dir / 'valid' / 'images'  # Changed from 'val' to 'valid'
         val_label_dir = fold_dir / 'valid' / 'labels'
         
         # Remove existing fold directory if it exists
@@ -69,19 +69,17 @@ class DatasetManager:
             shutil.copy2(self.all_labels[idx], val_label_dir)
         
         print(f"Fold {fold} setup complete with {len(train_idx)} training and {len(val_idx)} validation samples")
-        return fold_dir
-
-    def create_yaml(self, fold_dir, fold):
-        """Create YAML file for current fold"""
+        
+        # Create data.yaml in the base directory
+        yaml_path = self.base_dir / 'data.yaml'
         yaml_content = {
             'path': str(fold_dir.absolute()),  # Use absolute path
-            'train': str(Path('train/images')),  # Relative paths for train/val
-            'val': str(Path('valid/images')),
-            'nc': 1,  # Number of classes
-            'names': ['Box']  # Class names
+            'train': 'train/images',  # Relative paths for train/val
+            'val': 'valid/images',    # Using 'valid' instead of 'val'
+            'nc': 1,                  # Number of classes
+            'names': ['Box']          # Class names
         }
         
-        yaml_path = BASE_DIR / 'data.yaml'
         with open(yaml_path, 'w') as f:
             yaml.dump(yaml_content, f, default_flow_style=False)
         

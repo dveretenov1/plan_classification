@@ -24,7 +24,8 @@ from config import (
     MODEL_CONFIG, 
     DATASET_CONFIG, 
     BASE_DIR,
-    IMAGE_CONFIG
+    IMAGE_CONFIG,
+    TEMP_DIR
 )
 
 # Configure logging
@@ -37,6 +38,26 @@ logging.basicConfig(
     ]
 )
 logger = logging.getLogger(__name__)
+
+def cleanup_temp_files():
+    """Clean up temporary files and directories"""
+    try:
+        if TEMP_DIR.exists():
+            logger.info(f"Cleaning up temporary directory: {TEMP_DIR}")
+            shutil.rmtree(TEMP_DIR)
+            logger.info("Cleanup completed successfully")
+    except Exception as e:
+        logger.warning(f"Error during cleanup: {str(e)}")
+
+def cleanup_failed_run(run_dir):
+    """Clean up a failed run directory"""
+    try:
+        if run_dir.exists():
+            logger.info(f"Cleaning up failed run directory: {run_dir}")
+            shutil.rmtree(run_dir)
+            logger.info("Failed run cleanup completed successfully")
+    except Exception as e:
+        logger.warning(f"Error during failed run cleanup: {str(e)}")
 
 def find_best_model(run_dir, best_fold):
     """
@@ -62,12 +83,18 @@ def find_best_model(run_dir, best_fold):
     )
 
 def main():
+    run_dir = None
+    success = False
+    
     try:
         # Create timestamp for this run
         timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
         run_dir = RESULTS_DIR / f'run_{timestamp}'
         run_dir.mkdir(parents=True, exist_ok=True)
         logger.info(f"Created run directory: {run_dir}")
+        
+        # Clean up any existing temp files before starting
+        cleanup_temp_files()
         
         # 1. First split into train and test sets
         logger.info("Step 1: Splitting dataset into train and test sets")
@@ -218,10 +245,20 @@ def main():
         plotter.plot_predictions(results, 'test')
         
         logger.info(f"Pipeline completed successfully! Results saved in {run_dir}")
+        success = True
         
     except Exception as e:
         logger.error(f"An error occurred: {str(e)}", exc_info=True)
+        if run_dir:
+            cleanup_failed_run(run_dir)
         raise
+    
+    finally:
+        # Always cleanup temp files
+        cleanup_temp_files()
+        # If the run failed, clean up the run directory
+        if not success and run_dir:
+            cleanup_failed_run(run_dir)
 
 if __name__ == "__main__":
     main()
