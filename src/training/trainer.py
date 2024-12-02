@@ -16,15 +16,32 @@ class YOLOTrainer:
         # Initialize model
         self.model = YOLO(MODEL_CONFIG['base_model'])
         
+        # Create training config without invalid parameters
+        train_args = TRAIN_CONFIG.copy()
+        
+        # Remove parameters that might cause issues
+        params_to_remove = [
+            'pin_memory', 'cuda_cache_disable', 'overlap_mask', 
+            'deterministic', 'mask_ratio', 'dropout'
+        ]
+        
+        for param in params_to_remove:
+            if param in train_args:
+                del train_args[param]
+        
         # Train with specific naming pattern
-        self.results = self.model.train(
-            data=str(yaml_path),
-            project=str(self.results_dir),  # Parent directory for all results
-            name=f'fold_{fold}',  # This creates fold_N subdirectory
-            exist_ok=True,
-            device=0,
-            **TRAIN_CONFIG
-        )
+        model_args = {
+            'data': str(yaml_path),
+            'project': str(self.results_dir),
+            'name': f'fold_{fold}',
+            'exist_ok': True,
+        }
+        
+        # Combine valid arguments
+        train_args.update(model_args)
+        
+        # Train the model
+        self.results = self.model.train(**train_args)
         
         return self.model, self.results
 
@@ -52,13 +69,10 @@ class YOLOTrainer:
         if self.model is None:
             raise ValueError("No model has been trained yet")
             
-        conf = conf or MODEL_CONFIG['conf_threshold']
+        pred_args = MODEL_CONFIG.copy()
+        pred_args['source'] = source
+        pred_args['conf'] = conf or pred_args.get('conf', 0.2)
         
-        results = self.model.predict(
-            source=source,
-            save=True,
-            conf=conf,
-            show_boxes=True
-        )
+        results = self.model.predict(**pred_args)
         
         return results

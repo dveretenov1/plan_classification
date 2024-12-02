@@ -808,3 +808,1095 @@ Processing Fold 1/5
 2024-12-01 22:01:27,750 - ERROR - Error in fold 1: CUDA out of memory. Tried to allocate 92.00 MiB. GPU 0 has a total capacity of 7.78 GiB of which 54.56 MiB is free. Process 161060 has 3.70 GiB memory in use. Including non-PyTorch memory, this process has 3.28 GiB memory in use. Of the allocated memory 2.97 GiB is allocated by PyTorch, and 97.00 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
 2024-12-01 22:01:27,751 - INFO - 
 Processing Fold 2/5
+2024-12-01 22:03:24,171 - INFO - Created run directory: results/run_20241201_220324
+2024-12-01 22:03:24,171 - INFO - Cleaning up temporary directory: temp
+2024-12-01 22:03:24,198 - INFO - Cleanup completed successfully
+2024-12-01 22:03:24,198 - INFO - Step 1: Splitting dataset into train and test sets
+2024-12-01 22:03:24,198 - INFO - Processing large images up to 14400x10800 pixels
+2024-12-01 22:03:24,239 - INFO - Step 2: Splitting training images into grid
+2024-12-01 22:03:24,239 - INFO - Initialized ImageSplitter with grid size (4, 4) and 15.0% overlap
+2024-12-01 22:03:24,239 - INFO - Starting dataset splitting process...
+2024-12-01 22:03:24,239 - INFO - Found 15 images to process
+2024-12-01 22:03:24,240 - INFO - Processing MCPS-Crown10_jpg.rf.68e42e7b9aabd4819d22a746033c8199.jpg
+2024-12-01 22:03:24,719 - INFO - Completed processing MCPS-Crown10_jpg.rf.68e42e7b9aabd4819d22a746033c8199.jpg
+2024-12-01 22:03:24,720 - INFO - Processing MCPS-Crown11_jpg.rf.c7bcfe0ab31c8e2db068d14873f7585b.jpg
+2024-12-01 22:03:25,237 - INFO - Completed processing MCPS-Crown11_jpg.rf.c7bcfe0ab31c8e2db068d14873f7585b.jpg
+2024-12-01 22:03:25,238 - INFO - Processing MCPS-Crown12_jpg.rf.7b04d4de6e8e14b3210418c48837ab5b.jpg
+2024-12-01 22:03:25,755 - INFO - Completed processing MCPS-Crown12_jpg.rf.7b04d4de6e8e14b3210418c48837ab5b.jpg
+2024-12-01 22:03:25,756 - INFO - Processing MCPS-Crown14_jpg.rf.b3f22739a63ae4adef5dba675b3fb4db.jpg
+2024-12-01 22:03:26,203 - INFO - Completed processing MCPS-Crown14_jpg.rf.b3f22739a63ae4adef5dba675b3fb4db.jpg
+2024-12-01 22:03:26,204 - INFO - Processing MCPS-Crown15_jpg.rf.4b54dd4502a00000e2088e0e0100d36b.jpg
+2024-12-01 22:03:26,667 - INFO - Completed processing MCPS-Crown15_jpg.rf.4b54dd4502a00000e2088e0e0100d36b.jpg
+2024-12-01 22:03:26,668 - INFO - Processing MCPS-Crown16_jpg.rf.564bef363ffa840130eb8d0426a4a89a.jpg
+2024-12-01 22:03:27,208 - INFO - Completed processing MCPS-Crown16_jpg.rf.564bef363ffa840130eb8d0426a4a89a.jpg
+2024-12-01 22:03:27,209 - INFO - Processing MCPS-Crown17_jpg.rf.6a56113369c0ed9109df8f0288f36f00.jpg
+2024-12-01 22:03:27,742 - INFO - Completed processing MCPS-Crown17_jpg.rf.6a56113369c0ed9109df8f0288f36f00.jpg
+2024-12-01 22:03:27,743 - INFO - Processing MCPS-Crown18_jpg.rf.fc08679c0de1525e21179a7051d2c7eb.jpg
+2024-12-01 22:03:28,194 - INFO - Completed processing MCPS-Crown18_jpg.rf.fc08679c0de1525e21179a7051d2c7eb.jpg
+2024-12-01 22:03:28,195 - INFO - Processing MCPS-Crown6_jpg.rf.d012d326ac6e01dc3baf2b33b0980cf3.jpg
+2024-12-01 22:03:28,631 - INFO - Completed processing MCPS-Crown6_jpg.rf.d012d326ac6e01dc3baf2b33b0980cf3.jpg
+2024-12-01 22:03:28,632 - INFO - Processing MCPS-Crown7_jpg.rf.c3f2312f60f450e7d3d85bcab96e912b.jpg
+2024-12-01 22:03:29,130 - INFO - Completed processing MCPS-Crown7_jpg.rf.c3f2312f60f450e7d3d85bcab96e912b.jpg
+2024-12-01 22:03:29,132 - INFO - Processing MCPS-Crown8_jpg.rf.f24e1aa3e6609a8ba1131a4c2f0c9963.jpg
+2024-12-01 22:03:29,629 - INFO - Completed processing MCPS-Crown8_jpg.rf.f24e1aa3e6609a8ba1131a4c2f0c9963.jpg
+2024-12-01 22:03:29,630 - INFO - Processing MCPS-Crown9_jpg.rf.64f5b451d92c164f60eff1bf1bf9fb13.jpg
+2024-12-01 22:03:30,165 - INFO - Completed processing MCPS-Crown9_jpg.rf.64f5b451d92c164f60eff1bf1bf9fb13.jpg
+2024-12-01 22:03:30,166 - INFO - Processing mech1_jpg.rf.dbfd19088506fd61e8ddc13f5ebc0136.jpg
+2024-12-01 22:03:30,645 - INFO - Completed processing mech1_jpg.rf.dbfd19088506fd61e8ddc13f5ebc0136.jpg
+2024-12-01 22:03:30,646 - INFO - Processing mech2_jpg.rf.9dc40f0f06462d6e4badc4d39670dc9d.jpg
+2024-12-01 22:03:31,047 - INFO - Completed processing mech2_jpg.rf.9dc40f0f06462d6e4badc4d39670dc9d.jpg
+2024-12-01 22:03:31,048 - INFO - Processing oncology_jpg.rf.f36c2a0435c4aa0d14399913857fe72e.jpg
+2024-12-01 22:03:31,571 - INFO - Completed processing oncology_jpg.rf.f36c2a0435c4aa0d14399913857fe72e.jpg
+2024-12-01 22:03:31,574 - INFO - Dataset splitting completed. Metadata saved to results/run_20241201_220324/train_splits/metadata.json
+2024-12-01 22:03:31,576 - INFO - 
+Processing Fold 1/5
+2024-12-01 22:03:37,949 - ERROR - Error in fold 1: CUDA out of memory. Tried to allocate 20.00 MiB. GPU 0 has a total capacity of 7.78 GiB of which 43.44 MiB is free. Process 161060 has 3.70 GiB memory in use. Process 162650 has 830.00 MiB memory in use. Including non-PyTorch memory, this process has 2.49 GiB memory in use. Of the allocated memory 2.25 GiB is allocated by PyTorch, and 23.18 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2024-12-01 22:03:37,949 - INFO - 
+Processing Fold 2/5
+2024-12-01 22:03:53,630 - INFO - Created run directory: results/run_20241201_220353
+2024-12-01 22:03:53,630 - INFO - Cleaning up temporary directory: temp
+2024-12-01 22:03:53,660 - INFO - Cleanup completed successfully
+2024-12-01 22:03:53,660 - INFO - Step 1: Splitting dataset into train and test sets
+2024-12-01 22:03:53,660 - INFO - Processing large images up to 14400x10800 pixels
+2024-12-01 22:03:53,704 - INFO - Step 2: Splitting training images into grid
+2024-12-01 22:03:53,704 - INFO - Initialized ImageSplitter with grid size (4, 4) and 15.0% overlap
+2024-12-01 22:03:53,704 - INFO - Starting dataset splitting process...
+2024-12-01 22:03:53,705 - INFO - Found 15 images to process
+2024-12-01 22:03:53,705 - INFO - Processing MCPS-Crown10_jpg.rf.68e42e7b9aabd4819d22a746033c8199.jpg
+2024-12-01 22:03:54,191 - INFO - Completed processing MCPS-Crown10_jpg.rf.68e42e7b9aabd4819d22a746033c8199.jpg
+2024-12-01 22:03:54,192 - INFO - Processing MCPS-Crown11_jpg.rf.c7bcfe0ab31c8e2db068d14873f7585b.jpg
+2024-12-01 22:03:54,716 - INFO - Completed processing MCPS-Crown11_jpg.rf.c7bcfe0ab31c8e2db068d14873f7585b.jpg
+2024-12-01 22:03:54,717 - INFO - Processing MCPS-Crown12_jpg.rf.7b04d4de6e8e14b3210418c48837ab5b.jpg
+2024-12-01 22:03:55,221 - INFO - Completed processing MCPS-Crown12_jpg.rf.7b04d4de6e8e14b3210418c48837ab5b.jpg
+2024-12-01 22:03:55,222 - INFO - Processing MCPS-Crown14_jpg.rf.b3f22739a63ae4adef5dba675b3fb4db.jpg
+2024-12-01 22:03:55,664 - INFO - Completed processing MCPS-Crown14_jpg.rf.b3f22739a63ae4adef5dba675b3fb4db.jpg
+2024-12-01 22:03:55,665 - INFO - Processing MCPS-Crown15_jpg.rf.4b54dd4502a00000e2088e0e0100d36b.jpg
+2024-12-01 22:03:56,125 - INFO - Completed processing MCPS-Crown15_jpg.rf.4b54dd4502a00000e2088e0e0100d36b.jpg
+2024-12-01 22:03:56,126 - INFO - Processing MCPS-Crown16_jpg.rf.564bef363ffa840130eb8d0426a4a89a.jpg
+2024-12-01 22:03:56,660 - INFO - Completed processing MCPS-Crown16_jpg.rf.564bef363ffa840130eb8d0426a4a89a.jpg
+2024-12-01 22:03:56,661 - INFO - Processing MCPS-Crown17_jpg.rf.6a56113369c0ed9109df8f0288f36f00.jpg
+2024-12-01 22:03:57,198 - INFO - Completed processing MCPS-Crown17_jpg.rf.6a56113369c0ed9109df8f0288f36f00.jpg
+2024-12-01 22:03:57,199 - INFO - Processing MCPS-Crown18_jpg.rf.fc08679c0de1525e21179a7051d2c7eb.jpg
+2024-12-01 22:03:57,618 - INFO - Completed processing MCPS-Crown18_jpg.rf.fc08679c0de1525e21179a7051d2c7eb.jpg
+2024-12-01 22:03:57,619 - INFO - Processing MCPS-Crown6_jpg.rf.d012d326ac6e01dc3baf2b33b0980cf3.jpg
+2024-12-01 22:03:58,037 - INFO - Completed processing MCPS-Crown6_jpg.rf.d012d326ac6e01dc3baf2b33b0980cf3.jpg
+2024-12-01 22:03:58,038 - INFO - Processing MCPS-Crown7_jpg.rf.c3f2312f60f450e7d3d85bcab96e912b.jpg
+2024-12-01 22:03:58,543 - INFO - Completed processing MCPS-Crown7_jpg.rf.c3f2312f60f450e7d3d85bcab96e912b.jpg
+2024-12-01 22:03:58,544 - INFO - Processing MCPS-Crown8_jpg.rf.f24e1aa3e6609a8ba1131a4c2f0c9963.jpg
+2024-12-01 22:03:59,046 - INFO - Completed processing MCPS-Crown8_jpg.rf.f24e1aa3e6609a8ba1131a4c2f0c9963.jpg
+2024-12-01 22:03:59,047 - INFO - Processing MCPS-Crown9_jpg.rf.64f5b451d92c164f60eff1bf1bf9fb13.jpg
+2024-12-01 22:03:59,579 - INFO - Completed processing MCPS-Crown9_jpg.rf.64f5b451d92c164f60eff1bf1bf9fb13.jpg
+2024-12-01 22:03:59,580 - INFO - Processing mech1_jpg.rf.dbfd19088506fd61e8ddc13f5ebc0136.jpg
+2024-12-01 22:04:00,083 - INFO - Completed processing mech1_jpg.rf.dbfd19088506fd61e8ddc13f5ebc0136.jpg
+2024-12-01 22:04:00,084 - INFO - Processing mech2_jpg.rf.9dc40f0f06462d6e4badc4d39670dc9d.jpg
+2024-12-01 22:04:00,505 - INFO - Completed processing mech2_jpg.rf.9dc40f0f06462d6e4badc4d39670dc9d.jpg
+2024-12-01 22:04:00,506 - INFO - Processing oncology_jpg.rf.f36c2a0435c4aa0d14399913857fe72e.jpg
+2024-12-01 22:04:01,040 - INFO - Completed processing oncology_jpg.rf.f36c2a0435c4aa0d14399913857fe72e.jpg
+2024-12-01 22:04:01,042 - INFO - Dataset splitting completed. Metadata saved to results/run_20241201_220353/train_splits/metadata.json
+2024-12-01 22:04:01,044 - INFO - 
+Processing Fold 1/5
+2024-12-01 22:04:06,351 - ERROR - Error in fold 1: CUDA out of memory. Tried to allocate 20.00 MiB. GPU 0 has a total capacity of 7.78 GiB of which 31.25 MiB is free. Process 161060 has 3.70 GiB memory in use. Process 162650 has 830.00 MiB memory in use. Process 164575 has 692.00 MiB memory in use. Including non-PyTorch memory, this process has 1.81 GiB memory in use. Of the allocated memory 1.55 GiB is allocated by PyTorch, and 47.85 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2024-12-01 22:04:06,352 - INFO - 
+Processing Fold 2/5
+2024-12-01 22:04:10,233 - ERROR - Error in fold 2: CUDA out of memory. Tried to allocate 20.00 MiB. GPU 0 has a total capacity of 7.78 GiB of which 37.38 MiB is free. Process 161060 has 3.70 GiB memory in use. Process 162650 has 830.00 MiB memory in use. Process 164575 has 692.00 MiB memory in use. Including non-PyTorch memory, this process has 1.81 GiB memory in use. Of the allocated memory 1.56 GiB is allocated by PyTorch, and 26.18 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2024-12-01 22:04:10,233 - INFO - 
+Processing Fold 3/5
+2024-12-01 22:04:14,308 - ERROR - Error in fold 3: CUDA out of memory. Tried to allocate 38.00 MiB. GPU 0 has a total capacity of 7.78 GiB of which 48.62 MiB is free. Process 161060 has 3.70 GiB memory in use. Process 162650 has 830.00 MiB memory in use. Process 164575 has 692.00 MiB memory in use. Including non-PyTorch memory, this process has 1.78 GiB memory in use. Of the allocated memory 1.52 GiB is allocated by PyTorch, and 44.01 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2024-12-01 22:04:14,308 - INFO - 
+Processing Fold 4/5
+2024-12-01 22:04:18,554 - ERROR - Error in fold 4: CUDA out of memory. Tried to allocate 76.00 MiB. GPU 0 has a total capacity of 7.78 GiB of which 105.50 MiB is free. Process 161060 has 3.70 GiB memory in use. Process 162650 has 830.00 MiB memory in use. Process 164575 has 692.00 MiB memory in use. Including non-PyTorch memory, this process has 1.83 GiB memory in use. Of the allocated memory 1.58 GiB is allocated by PyTorch, and 34.48 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2024-12-01 22:04:18,554 - INFO - 
+Processing Fold 5/5
+2024-12-01 22:04:22,791 - ERROR - Error in fold 5: CUDA out of memory. Tried to allocate 20.00 MiB. GPU 0 has a total capacity of 7.78 GiB of which 33.56 MiB is free. Process 161060 has 3.70 GiB memory in use. Process 162650 has 830.00 MiB memory in use. Process 164575 has 692.00 MiB memory in use. Including non-PyTorch memory, this process has 1.93 GiB memory in use. Of the allocated memory 1.69 GiB is allocated by PyTorch, and 26.13 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2024-12-01 22:04:22,791 - ERROR - An error occurred: No successful folds completed
+Traceback (most recent call last):
+  File "/home/daniel/Documents/Fall2024/plan_classification/main.py", line 189, in main
+    raise RuntimeError("No successful folds completed")
+RuntimeError: No successful folds completed
+2024-12-01 22:04:22,791 - INFO - Cleaning up failed run directory: results/run_20241201_220353
+2024-12-01 22:04:22,818 - INFO - Failed run cleanup completed successfully
+2024-12-01 22:04:22,818 - INFO - Cleaning up temporary directory: temp
+2024-12-01 22:04:22,896 - INFO - Cleanup completed successfully
+2024-12-01 22:04:34,289 - INFO - Created run directory: results/run_20241201_220434
+2024-12-01 22:04:34,289 - INFO - Cleaning up temporary directory: temp
+2024-12-01 22:04:34,289 - INFO - Cleanup completed successfully
+2024-12-01 22:04:34,289 - INFO - Step 1: Splitting dataset into train and test sets
+2024-12-01 22:04:34,289 - INFO - Processing large images up to 14400x10800 pixels
+2024-12-01 22:04:34,329 - INFO - Step 2: Splitting training images into grid
+2024-12-01 22:04:34,329 - INFO - Initialized ImageSplitter with grid size (4, 4) and 15.0% overlap
+2024-12-01 22:04:34,329 - INFO - Starting dataset splitting process...
+2024-12-01 22:04:34,330 - INFO - Found 15 images to process
+2024-12-01 22:04:34,331 - INFO - Processing MCPS-Crown10_jpg.rf.68e42e7b9aabd4819d22a746033c8199.jpg
+2024-12-01 22:04:34,804 - INFO - Completed processing MCPS-Crown10_jpg.rf.68e42e7b9aabd4819d22a746033c8199.jpg
+2024-12-01 22:04:34,805 - INFO - Processing MCPS-Crown11_jpg.rf.c7bcfe0ab31c8e2db068d14873f7585b.jpg
+2024-12-01 22:04:35,327 - INFO - Completed processing MCPS-Crown11_jpg.rf.c7bcfe0ab31c8e2db068d14873f7585b.jpg
+2024-12-01 22:04:35,329 - INFO - Processing MCPS-Crown12_jpg.rf.7b04d4de6e8e14b3210418c48837ab5b.jpg
+2024-12-01 22:04:35,844 - INFO - Completed processing MCPS-Crown12_jpg.rf.7b04d4de6e8e14b3210418c48837ab5b.jpg
+2024-12-01 22:04:35,845 - INFO - Processing MCPS-Crown14_jpg.rf.b3f22739a63ae4adef5dba675b3fb4db.jpg
+2024-12-01 22:04:36,293 - INFO - Completed processing MCPS-Crown14_jpg.rf.b3f22739a63ae4adef5dba675b3fb4db.jpg
+2024-12-01 22:04:36,294 - INFO - Processing MCPS-Crown15_jpg.rf.4b54dd4502a00000e2088e0e0100d36b.jpg
+2024-12-01 22:04:36,766 - INFO - Completed processing MCPS-Crown15_jpg.rf.4b54dd4502a00000e2088e0e0100d36b.jpg
+2024-12-01 22:04:36,767 - INFO - Processing MCPS-Crown16_jpg.rf.564bef363ffa840130eb8d0426a4a89a.jpg
+2024-12-01 22:04:37,296 - INFO - Completed processing MCPS-Crown16_jpg.rf.564bef363ffa840130eb8d0426a4a89a.jpg
+2024-12-01 22:04:37,297 - INFO - Processing MCPS-Crown17_jpg.rf.6a56113369c0ed9109df8f0288f36f00.jpg
+2024-12-01 22:04:37,825 - INFO - Completed processing MCPS-Crown17_jpg.rf.6a56113369c0ed9109df8f0288f36f00.jpg
+2024-12-01 22:04:37,826 - INFO - Processing MCPS-Crown18_jpg.rf.fc08679c0de1525e21179a7051d2c7eb.jpg
+2024-12-01 22:04:38,255 - INFO - Completed processing MCPS-Crown18_jpg.rf.fc08679c0de1525e21179a7051d2c7eb.jpg
+2024-12-01 22:04:38,256 - INFO - Processing MCPS-Crown6_jpg.rf.d012d326ac6e01dc3baf2b33b0980cf3.jpg
+2024-12-01 22:04:38,673 - INFO - Completed processing MCPS-Crown6_jpg.rf.d012d326ac6e01dc3baf2b33b0980cf3.jpg
+2024-12-01 22:04:38,674 - INFO - Processing MCPS-Crown7_jpg.rf.c3f2312f60f450e7d3d85bcab96e912b.jpg
+2024-12-01 22:04:39,167 - INFO - Completed processing MCPS-Crown7_jpg.rf.c3f2312f60f450e7d3d85bcab96e912b.jpg
+2024-12-01 22:04:39,168 - INFO - Processing MCPS-Crown8_jpg.rf.f24e1aa3e6609a8ba1131a4c2f0c9963.jpg
+2024-12-01 22:04:39,657 - INFO - Completed processing MCPS-Crown8_jpg.rf.f24e1aa3e6609a8ba1131a4c2f0c9963.jpg
+2024-12-01 22:04:39,658 - INFO - Processing MCPS-Crown9_jpg.rf.64f5b451d92c164f60eff1bf1bf9fb13.jpg
+2024-12-01 22:04:40,187 - INFO - Completed processing MCPS-Crown9_jpg.rf.64f5b451d92c164f60eff1bf1bf9fb13.jpg
+2024-12-01 22:04:40,188 - INFO - Processing mech1_jpg.rf.dbfd19088506fd61e8ddc13f5ebc0136.jpg
+2024-12-01 22:04:40,676 - INFO - Completed processing mech1_jpg.rf.dbfd19088506fd61e8ddc13f5ebc0136.jpg
+2024-12-01 22:04:40,677 - INFO - Processing mech2_jpg.rf.9dc40f0f06462d6e4badc4d39670dc9d.jpg
+2024-12-01 22:04:41,102 - INFO - Completed processing mech2_jpg.rf.9dc40f0f06462d6e4badc4d39670dc9d.jpg
+2024-12-01 22:04:41,103 - INFO - Processing oncology_jpg.rf.f36c2a0435c4aa0d14399913857fe72e.jpg
+2024-12-01 22:04:41,632 - INFO - Completed processing oncology_jpg.rf.f36c2a0435c4aa0d14399913857fe72e.jpg
+2024-12-01 22:04:41,635 - INFO - Dataset splitting completed. Metadata saved to results/run_20241201_220434/train_splits/metadata.json
+2024-12-01 22:04:41,637 - INFO - 
+Processing Fold 1/5
+2024-12-01 22:04:46,916 - ERROR - Error in fold 1: CUDA out of memory. Tried to allocate 20.00 MiB. GPU 0 has a total capacity of 7.78 GiB of which 40.44 MiB is free. Process 161060 has 3.70 GiB memory in use. Process 162650 has 830.00 MiB memory in use. Process 164575 has 692.00 MiB memory in use. Including non-PyTorch memory, this process has 1.99 GiB memory in use. Of the allocated memory 1.72 GiB is allocated by PyTorch, and 52.05 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2024-12-01 22:04:46,917 - INFO - 
+Processing Fold 2/5
+2024-12-01 22:06:09,864 - INFO - Created run directory: results/run_20241201_220609
+2024-12-01 22:06:09,864 - INFO - Cleaning up temporary directory: temp
+2024-12-01 22:06:09,864 - INFO - Cleanup completed successfully
+2024-12-01 22:06:09,864 - INFO - Step 1: Splitting dataset into train and test sets
+2024-12-01 22:06:09,864 - INFO - Processing large images up to 14400x10800 pixels
+2024-12-01 22:06:09,903 - INFO - Step 2: Splitting training images into grid
+2024-12-01 22:06:09,904 - INFO - Initialized ImageSplitter with grid size (4, 4) and 15.0% overlap
+2024-12-01 22:06:09,904 - INFO - Starting dataset splitting process...
+2024-12-01 22:06:09,904 - INFO - Found 15 images to process
+2024-12-01 22:06:09,905 - INFO - Processing MCPS-Crown10_jpg.rf.68e42e7b9aabd4819d22a746033c8199.jpg
+2024-12-01 22:06:10,377 - INFO - Completed processing MCPS-Crown10_jpg.rf.68e42e7b9aabd4819d22a746033c8199.jpg
+2024-12-01 22:06:10,378 - INFO - Processing MCPS-Crown11_jpg.rf.c7bcfe0ab31c8e2db068d14873f7585b.jpg
+2024-12-01 22:06:10,898 - INFO - Completed processing MCPS-Crown11_jpg.rf.c7bcfe0ab31c8e2db068d14873f7585b.jpg
+2024-12-01 22:06:10,899 - INFO - Processing MCPS-Crown12_jpg.rf.7b04d4de6e8e14b3210418c48837ab5b.jpg
+2024-12-01 22:06:11,411 - INFO - Completed processing MCPS-Crown12_jpg.rf.7b04d4de6e8e14b3210418c48837ab5b.jpg
+2024-12-01 22:06:11,412 - INFO - Processing MCPS-Crown14_jpg.rf.b3f22739a63ae4adef5dba675b3fb4db.jpg
+2024-12-01 22:06:11,855 - INFO - Completed processing MCPS-Crown14_jpg.rf.b3f22739a63ae4adef5dba675b3fb4db.jpg
+2024-12-01 22:06:11,856 - INFO - Processing MCPS-Crown15_jpg.rf.4b54dd4502a00000e2088e0e0100d36b.jpg
+2024-12-01 22:06:12,321 - INFO - Completed processing MCPS-Crown15_jpg.rf.4b54dd4502a00000e2088e0e0100d36b.jpg
+2024-12-01 22:06:12,322 - INFO - Processing MCPS-Crown16_jpg.rf.564bef363ffa840130eb8d0426a4a89a.jpg
+2024-12-01 22:06:12,851 - INFO - Completed processing MCPS-Crown16_jpg.rf.564bef363ffa840130eb8d0426a4a89a.jpg
+2024-12-01 22:06:12,852 - INFO - Processing MCPS-Crown17_jpg.rf.6a56113369c0ed9109df8f0288f36f00.jpg
+2024-12-01 22:06:13,389 - INFO - Completed processing MCPS-Crown17_jpg.rf.6a56113369c0ed9109df8f0288f36f00.jpg
+2024-12-01 22:06:13,391 - INFO - Processing MCPS-Crown18_jpg.rf.fc08679c0de1525e21179a7051d2c7eb.jpg
+2024-12-01 22:06:13,810 - INFO - Completed processing MCPS-Crown18_jpg.rf.fc08679c0de1525e21179a7051d2c7eb.jpg
+2024-12-01 22:06:13,811 - INFO - Processing MCPS-Crown6_jpg.rf.d012d326ac6e01dc3baf2b33b0980cf3.jpg
+2024-12-01 22:06:14,235 - INFO - Completed processing MCPS-Crown6_jpg.rf.d012d326ac6e01dc3baf2b33b0980cf3.jpg
+2024-12-01 22:06:14,236 - INFO - Processing MCPS-Crown7_jpg.rf.c3f2312f60f450e7d3d85bcab96e912b.jpg
+2024-12-01 22:06:14,723 - INFO - Completed processing MCPS-Crown7_jpg.rf.c3f2312f60f450e7d3d85bcab96e912b.jpg
+2024-12-01 22:06:14,724 - INFO - Processing MCPS-Crown8_jpg.rf.f24e1aa3e6609a8ba1131a4c2f0c9963.jpg
+2024-12-01 22:06:15,214 - INFO - Completed processing MCPS-Crown8_jpg.rf.f24e1aa3e6609a8ba1131a4c2f0c9963.jpg
+2024-12-01 22:06:15,215 - INFO - Processing MCPS-Crown9_jpg.rf.64f5b451d92c164f60eff1bf1bf9fb13.jpg
+2024-12-01 22:06:15,749 - INFO - Completed processing MCPS-Crown9_jpg.rf.64f5b451d92c164f60eff1bf1bf9fb13.jpg
+2024-12-01 22:06:15,750 - INFO - Processing mech1_jpg.rf.dbfd19088506fd61e8ddc13f5ebc0136.jpg
+2024-12-01 22:06:16,238 - INFO - Completed processing mech1_jpg.rf.dbfd19088506fd61e8ddc13f5ebc0136.jpg
+2024-12-01 22:06:16,239 - INFO - Processing mech2_jpg.rf.9dc40f0f06462d6e4badc4d39670dc9d.jpg
+2024-12-01 22:06:16,639 - INFO - Completed processing mech2_jpg.rf.9dc40f0f06462d6e4badc4d39670dc9d.jpg
+2024-12-01 22:06:16,641 - INFO - Processing oncology_jpg.rf.f36c2a0435c4aa0d14399913857fe72e.jpg
+2024-12-01 22:06:17,164 - INFO - Completed processing oncology_jpg.rf.f36c2a0435c4aa0d14399913857fe72e.jpg
+2024-12-01 22:06:17,167 - INFO - Dataset splitting completed. Metadata saved to results/run_20241201_220609/train_splits/metadata.json
+2024-12-01 22:06:17,169 - INFO - 
+Processing Fold 1/5
+2024-12-01 22:06:17,413 - ERROR - Error in fold 1: '[31m[1mpin_memory[0m' is not a valid YOLO argument. 
+'[31m[1mcuda_cache_disable[0m' is not a valid YOLO argument. 
+
+    Arguments received: ['yolo']. Ultralytics 'yolo' commands use the following syntax:
+
+        yolo TASK MODE ARGS
+
+        Where   TASK (optional) is one of {'segment', 'classify', 'obb', 'detect', 'pose'}
+                MODE (required) is one of {'val', 'predict', 'train', 'benchmark', 'export', 'track'}
+                ARGS (optional) are any number of custom 'arg=value' pairs like 'imgsz=320' that override defaults.
+                    See all ARGS at https://docs.ultralytics.com/usage/cfg or with 'yolo cfg'
+
+    1. Train a detection model for 10 epochs with an initial learning_rate of 0.01
+        yolo train data=coco8.yaml model=yolo11n.pt epochs=10 lr0=0.01
+
+    2. Predict a YouTube video using a pretrained segmentation model at image size 320:
+        yolo predict model=yolo11n-seg.pt source='https://youtu.be/LNwODJXcvt4' imgsz=320
+
+    3. Val a pretrained detection model at batch-size 1 and image size 640:
+        yolo val model=yolo11n.pt data=coco8.yaml batch=1 imgsz=640
+
+    4. Export a YOLO11n classification model to ONNX format at image size 224 by 128 (no TASK required)
+        yolo export model=yolo11n-cls.pt format=onnx imgsz=224,128
+
+    5. Streamlit real-time webcam inference GUI
+        yolo streamlit-predict
+
+    6. Ultralytics solutions usage
+        yolo solutions count or in ['count', 'heatmap', 'queue', 'speed', 'workout', 'analytics', 'help'] source="path/to/video/file.mp4"
+
+    7. Run special commands:
+        yolo help
+        yolo checks
+        yolo version
+        yolo settings
+        yolo copy-cfg
+        yolo cfg
+        yolo solutions help
+
+    Docs: https://docs.ultralytics.com
+    Solutions: https://docs.ultralytics.com/solutions/
+    Community: https://community.ultralytics.com
+    GitHub: https://github.com/ultralytics/ultralytics
+    
+2024-12-01 22:06:17,413 - INFO - 
+Processing Fold 2/5
+2024-12-01 22:06:17,625 - ERROR - Error in fold 2: '[31m[1mpin_memory[0m' is not a valid YOLO argument. 
+'[31m[1mcuda_cache_disable[0m' is not a valid YOLO argument. 
+
+    Arguments received: ['yolo']. Ultralytics 'yolo' commands use the following syntax:
+
+        yolo TASK MODE ARGS
+
+        Where   TASK (optional) is one of {'segment', 'classify', 'obb', 'detect', 'pose'}
+                MODE (required) is one of {'val', 'predict', 'train', 'benchmark', 'export', 'track'}
+                ARGS (optional) are any number of custom 'arg=value' pairs like 'imgsz=320' that override defaults.
+                    See all ARGS at https://docs.ultralytics.com/usage/cfg or with 'yolo cfg'
+
+    1. Train a detection model for 10 epochs with an initial learning_rate of 0.01
+        yolo train data=coco8.yaml model=yolo11n.pt epochs=10 lr0=0.01
+
+    2. Predict a YouTube video using a pretrained segmentation model at image size 320:
+        yolo predict model=yolo11n-seg.pt source='https://youtu.be/LNwODJXcvt4' imgsz=320
+
+    3. Val a pretrained detection model at batch-size 1 and image size 640:
+        yolo val model=yolo11n.pt data=coco8.yaml batch=1 imgsz=640
+
+    4. Export a YOLO11n classification model to ONNX format at image size 224 by 128 (no TASK required)
+        yolo export model=yolo11n-cls.pt format=onnx imgsz=224,128
+
+    5. Streamlit real-time webcam inference GUI
+        yolo streamlit-predict
+
+    6. Ultralytics solutions usage
+        yolo solutions count or in ['count', 'heatmap', 'queue', 'speed', 'workout', 'analytics', 'help'] source="path/to/video/file.mp4"
+
+    7. Run special commands:
+        yolo help
+        yolo checks
+        yolo version
+        yolo settings
+        yolo copy-cfg
+        yolo cfg
+        yolo solutions help
+
+    Docs: https://docs.ultralytics.com
+    Solutions: https://docs.ultralytics.com/solutions/
+    Community: https://community.ultralytics.com
+    GitHub: https://github.com/ultralytics/ultralytics
+    
+2024-12-01 22:06:17,625 - INFO - 
+Processing Fold 3/5
+2024-12-01 22:06:17,900 - ERROR - Error in fold 3: '[31m[1mpin_memory[0m' is not a valid YOLO argument. 
+'[31m[1mcuda_cache_disable[0m' is not a valid YOLO argument. 
+
+    Arguments received: ['yolo']. Ultralytics 'yolo' commands use the following syntax:
+
+        yolo TASK MODE ARGS
+
+        Where   TASK (optional) is one of {'segment', 'classify', 'obb', 'detect', 'pose'}
+                MODE (required) is one of {'val', 'predict', 'train', 'benchmark', 'export', 'track'}
+                ARGS (optional) are any number of custom 'arg=value' pairs like 'imgsz=320' that override defaults.
+                    See all ARGS at https://docs.ultralytics.com/usage/cfg or with 'yolo cfg'
+
+    1. Train a detection model for 10 epochs with an initial learning_rate of 0.01
+        yolo train data=coco8.yaml model=yolo11n.pt epochs=10 lr0=0.01
+
+    2. Predict a YouTube video using a pretrained segmentation model at image size 320:
+        yolo predict model=yolo11n-seg.pt source='https://youtu.be/LNwODJXcvt4' imgsz=320
+
+    3. Val a pretrained detection model at batch-size 1 and image size 640:
+        yolo val model=yolo11n.pt data=coco8.yaml batch=1 imgsz=640
+
+    4. Export a YOLO11n classification model to ONNX format at image size 224 by 128 (no TASK required)
+        yolo export model=yolo11n-cls.pt format=onnx imgsz=224,128
+
+    5. Streamlit real-time webcam inference GUI
+        yolo streamlit-predict
+
+    6. Ultralytics solutions usage
+        yolo solutions count or in ['count', 'heatmap', 'queue', 'speed', 'workout', 'analytics', 'help'] source="path/to/video/file.mp4"
+
+    7. Run special commands:
+        yolo help
+        yolo checks
+        yolo version
+        yolo settings
+        yolo copy-cfg
+        yolo cfg
+        yolo solutions help
+
+    Docs: https://docs.ultralytics.com
+    Solutions: https://docs.ultralytics.com/solutions/
+    Community: https://community.ultralytics.com
+    GitHub: https://github.com/ultralytics/ultralytics
+    
+2024-12-01 22:06:17,900 - INFO - 
+Processing Fold 4/5
+2024-12-01 22:06:18,157 - ERROR - Error in fold 4: '[31m[1mpin_memory[0m' is not a valid YOLO argument. 
+'[31m[1mcuda_cache_disable[0m' is not a valid YOLO argument. 
+
+    Arguments received: ['yolo']. Ultralytics 'yolo' commands use the following syntax:
+
+        yolo TASK MODE ARGS
+
+        Where   TASK (optional) is one of {'segment', 'classify', 'obb', 'detect', 'pose'}
+                MODE (required) is one of {'val', 'predict', 'train', 'benchmark', 'export', 'track'}
+                ARGS (optional) are any number of custom 'arg=value' pairs like 'imgsz=320' that override defaults.
+                    See all ARGS at https://docs.ultralytics.com/usage/cfg or with 'yolo cfg'
+
+    1. Train a detection model for 10 epochs with an initial learning_rate of 0.01
+        yolo train data=coco8.yaml model=yolo11n.pt epochs=10 lr0=0.01
+
+    2. Predict a YouTube video using a pretrained segmentation model at image size 320:
+        yolo predict model=yolo11n-seg.pt source='https://youtu.be/LNwODJXcvt4' imgsz=320
+
+    3. Val a pretrained detection model at batch-size 1 and image size 640:
+        yolo val model=yolo11n.pt data=coco8.yaml batch=1 imgsz=640
+
+    4. Export a YOLO11n classification model to ONNX format at image size 224 by 128 (no TASK required)
+        yolo export model=yolo11n-cls.pt format=onnx imgsz=224,128
+
+    5. Streamlit real-time webcam inference GUI
+        yolo streamlit-predict
+
+    6. Ultralytics solutions usage
+        yolo solutions count or in ['count', 'heatmap', 'queue', 'speed', 'workout', 'analytics', 'help'] source="path/to/video/file.mp4"
+
+    7. Run special commands:
+        yolo help
+        yolo checks
+        yolo version
+        yolo settings
+        yolo copy-cfg
+        yolo cfg
+        yolo solutions help
+
+    Docs: https://docs.ultralytics.com
+    Solutions: https://docs.ultralytics.com/solutions/
+    Community: https://community.ultralytics.com
+    GitHub: https://github.com/ultralytics/ultralytics
+    
+2024-12-01 22:06:18,157 - INFO - 
+Processing Fold 5/5
+2024-12-01 22:06:18,439 - ERROR - Error in fold 5: '[31m[1mpin_memory[0m' is not a valid YOLO argument. 
+'[31m[1mcuda_cache_disable[0m' is not a valid YOLO argument. 
+
+    Arguments received: ['yolo']. Ultralytics 'yolo' commands use the following syntax:
+
+        yolo TASK MODE ARGS
+
+        Where   TASK (optional) is one of {'segment', 'classify', 'obb', 'detect', 'pose'}
+                MODE (required) is one of {'val', 'predict', 'train', 'benchmark', 'export', 'track'}
+                ARGS (optional) are any number of custom 'arg=value' pairs like 'imgsz=320' that override defaults.
+                    See all ARGS at https://docs.ultralytics.com/usage/cfg or with 'yolo cfg'
+
+    1. Train a detection model for 10 epochs with an initial learning_rate of 0.01
+        yolo train data=coco8.yaml model=yolo11n.pt epochs=10 lr0=0.01
+
+    2. Predict a YouTube video using a pretrained segmentation model at image size 320:
+        yolo predict model=yolo11n-seg.pt source='https://youtu.be/LNwODJXcvt4' imgsz=320
+
+    3. Val a pretrained detection model at batch-size 1 and image size 640:
+        yolo val model=yolo11n.pt data=coco8.yaml batch=1 imgsz=640
+
+    4. Export a YOLO11n classification model to ONNX format at image size 224 by 128 (no TASK required)
+        yolo export model=yolo11n-cls.pt format=onnx imgsz=224,128
+
+    5. Streamlit real-time webcam inference GUI
+        yolo streamlit-predict
+
+    6. Ultralytics solutions usage
+        yolo solutions count or in ['count', 'heatmap', 'queue', 'speed', 'workout', 'analytics', 'help'] source="path/to/video/file.mp4"
+
+    7. Run special commands:
+        yolo help
+        yolo checks
+        yolo version
+        yolo settings
+        yolo copy-cfg
+        yolo cfg
+        yolo solutions help
+
+    Docs: https://docs.ultralytics.com
+    Solutions: https://docs.ultralytics.com/solutions/
+    Community: https://community.ultralytics.com
+    GitHub: https://github.com/ultralytics/ultralytics
+    
+2024-12-01 22:06:18,439 - ERROR - An error occurred: No successful folds completed
+Traceback (most recent call last):
+  File "/home/daniel/Documents/Fall2024/plan_classification/main.py", line 189, in main
+    raise RuntimeError("No successful folds completed")
+RuntimeError: No successful folds completed
+2024-12-01 22:06:18,440 - INFO - Cleaning up failed run directory: results/run_20241201_220609
+2024-12-01 22:06:18,462 - INFO - Failed run cleanup completed successfully
+2024-12-01 22:06:18,462 - INFO - Cleaning up temporary directory: temp
+2024-12-01 22:06:18,527 - INFO - Cleanup completed successfully
+2024-12-01 22:06:48,500 - INFO - Created run directory: results/run_20241201_220648
+2024-12-01 22:06:48,500 - INFO - Cleaning up temporary directory: temp
+2024-12-01 22:06:48,500 - INFO - Cleanup completed successfully
+2024-12-01 22:06:48,500 - INFO - Step 1: Splitting dataset into train and test sets
+2024-12-01 22:06:48,500 - INFO - Processing large images up to 14400x10800 pixels
+2024-12-01 22:06:48,549 - INFO - Step 2: Splitting training images into grid
+2024-12-01 22:06:48,550 - INFO - Initialized ImageSplitter with grid size (4, 4) and 10.0% overlap
+2024-12-01 22:06:48,550 - INFO - Starting dataset splitting process...
+2024-12-01 22:06:48,550 - INFO - Found 15 images to process
+2024-12-01 22:06:48,551 - INFO - Processing MCPS-Crown10_jpg.rf.68e42e7b9aabd4819d22a746033c8199.jpg
+2024-12-01 22:06:49,006 - INFO - Completed processing MCPS-Crown10_jpg.rf.68e42e7b9aabd4819d22a746033c8199.jpg
+2024-12-01 22:06:49,007 - INFO - Processing MCPS-Crown11_jpg.rf.c7bcfe0ab31c8e2db068d14873f7585b.jpg
+2024-12-01 22:06:49,458 - INFO - Completed processing MCPS-Crown11_jpg.rf.c7bcfe0ab31c8e2db068d14873f7585b.jpg
+2024-12-01 22:06:49,459 - INFO - Processing MCPS-Crown12_jpg.rf.7b04d4de6e8e14b3210418c48837ab5b.jpg
+2024-12-01 22:06:49,909 - INFO - Completed processing MCPS-Crown12_jpg.rf.7b04d4de6e8e14b3210418c48837ab5b.jpg
+2024-12-01 22:06:49,910 - INFO - Processing MCPS-Crown14_jpg.rf.b3f22739a63ae4adef5dba675b3fb4db.jpg
+2024-12-01 22:06:50,311 - INFO - Completed processing MCPS-Crown14_jpg.rf.b3f22739a63ae4adef5dba675b3fb4db.jpg
+2024-12-01 22:06:50,312 - INFO - Processing MCPS-Crown15_jpg.rf.4b54dd4502a00000e2088e0e0100d36b.jpg
+2024-12-01 22:06:50,724 - INFO - Completed processing MCPS-Crown15_jpg.rf.4b54dd4502a00000e2088e0e0100d36b.jpg
+2024-12-01 22:06:50,724 - INFO - Processing MCPS-Crown16_jpg.rf.564bef363ffa840130eb8d0426a4a89a.jpg
+2024-12-01 22:06:51,201 - INFO - Completed processing MCPS-Crown16_jpg.rf.564bef363ffa840130eb8d0426a4a89a.jpg
+2024-12-01 22:06:51,201 - INFO - Processing MCPS-Crown17_jpg.rf.6a56113369c0ed9109df8f0288f36f00.jpg
+2024-12-01 22:06:51,664 - INFO - Completed processing MCPS-Crown17_jpg.rf.6a56113369c0ed9109df8f0288f36f00.jpg
+2024-12-01 22:06:51,665 - INFO - Processing MCPS-Crown18_jpg.rf.fc08679c0de1525e21179a7051d2c7eb.jpg
+2024-12-01 22:06:52,038 - INFO - Completed processing MCPS-Crown18_jpg.rf.fc08679c0de1525e21179a7051d2c7eb.jpg
+2024-12-01 22:06:52,039 - INFO - Processing MCPS-Crown6_jpg.rf.d012d326ac6e01dc3baf2b33b0980cf3.jpg
+2024-12-01 22:06:52,417 - INFO - Completed processing MCPS-Crown6_jpg.rf.d012d326ac6e01dc3baf2b33b0980cf3.jpg
+2024-12-01 22:06:52,417 - INFO - Processing MCPS-Crown7_jpg.rf.c3f2312f60f450e7d3d85bcab96e912b.jpg
+2024-12-01 22:06:52,827 - INFO - Completed processing MCPS-Crown7_jpg.rf.c3f2312f60f450e7d3d85bcab96e912b.jpg
+2024-12-01 22:06:52,828 - INFO - Processing MCPS-Crown8_jpg.rf.f24e1aa3e6609a8ba1131a4c2f0c9963.jpg
+2024-12-01 22:06:53,262 - INFO - Completed processing MCPS-Crown8_jpg.rf.f24e1aa3e6609a8ba1131a4c2f0c9963.jpg
+2024-12-01 22:06:53,263 - INFO - Processing MCPS-Crown9_jpg.rf.64f5b451d92c164f60eff1bf1bf9fb13.jpg
+2024-12-01 22:06:53,698 - INFO - Completed processing MCPS-Crown9_jpg.rf.64f5b451d92c164f60eff1bf1bf9fb13.jpg
+2024-12-01 22:06:53,699 - INFO - Processing mech1_jpg.rf.dbfd19088506fd61e8ddc13f5ebc0136.jpg
+2024-12-01 22:06:54,139 - INFO - Completed processing mech1_jpg.rf.dbfd19088506fd61e8ddc13f5ebc0136.jpg
+2024-12-01 22:06:54,140 - INFO - Processing mech2_jpg.rf.9dc40f0f06462d6e4badc4d39670dc9d.jpg
+2024-12-01 22:06:54,500 - INFO - Completed processing mech2_jpg.rf.9dc40f0f06462d6e4badc4d39670dc9d.jpg
+2024-12-01 22:06:54,501 - INFO - Processing oncology_jpg.rf.f36c2a0435c4aa0d14399913857fe72e.jpg
+2024-12-01 22:06:54,967 - INFO - Completed processing oncology_jpg.rf.f36c2a0435c4aa0d14399913857fe72e.jpg
+2024-12-01 22:06:54,969 - INFO - Dataset splitting completed. Metadata saved to results/run_20241201_220648/train_splits/metadata.json
+2024-12-01 22:06:54,971 - INFO - 
+Processing Fold 1/5
+2024-12-01 22:07:00,312 - ERROR - Error in fold 1: CUDA out of memory. Tried to allocate 26.00 MiB. GPU 0 has a total capacity of 7.78 GiB of which 53.25 MiB is free. Process 161060 has 3.70 GiB memory in use. Process 162650 has 830.00 MiB memory in use. Process 164575 has 692.00 MiB memory in use. Process 170246 has 696.00 MiB memory in use. Including non-PyTorch memory, this process has 1.30 GiB memory in use. Of the allocated memory 1.04 GiB is allocated by PyTorch, and 37.40 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2024-12-01 22:07:00,312 - INFO - 
+Processing Fold 2/5
+2024-12-01 22:07:04,546 - ERROR - Error in fold 2: CUDA out of memory. Tried to allocate 20.00 MiB. GPU 0 has a total capacity of 7.78 GiB of which 18.12 MiB is free. Process 161060 has 3.70 GiB memory in use. Process 162650 has 830.00 MiB memory in use. Process 164575 has 692.00 MiB memory in use. Process 170246 has 696.00 MiB memory in use. Including non-PyTorch memory, this process has 1.28 GiB memory in use. Of the allocated memory 1.03 GiB is allocated by PyTorch, and 22.63 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2024-12-01 22:07:04,547 - INFO - 
+Processing Fold 3/5
+2024-12-01 22:07:08,787 - ERROR - Error in fold 3: CUDA out of memory. Tried to allocate 20.00 MiB. GPU 0 has a total capacity of 7.78 GiB of which 30.81 MiB is free. Process 161060 has 3.70 GiB memory in use. Process 162650 has 830.00 MiB memory in use. Process 164575 has 692.00 MiB memory in use. Process 170246 has 696.00 MiB memory in use. Including non-PyTorch memory, this process has 1.29 GiB memory in use. Of the allocated memory 1.05 GiB is allocated by PyTorch, and 20.54 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2024-12-01 22:07:08,787 - INFO - 
+Processing Fold 4/5
+2024-12-01 22:07:13,160 - ERROR - Error in fold 4: CUDA out of memory. Tried to allocate 20.00 MiB. GPU 0 has a total capacity of 7.78 GiB of which 32.56 MiB is free. Process 161060 has 3.70 GiB memory in use. Process 162650 has 830.00 MiB memory in use. Process 164575 has 692.00 MiB memory in use. Process 170246 has 696.00 MiB memory in use. Including non-PyTorch memory, this process has 1.30 GiB memory in use. Of the allocated memory 1.06 GiB is allocated by PyTorch, and 19.77 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2024-12-01 22:07:13,160 - INFO - 
+Processing Fold 5/5
+2024-12-01 22:07:17,423 - ERROR - Error in fold 5: CUDA out of memory. Tried to allocate 20.00 MiB. GPU 0 has a total capacity of 7.78 GiB of which 36.62 MiB is free. Process 161060 has 3.70 GiB memory in use. Process 162650 has 830.00 MiB memory in use. Process 164575 has 692.00 MiB memory in use. Process 170246 has 696.00 MiB memory in use. Including non-PyTorch memory, this process has 1.29 GiB memory in use. Of the allocated memory 1.05 GiB is allocated by PyTorch, and 16.18 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+2024-12-01 22:07:17,424 - ERROR - An error occurred: No successful folds completed
+Traceback (most recent call last):
+  File "/home/daniel/Documents/Fall2024/plan_classification/main.py", line 189, in main
+    raise RuntimeError("No successful folds completed")
+RuntimeError: No successful folds completed
+2024-12-01 22:07:17,424 - INFO - Cleaning up failed run directory: results/run_20241201_220648
+2024-12-01 22:07:17,446 - INFO - Failed run cleanup completed successfully
+2024-12-01 22:07:17,446 - INFO - Cleaning up temporary directory: temp
+2024-12-01 22:07:17,506 - INFO - Cleanup completed successfully
+2024-12-01 22:09:41,701 - INFO - Created run directory: results/run_20241201_220941
+2024-12-01 22:09:41,701 - INFO - Cleaning up temporary directory: temp
+2024-12-01 22:09:41,701 - INFO - Cleanup completed successfully
+2024-12-01 22:09:41,701 - INFO - Step 1: Splitting dataset into train and test sets
+2024-12-01 22:09:41,701 - INFO - Processing large images up to 14400x10800 pixels
+2024-12-01 22:09:41,744 - INFO - Step 2: Splitting training images into grid
+2024-12-01 22:09:41,744 - INFO - Initialized ImageSplitter with grid size (4, 4) and 15.0% overlap
+2024-12-01 22:09:41,744 - INFO - Starting dataset splitting process...
+2024-12-01 22:09:41,744 - INFO - Found 15 images to process
+2024-12-01 22:09:41,745 - INFO - Processing MCPS-Crown10_jpg.rf.68e42e7b9aabd4819d22a746033c8199.jpg
+2024-12-01 22:09:42,251 - INFO - Completed processing MCPS-Crown10_jpg.rf.68e42e7b9aabd4819d22a746033c8199.jpg
+2024-12-01 22:09:42,252 - INFO - Processing MCPS-Crown11_jpg.rf.c7bcfe0ab31c8e2db068d14873f7585b.jpg
+2024-12-01 22:09:42,804 - INFO - Completed processing MCPS-Crown11_jpg.rf.c7bcfe0ab31c8e2db068d14873f7585b.jpg
+2024-12-01 22:09:42,805 - INFO - Processing MCPS-Crown12_jpg.rf.7b04d4de6e8e14b3210418c48837ab5b.jpg
+2024-12-01 22:09:43,337 - INFO - Completed processing MCPS-Crown12_jpg.rf.7b04d4de6e8e14b3210418c48837ab5b.jpg
+2024-12-01 22:09:43,338 - INFO - Processing MCPS-Crown14_jpg.rf.b3f22739a63ae4adef5dba675b3fb4db.jpg
+2024-12-01 22:09:43,793 - INFO - Completed processing MCPS-Crown14_jpg.rf.b3f22739a63ae4adef5dba675b3fb4db.jpg
+2024-12-01 22:09:43,794 - INFO - Processing MCPS-Crown15_jpg.rf.4b54dd4502a00000e2088e0e0100d36b.jpg
+2024-12-01 22:09:44,270 - INFO - Completed processing MCPS-Crown15_jpg.rf.4b54dd4502a00000e2088e0e0100d36b.jpg
+2024-12-01 22:09:44,271 - INFO - Processing MCPS-Crown16_jpg.rf.564bef363ffa840130eb8d0426a4a89a.jpg
+2024-12-01 22:09:44,821 - INFO - Completed processing MCPS-Crown16_jpg.rf.564bef363ffa840130eb8d0426a4a89a.jpg
+2024-12-01 22:09:44,822 - INFO - Processing MCPS-Crown17_jpg.rf.6a56113369c0ed9109df8f0288f36f00.jpg
+2024-12-01 22:09:45,369 - INFO - Completed processing MCPS-Crown17_jpg.rf.6a56113369c0ed9109df8f0288f36f00.jpg
+2024-12-01 22:09:45,370 - INFO - Processing MCPS-Crown18_jpg.rf.fc08679c0de1525e21179a7051d2c7eb.jpg
+2024-12-01 22:09:45,802 - INFO - Completed processing MCPS-Crown18_jpg.rf.fc08679c0de1525e21179a7051d2c7eb.jpg
+2024-12-01 22:09:45,803 - INFO - Processing MCPS-Crown6_jpg.rf.d012d326ac6e01dc3baf2b33b0980cf3.jpg
+2024-12-01 22:09:46,260 - INFO - Completed processing MCPS-Crown6_jpg.rf.d012d326ac6e01dc3baf2b33b0980cf3.jpg
+2024-12-01 22:09:46,262 - INFO - Processing MCPS-Crown7_jpg.rf.c3f2312f60f450e7d3d85bcab96e912b.jpg
+2024-12-01 22:09:46,757 - INFO - Completed processing MCPS-Crown7_jpg.rf.c3f2312f60f450e7d3d85bcab96e912b.jpg
+2024-12-01 22:09:46,759 - INFO - Processing MCPS-Crown8_jpg.rf.f24e1aa3e6609a8ba1131a4c2f0c9963.jpg
+2024-12-01 22:09:47,258 - INFO - Completed processing MCPS-Crown8_jpg.rf.f24e1aa3e6609a8ba1131a4c2f0c9963.jpg
+2024-12-01 22:09:47,259 - INFO - Processing MCPS-Crown9_jpg.rf.64f5b451d92c164f60eff1bf1bf9fb13.jpg
+2024-12-01 22:09:47,808 - INFO - Completed processing MCPS-Crown9_jpg.rf.64f5b451d92c164f60eff1bf1bf9fb13.jpg
+2024-12-01 22:09:47,809 - INFO - Processing mech1_jpg.rf.dbfd19088506fd61e8ddc13f5ebc0136.jpg
+2024-12-01 22:09:48,297 - INFO - Completed processing mech1_jpg.rf.dbfd19088506fd61e8ddc13f5ebc0136.jpg
+2024-12-01 22:09:48,298 - INFO - Processing mech2_jpg.rf.9dc40f0f06462d6e4badc4d39670dc9d.jpg
+2024-12-01 22:09:48,703 - INFO - Completed processing mech2_jpg.rf.9dc40f0f06462d6e4badc4d39670dc9d.jpg
+2024-12-01 22:09:48,705 - INFO - Processing oncology_jpg.rf.f36c2a0435c4aa0d14399913857fe72e.jpg
+2024-12-01 22:09:49,233 - INFO - Completed processing oncology_jpg.rf.f36c2a0435c4aa0d14399913857fe72e.jpg
+2024-12-01 22:09:49,236 - INFO - Dataset splitting completed. Metadata saved to results/run_20241201_220941/train_splits/metadata.json
+2024-12-01 22:09:49,238 - INFO - 
+Processing Fold 1/5
+2024-12-01 22:21:51,631 - INFO - Created run directory: results/run_20241201_222151
+2024-12-01 22:21:51,631 - INFO - Cleaning up temporary directory: temp
+2024-12-01 22:21:51,649 - INFO - Cleanup completed successfully
+2024-12-01 22:21:51,649 - INFO - Step 1: Splitting dataset into train and test sets
+2024-12-01 22:21:51,649 - INFO - Processing large images up to 14400x10800 pixels
+2024-12-01 22:21:51,695 - INFO - Step 2: Splitting training images into grid
+2024-12-01 22:21:51,695 - INFO - Initialized ImageSplitter with grid size (4, 4) and 15.0% overlap
+2024-12-01 22:21:51,695 - INFO - Starting dataset splitting process...
+2024-12-01 22:21:51,695 - INFO - Found 15 images to process
+2024-12-01 22:21:51,696 - INFO - Processing MCPS-Crown10_jpg.rf.68e42e7b9aabd4819d22a746033c8199.jpg
+2024-12-01 22:21:52,176 - INFO - Completed processing MCPS-Crown10_jpg.rf.68e42e7b9aabd4819d22a746033c8199.jpg
+2024-12-01 22:21:52,177 - INFO - Processing MCPS-Crown11_jpg.rf.c7bcfe0ab31c8e2db068d14873f7585b.jpg
+2024-12-01 22:21:52,722 - INFO - Completed processing MCPS-Crown11_jpg.rf.c7bcfe0ab31c8e2db068d14873f7585b.jpg
+2024-12-01 22:21:52,723 - INFO - Processing MCPS-Crown12_jpg.rf.7b04d4de6e8e14b3210418c48837ab5b.jpg
+2024-12-01 22:21:53,261 - INFO - Completed processing MCPS-Crown12_jpg.rf.7b04d4de6e8e14b3210418c48837ab5b.jpg
+2024-12-01 22:21:53,263 - INFO - Processing MCPS-Crown14_jpg.rf.b3f22739a63ae4adef5dba675b3fb4db.jpg
+2024-12-01 22:21:53,734 - INFO - Completed processing MCPS-Crown14_jpg.rf.b3f22739a63ae4adef5dba675b3fb4db.jpg
+2024-12-01 22:21:53,735 - INFO - Processing MCPS-Crown15_jpg.rf.4b54dd4502a00000e2088e0e0100d36b.jpg
+2024-12-01 22:21:54,216 - INFO - Completed processing MCPS-Crown15_jpg.rf.4b54dd4502a00000e2088e0e0100d36b.jpg
+2024-12-01 22:21:54,217 - INFO - Processing MCPS-Crown16_jpg.rf.564bef363ffa840130eb8d0426a4a89a.jpg
+2024-12-01 22:21:54,817 - INFO - Completed processing MCPS-Crown16_jpg.rf.564bef363ffa840130eb8d0426a4a89a.jpg
+2024-12-01 22:21:54,818 - INFO - Processing MCPS-Crown17_jpg.rf.6a56113369c0ed9109df8f0288f36f00.jpg
+2024-12-01 22:21:55,468 - INFO - Completed processing MCPS-Crown17_jpg.rf.6a56113369c0ed9109df8f0288f36f00.jpg
+2024-12-01 22:21:55,469 - INFO - Processing MCPS-Crown18_jpg.rf.fc08679c0de1525e21179a7051d2c7eb.jpg
+2024-12-01 22:21:56,001 - INFO - Completed processing MCPS-Crown18_jpg.rf.fc08679c0de1525e21179a7051d2c7eb.jpg
+2024-12-01 22:21:56,002 - INFO - Processing MCPS-Crown6_jpg.rf.d012d326ac6e01dc3baf2b33b0980cf3.jpg
+2024-12-01 22:21:56,493 - INFO - Completed processing MCPS-Crown6_jpg.rf.d012d326ac6e01dc3baf2b33b0980cf3.jpg
+2024-12-01 22:21:56,495 - INFO - Processing MCPS-Crown7_jpg.rf.c3f2312f60f450e7d3d85bcab96e912b.jpg
+2024-12-01 22:21:57,009 - INFO - Completed processing MCPS-Crown7_jpg.rf.c3f2312f60f450e7d3d85bcab96e912b.jpg
+2024-12-01 22:21:57,011 - INFO - Processing MCPS-Crown8_jpg.rf.f24e1aa3e6609a8ba1131a4c2f0c9963.jpg
+2024-12-01 22:21:57,538 - INFO - Completed processing MCPS-Crown8_jpg.rf.f24e1aa3e6609a8ba1131a4c2f0c9963.jpg
+2024-12-01 22:21:57,540 - INFO - Processing MCPS-Crown9_jpg.rf.64f5b451d92c164f60eff1bf1bf9fb13.jpg
+2024-12-01 22:21:58,085 - INFO - Completed processing MCPS-Crown9_jpg.rf.64f5b451d92c164f60eff1bf1bf9fb13.jpg
+2024-12-01 22:21:58,086 - INFO - Processing mech1_jpg.rf.dbfd19088506fd61e8ddc13f5ebc0136.jpg
+2024-12-01 22:21:58,593 - INFO - Completed processing mech1_jpg.rf.dbfd19088506fd61e8ddc13f5ebc0136.jpg
+2024-12-01 22:21:58,594 - INFO - Processing mech2_jpg.rf.9dc40f0f06462d6e4badc4d39670dc9d.jpg
+2024-12-01 22:21:59,195 - INFO - Completed processing mech2_jpg.rf.9dc40f0f06462d6e4badc4d39670dc9d.jpg
+2024-12-01 22:21:59,196 - INFO - Processing oncology_jpg.rf.f36c2a0435c4aa0d14399913857fe72e.jpg
+2024-12-01 22:21:59,778 - INFO - Completed processing oncology_jpg.rf.f36c2a0435c4aa0d14399913857fe72e.jpg
+2024-12-01 22:21:59,781 - INFO - Dataset splitting completed. Metadata saved to results/run_20241201_222151/train_splits/metadata.json
+2024-12-01 22:21:59,783 - INFO - 
+Processing Fold 1/5
+2024-12-01 22:25:35,216 - INFO - Created run directory: results/run_20241201_222535
+2024-12-01 22:25:35,217 - INFO - Cleaning up temporary directory: temp
+2024-12-01 22:25:35,234 - INFO - Cleanup completed successfully
+2024-12-01 22:25:35,234 - INFO - Step 1: Splitting dataset into train and test sets
+2024-12-01 22:25:35,234 - INFO - Processing large images up to 14400x10800 pixels
+2024-12-01 22:25:35,280 - INFO - Step 2: Splitting training images into grid
+2024-12-01 22:25:35,280 - INFO - Initialized ImageSplitter with grid size (4, 4) and 10.0% overlap
+2024-12-01 22:25:35,280 - INFO - Starting dataset splitting process...
+2024-12-01 22:25:35,280 - INFO - Found 15 images to process
+2024-12-01 22:25:35,281 - INFO - Processing MCPS-Crown10_jpg.rf.68e42e7b9aabd4819d22a746033c8199.jpg
+2024-12-01 22:25:35,723 - INFO - Completed processing MCPS-Crown10_jpg.rf.68e42e7b9aabd4819d22a746033c8199.jpg
+2024-12-01 22:25:35,724 - INFO - Processing MCPS-Crown11_jpg.rf.c7bcfe0ab31c8e2db068d14873f7585b.jpg
+2024-12-01 22:25:36,172 - INFO - Completed processing MCPS-Crown11_jpg.rf.c7bcfe0ab31c8e2db068d14873f7585b.jpg
+2024-12-01 22:25:36,172 - INFO - Processing MCPS-Crown12_jpg.rf.7b04d4de6e8e14b3210418c48837ab5b.jpg
+2024-12-01 22:25:36,626 - INFO - Completed processing MCPS-Crown12_jpg.rf.7b04d4de6e8e14b3210418c48837ab5b.jpg
+2024-12-01 22:25:36,628 - INFO - Processing MCPS-Crown14_jpg.rf.b3f22739a63ae4adef5dba675b3fb4db.jpg
+2024-12-01 22:25:37,037 - INFO - Completed processing MCPS-Crown14_jpg.rf.b3f22739a63ae4adef5dba675b3fb4db.jpg
+2024-12-01 22:25:37,038 - INFO - Processing MCPS-Crown15_jpg.rf.4b54dd4502a00000e2088e0e0100d36b.jpg
+2024-12-01 22:25:37,459 - INFO - Completed processing MCPS-Crown15_jpg.rf.4b54dd4502a00000e2088e0e0100d36b.jpg
+2024-12-01 22:25:37,459 - INFO - Processing MCPS-Crown16_jpg.rf.564bef363ffa840130eb8d0426a4a89a.jpg
+2024-12-01 22:25:37,946 - INFO - Completed processing MCPS-Crown16_jpg.rf.564bef363ffa840130eb8d0426a4a89a.jpg
+2024-12-01 22:25:37,947 - INFO - Processing MCPS-Crown17_jpg.rf.6a56113369c0ed9109df8f0288f36f00.jpg
+2024-12-01 22:25:38,410 - INFO - Completed processing MCPS-Crown17_jpg.rf.6a56113369c0ed9109df8f0288f36f00.jpg
+2024-12-01 22:25:38,411 - INFO - Processing MCPS-Crown18_jpg.rf.fc08679c0de1525e21179a7051d2c7eb.jpg
+2024-12-01 22:25:38,788 - INFO - Completed processing MCPS-Crown18_jpg.rf.fc08679c0de1525e21179a7051d2c7eb.jpg
+2024-12-01 22:25:38,789 - INFO - Processing MCPS-Crown6_jpg.rf.d012d326ac6e01dc3baf2b33b0980cf3.jpg
+2024-12-01 22:25:39,178 - INFO - Completed processing MCPS-Crown6_jpg.rf.d012d326ac6e01dc3baf2b33b0980cf3.jpg
+2024-12-01 22:25:39,179 - INFO - Processing MCPS-Crown7_jpg.rf.c3f2312f60f450e7d3d85bcab96e912b.jpg
+2024-12-01 22:25:39,600 - INFO - Completed processing MCPS-Crown7_jpg.rf.c3f2312f60f450e7d3d85bcab96e912b.jpg
+2024-12-01 22:25:39,601 - INFO - Processing MCPS-Crown8_jpg.rf.f24e1aa3e6609a8ba1131a4c2f0c9963.jpg
+2024-12-01 22:25:40,037 - INFO - Completed processing MCPS-Crown8_jpg.rf.f24e1aa3e6609a8ba1131a4c2f0c9963.jpg
+2024-12-01 22:25:40,038 - INFO - Processing MCPS-Crown9_jpg.rf.64f5b451d92c164f60eff1bf1bf9fb13.jpg
+2024-12-01 22:25:40,483 - INFO - Completed processing MCPS-Crown9_jpg.rf.64f5b451d92c164f60eff1bf1bf9fb13.jpg
+2024-12-01 22:25:40,484 - INFO - Processing mech1_jpg.rf.dbfd19088506fd61e8ddc13f5ebc0136.jpg
+2024-12-01 22:25:40,931 - INFO - Completed processing mech1_jpg.rf.dbfd19088506fd61e8ddc13f5ebc0136.jpg
+2024-12-01 22:25:40,932 - INFO - Processing mech2_jpg.rf.9dc40f0f06462d6e4badc4d39670dc9d.jpg
+2024-12-01 22:25:41,308 - INFO - Completed processing mech2_jpg.rf.9dc40f0f06462d6e4badc4d39670dc9d.jpg
+2024-12-01 22:25:41,309 - INFO - Processing oncology_jpg.rf.f36c2a0435c4aa0d14399913857fe72e.jpg
+2024-12-01 22:25:41,811 - INFO - Completed processing oncology_jpg.rf.f36c2a0435c4aa0d14399913857fe72e.jpg
+2024-12-01 22:25:41,814 - INFO - Dataset splitting completed. Metadata saved to results/run_20241201_222535/train_splits/metadata.json
+2024-12-01 22:25:41,815 - INFO - 
+Processing Fold 1/5
+2024-12-01 22:25:43,659 - ERROR - Error in fold 1: ultralytics.engine.model.Model.train() got multiple values for keyword argument 'device'
+2024-12-01 22:25:43,660 - INFO - 
+Processing Fold 2/5
+2024-12-01 22:25:43,750 - ERROR - Error in fold 2: ultralytics.engine.model.Model.train() got multiple values for keyword argument 'device'
+2024-12-01 22:25:43,751 - INFO - 
+Processing Fold 3/5
+2024-12-01 22:25:43,830 - ERROR - Error in fold 3: ultralytics.engine.model.Model.train() got multiple values for keyword argument 'device'
+2024-12-01 22:25:43,831 - INFO - 
+Processing Fold 4/5
+2024-12-01 22:25:43,911 - ERROR - Error in fold 4: ultralytics.engine.model.Model.train() got multiple values for keyword argument 'device'
+2024-12-01 22:25:43,911 - INFO - 
+Processing Fold 5/5
+2024-12-01 22:25:44,049 - ERROR - Error in fold 5: ultralytics.engine.model.Model.train() got multiple values for keyword argument 'device'
+2024-12-01 22:25:44,049 - ERROR - An error occurred: No successful folds completed
+Traceback (most recent call last):
+  File "/home/daniel/Documents/Fall2024/plan_classification/main.py", line 189, in main
+    raise RuntimeError("No successful folds completed")
+RuntimeError: No successful folds completed
+2024-12-01 22:25:44,050 - INFO - Cleaning up failed run directory: results/run_20241201_222535
+2024-12-01 22:25:44,074 - INFO - Failed run cleanup completed successfully
+2024-12-01 22:25:44,074 - INFO - Cleaning up temporary directory: temp
+2024-12-01 22:25:44,150 - INFO - Cleanup completed successfully
+2024-12-01 22:27:07,464 - INFO - Created run directory: results/run_20241201_222707
+2024-12-01 22:27:07,464 - INFO - Cleaning up temporary directory: temp
+2024-12-01 22:27:07,464 - INFO - Cleanup completed successfully
+2024-12-01 22:27:07,464 - INFO - Step 1: Splitting dataset into train and test sets
+2024-12-01 22:27:07,464 - INFO - Processing large images up to 14400x10800 pixels
+2024-12-01 22:27:07,512 - INFO - Step 2: Splitting training images into grid
+2024-12-01 22:27:07,512 - INFO - Initialized ImageSplitter with grid size (4, 4) and 10.0% overlap
+2024-12-01 22:27:07,512 - INFO - Starting dataset splitting process...
+2024-12-01 22:27:07,513 - INFO - Found 15 images to process
+2024-12-01 22:27:07,513 - INFO - Processing MCPS-Crown10_jpg.rf.68e42e7b9aabd4819d22a746033c8199.jpg
+2024-12-01 22:27:07,969 - INFO - Completed processing MCPS-Crown10_jpg.rf.68e42e7b9aabd4819d22a746033c8199.jpg
+2024-12-01 22:27:07,970 - INFO - Processing MCPS-Crown11_jpg.rf.c7bcfe0ab31c8e2db068d14873f7585b.jpg
+2024-12-01 22:27:08,428 - INFO - Completed processing MCPS-Crown11_jpg.rf.c7bcfe0ab31c8e2db068d14873f7585b.jpg
+2024-12-01 22:27:08,429 - INFO - Processing MCPS-Crown12_jpg.rf.7b04d4de6e8e14b3210418c48837ab5b.jpg
+2024-12-01 22:27:08,890 - INFO - Completed processing MCPS-Crown12_jpg.rf.7b04d4de6e8e14b3210418c48837ab5b.jpg
+2024-12-01 22:27:08,891 - INFO - Processing MCPS-Crown14_jpg.rf.b3f22739a63ae4adef5dba675b3fb4db.jpg
+2024-12-01 22:27:09,305 - INFO - Completed processing MCPS-Crown14_jpg.rf.b3f22739a63ae4adef5dba675b3fb4db.jpg
+2024-12-01 22:27:09,306 - INFO - Processing MCPS-Crown15_jpg.rf.4b54dd4502a00000e2088e0e0100d36b.jpg
+2024-12-01 22:27:09,744 - INFO - Completed processing MCPS-Crown15_jpg.rf.4b54dd4502a00000e2088e0e0100d36b.jpg
+2024-12-01 22:27:09,744 - INFO - Processing MCPS-Crown16_jpg.rf.564bef363ffa840130eb8d0426a4a89a.jpg
+2024-12-01 22:27:10,250 - INFO - Completed processing MCPS-Crown16_jpg.rf.564bef363ffa840130eb8d0426a4a89a.jpg
+2024-12-01 22:27:10,251 - INFO - Processing MCPS-Crown17_jpg.rf.6a56113369c0ed9109df8f0288f36f00.jpg
+2024-12-01 22:27:10,714 - INFO - Completed processing MCPS-Crown17_jpg.rf.6a56113369c0ed9109df8f0288f36f00.jpg
+2024-12-01 22:27:10,715 - INFO - Processing MCPS-Crown18_jpg.rf.fc08679c0de1525e21179a7051d2c7eb.jpg
+2024-12-01 22:27:11,097 - INFO - Completed processing MCPS-Crown18_jpg.rf.fc08679c0de1525e21179a7051d2c7eb.jpg
+2024-12-01 22:27:11,098 - INFO - Processing MCPS-Crown6_jpg.rf.d012d326ac6e01dc3baf2b33b0980cf3.jpg
+2024-12-01 22:27:11,486 - INFO - Completed processing MCPS-Crown6_jpg.rf.d012d326ac6e01dc3baf2b33b0980cf3.jpg
+2024-12-01 22:27:11,487 - INFO - Processing MCPS-Crown7_jpg.rf.c3f2312f60f450e7d3d85bcab96e912b.jpg
+2024-12-01 22:27:11,905 - INFO - Completed processing MCPS-Crown7_jpg.rf.c3f2312f60f450e7d3d85bcab96e912b.jpg
+2024-12-01 22:27:11,906 - INFO - Processing MCPS-Crown8_jpg.rf.f24e1aa3e6609a8ba1131a4c2f0c9963.jpg
+2024-12-01 22:27:12,350 - INFO - Completed processing MCPS-Crown8_jpg.rf.f24e1aa3e6609a8ba1131a4c2f0c9963.jpg
+2024-12-01 22:27:12,351 - INFO - Processing MCPS-Crown9_jpg.rf.64f5b451d92c164f60eff1bf1bf9fb13.jpg
+2024-12-01 22:27:12,799 - INFO - Completed processing MCPS-Crown9_jpg.rf.64f5b451d92c164f60eff1bf1bf9fb13.jpg
+2024-12-01 22:27:12,800 - INFO - Processing mech1_jpg.rf.dbfd19088506fd61e8ddc13f5ebc0136.jpg
+2024-12-01 22:27:13,247 - INFO - Completed processing mech1_jpg.rf.dbfd19088506fd61e8ddc13f5ebc0136.jpg
+2024-12-01 22:27:13,248 - INFO - Processing mech2_jpg.rf.9dc40f0f06462d6e4badc4d39670dc9d.jpg
+2024-12-01 22:27:13,635 - INFO - Completed processing mech2_jpg.rf.9dc40f0f06462d6e4badc4d39670dc9d.jpg
+2024-12-01 22:27:13,636 - INFO - Processing oncology_jpg.rf.f36c2a0435c4aa0d14399913857fe72e.jpg
+2024-12-01 22:27:14,121 - INFO - Completed processing oncology_jpg.rf.f36c2a0435c4aa0d14399913857fe72e.jpg
+2024-12-01 22:27:14,124 - INFO - Dataset splitting completed. Metadata saved to results/run_20241201_222707/train_splits/metadata.json
+2024-12-01 22:27:14,125 - INFO - 
+Processing Fold 1/5
+2024-12-01 22:27:14,370 - ERROR - Error in fold 1: '[31m[1mpin_memory[0m' is not a valid YOLO argument. 
+'[31m[1mcuda_cache_disable[0m' is not a valid YOLO argument. 
+
+    Arguments received: ['yolo']. Ultralytics 'yolo' commands use the following syntax:
+
+        yolo TASK MODE ARGS
+
+        Where   TASK (optional) is one of {'obb', 'pose', 'segment', 'classify', 'detect'}
+                MODE (required) is one of {'train', 'benchmark', 'export', 'val', 'predict', 'track'}
+                ARGS (optional) are any number of custom 'arg=value' pairs like 'imgsz=320' that override defaults.
+                    See all ARGS at https://docs.ultralytics.com/usage/cfg or with 'yolo cfg'
+
+    1. Train a detection model for 10 epochs with an initial learning_rate of 0.01
+        yolo train data=coco8.yaml model=yolo11n.pt epochs=10 lr0=0.01
+
+    2. Predict a YouTube video using a pretrained segmentation model at image size 320:
+        yolo predict model=yolo11n-seg.pt source='https://youtu.be/LNwODJXcvt4' imgsz=320
+
+    3. Val a pretrained detection model at batch-size 1 and image size 640:
+        yolo val model=yolo11n.pt data=coco8.yaml batch=1 imgsz=640
+
+    4. Export a YOLO11n classification model to ONNX format at image size 224 by 128 (no TASK required)
+        yolo export model=yolo11n-cls.pt format=onnx imgsz=224,128
+
+    5. Streamlit real-time webcam inference GUI
+        yolo streamlit-predict
+
+    6. Ultralytics solutions usage
+        yolo solutions count or in ['count', 'heatmap', 'queue', 'speed', 'workout', 'analytics', 'help'] source="path/to/video/file.mp4"
+
+    7. Run special commands:
+        yolo help
+        yolo checks
+        yolo version
+        yolo settings
+        yolo copy-cfg
+        yolo cfg
+        yolo solutions help
+
+    Docs: https://docs.ultralytics.com
+    Solutions: https://docs.ultralytics.com/solutions/
+    Community: https://community.ultralytics.com
+    GitHub: https://github.com/ultralytics/ultralytics
+    
+2024-12-01 22:27:14,370 - INFO - 
+Processing Fold 2/5
+2024-12-01 22:27:14,595 - ERROR - Error in fold 2: '[31m[1mpin_memory[0m' is not a valid YOLO argument. 
+'[31m[1mcuda_cache_disable[0m' is not a valid YOLO argument. 
+
+    Arguments received: ['yolo']. Ultralytics 'yolo' commands use the following syntax:
+
+        yolo TASK MODE ARGS
+
+        Where   TASK (optional) is one of {'obb', 'pose', 'segment', 'classify', 'detect'}
+                MODE (required) is one of {'train', 'benchmark', 'export', 'val', 'predict', 'track'}
+                ARGS (optional) are any number of custom 'arg=value' pairs like 'imgsz=320' that override defaults.
+                    See all ARGS at https://docs.ultralytics.com/usage/cfg or with 'yolo cfg'
+
+    1. Train a detection model for 10 epochs with an initial learning_rate of 0.01
+        yolo train data=coco8.yaml model=yolo11n.pt epochs=10 lr0=0.01
+
+    2. Predict a YouTube video using a pretrained segmentation model at image size 320:
+        yolo predict model=yolo11n-seg.pt source='https://youtu.be/LNwODJXcvt4' imgsz=320
+
+    3. Val a pretrained detection model at batch-size 1 and image size 640:
+        yolo val model=yolo11n.pt data=coco8.yaml batch=1 imgsz=640
+
+    4. Export a YOLO11n classification model to ONNX format at image size 224 by 128 (no TASK required)
+        yolo export model=yolo11n-cls.pt format=onnx imgsz=224,128
+
+    5. Streamlit real-time webcam inference GUI
+        yolo streamlit-predict
+
+    6. Ultralytics solutions usage
+        yolo solutions count or in ['count', 'heatmap', 'queue', 'speed', 'workout', 'analytics', 'help'] source="path/to/video/file.mp4"
+
+    7. Run special commands:
+        yolo help
+        yolo checks
+        yolo version
+        yolo settings
+        yolo copy-cfg
+        yolo cfg
+        yolo solutions help
+
+    Docs: https://docs.ultralytics.com
+    Solutions: https://docs.ultralytics.com/solutions/
+    Community: https://community.ultralytics.com
+    GitHub: https://github.com/ultralytics/ultralytics
+    
+2024-12-01 22:27:14,595 - INFO - 
+Processing Fold 3/5
+2024-12-01 22:27:14,863 - ERROR - Error in fold 3: '[31m[1mpin_memory[0m' is not a valid YOLO argument. 
+'[31m[1mcuda_cache_disable[0m' is not a valid YOLO argument. 
+
+    Arguments received: ['yolo']. Ultralytics 'yolo' commands use the following syntax:
+
+        yolo TASK MODE ARGS
+
+        Where   TASK (optional) is one of {'obb', 'pose', 'segment', 'classify', 'detect'}
+                MODE (required) is one of {'train', 'benchmark', 'export', 'val', 'predict', 'track'}
+                ARGS (optional) are any number of custom 'arg=value' pairs like 'imgsz=320' that override defaults.
+                    See all ARGS at https://docs.ultralytics.com/usage/cfg or with 'yolo cfg'
+
+    1. Train a detection model for 10 epochs with an initial learning_rate of 0.01
+        yolo train data=coco8.yaml model=yolo11n.pt epochs=10 lr0=0.01
+
+    2. Predict a YouTube video using a pretrained segmentation model at image size 320:
+        yolo predict model=yolo11n-seg.pt source='https://youtu.be/LNwODJXcvt4' imgsz=320
+
+    3. Val a pretrained detection model at batch-size 1 and image size 640:
+        yolo val model=yolo11n.pt data=coco8.yaml batch=1 imgsz=640
+
+    4. Export a YOLO11n classification model to ONNX format at image size 224 by 128 (no TASK required)
+        yolo export model=yolo11n-cls.pt format=onnx imgsz=224,128
+
+    5. Streamlit real-time webcam inference GUI
+        yolo streamlit-predict
+
+    6. Ultralytics solutions usage
+        yolo solutions count or in ['count', 'heatmap', 'queue', 'speed', 'workout', 'analytics', 'help'] source="path/to/video/file.mp4"
+
+    7. Run special commands:
+        yolo help
+        yolo checks
+        yolo version
+        yolo settings
+        yolo copy-cfg
+        yolo cfg
+        yolo solutions help
+
+    Docs: https://docs.ultralytics.com
+    Solutions: https://docs.ultralytics.com/solutions/
+    Community: https://community.ultralytics.com
+    GitHub: https://github.com/ultralytics/ultralytics
+    
+2024-12-01 22:27:14,863 - INFO - 
+Processing Fold 4/5
+2024-12-01 22:27:15,079 - ERROR - Error in fold 4: '[31m[1mpin_memory[0m' is not a valid YOLO argument. 
+'[31m[1mcuda_cache_disable[0m' is not a valid YOLO argument. 
+
+    Arguments received: ['yolo']. Ultralytics 'yolo' commands use the following syntax:
+
+        yolo TASK MODE ARGS
+
+        Where   TASK (optional) is one of {'obb', 'pose', 'segment', 'classify', 'detect'}
+                MODE (required) is one of {'train', 'benchmark', 'export', 'val', 'predict', 'track'}
+                ARGS (optional) are any number of custom 'arg=value' pairs like 'imgsz=320' that override defaults.
+                    See all ARGS at https://docs.ultralytics.com/usage/cfg or with 'yolo cfg'
+
+    1. Train a detection model for 10 epochs with an initial learning_rate of 0.01
+        yolo train data=coco8.yaml model=yolo11n.pt epochs=10 lr0=0.01
+
+    2. Predict a YouTube video using a pretrained segmentation model at image size 320:
+        yolo predict model=yolo11n-seg.pt source='https://youtu.be/LNwODJXcvt4' imgsz=320
+
+    3. Val a pretrained detection model at batch-size 1 and image size 640:
+        yolo val model=yolo11n.pt data=coco8.yaml batch=1 imgsz=640
+
+    4. Export a YOLO11n classification model to ONNX format at image size 224 by 128 (no TASK required)
+        yolo export model=yolo11n-cls.pt format=onnx imgsz=224,128
+
+    5. Streamlit real-time webcam inference GUI
+        yolo streamlit-predict
+
+    6. Ultralytics solutions usage
+        yolo solutions count or in ['count', 'heatmap', 'queue', 'speed', 'workout', 'analytics', 'help'] source="path/to/video/file.mp4"
+
+    7. Run special commands:
+        yolo help
+        yolo checks
+        yolo version
+        yolo settings
+        yolo copy-cfg
+        yolo cfg
+        yolo solutions help
+
+    Docs: https://docs.ultralytics.com
+    Solutions: https://docs.ultralytics.com/solutions/
+    Community: https://community.ultralytics.com
+    GitHub: https://github.com/ultralytics/ultralytics
+    
+2024-12-01 22:27:15,079 - INFO - 
+Processing Fold 5/5
+2024-12-01 22:27:15,473 - ERROR - Error in fold 5: '[31m[1mpin_memory[0m' is not a valid YOLO argument. 
+'[31m[1mcuda_cache_disable[0m' is not a valid YOLO argument. 
+
+    Arguments received: ['yolo']. Ultralytics 'yolo' commands use the following syntax:
+
+        yolo TASK MODE ARGS
+
+        Where   TASK (optional) is one of {'obb', 'pose', 'segment', 'classify', 'detect'}
+                MODE (required) is one of {'train', 'benchmark', 'export', 'val', 'predict', 'track'}
+                ARGS (optional) are any number of custom 'arg=value' pairs like 'imgsz=320' that override defaults.
+                    See all ARGS at https://docs.ultralytics.com/usage/cfg or with 'yolo cfg'
+
+    1. Train a detection model for 10 epochs with an initial learning_rate of 0.01
+        yolo train data=coco8.yaml model=yolo11n.pt epochs=10 lr0=0.01
+
+    2. Predict a YouTube video using a pretrained segmentation model at image size 320:
+        yolo predict model=yolo11n-seg.pt source='https://youtu.be/LNwODJXcvt4' imgsz=320
+
+    3. Val a pretrained detection model at batch-size 1 and image size 640:
+        yolo val model=yolo11n.pt data=coco8.yaml batch=1 imgsz=640
+
+    4. Export a YOLO11n classification model to ONNX format at image size 224 by 128 (no TASK required)
+        yolo export model=yolo11n-cls.pt format=onnx imgsz=224,128
+
+    5. Streamlit real-time webcam inference GUI
+        yolo streamlit-predict
+
+    6. Ultralytics solutions usage
+        yolo solutions count or in ['count', 'heatmap', 'queue', 'speed', 'workout', 'analytics', 'help'] source="path/to/video/file.mp4"
+
+    7. Run special commands:
+        yolo help
+        yolo checks
+        yolo version
+        yolo settings
+        yolo copy-cfg
+        yolo cfg
+        yolo solutions help
+
+    Docs: https://docs.ultralytics.com
+    Solutions: https://docs.ultralytics.com/solutions/
+    Community: https://community.ultralytics.com
+    GitHub: https://github.com/ultralytics/ultralytics
+    
+2024-12-01 22:27:15,473 - ERROR - An error occurred: No successful folds completed
+Traceback (most recent call last):
+  File "/home/daniel/Documents/Fall2024/plan_classification/main.py", line 189, in main
+    raise RuntimeError("No successful folds completed")
+RuntimeError: No successful folds completed
+2024-12-01 22:27:15,473 - INFO - Cleaning up failed run directory: results/run_20241201_222707
+2024-12-01 22:27:15,500 - INFO - Failed run cleanup completed successfully
+2024-12-01 22:27:15,500 - INFO - Cleaning up temporary directory: temp
+2024-12-01 22:27:15,571 - INFO - Cleanup completed successfully
+2024-12-01 22:28:47,143 - INFO - Created run directory: results/run_20241201_222847
+2024-12-01 22:28:47,143 - INFO - Cleaning up temporary directory: temp
+2024-12-01 22:28:47,143 - INFO - Cleanup completed successfully
+2024-12-01 22:28:47,143 - INFO - Step 1: Splitting dataset into train and test sets
+2024-12-01 22:28:47,143 - INFO - Processing large images up to 14400x10800 pixels
+2024-12-01 22:28:47,185 - INFO - Step 2: Splitting training images into grid
+2024-12-01 22:28:47,186 - INFO - Initialized ImageSplitter with grid size (4, 4) and 10.0% overlap
+2024-12-01 22:28:47,186 - INFO - Starting dataset splitting process...
+2024-12-01 22:28:47,186 - INFO - Found 15 images to process
+2024-12-01 22:28:47,187 - INFO - Processing MCPS-Crown10_jpg.rf.68e42e7b9aabd4819d22a746033c8199.jpg
+2024-12-01 22:28:47,661 - INFO - Completed processing MCPS-Crown10_jpg.rf.68e42e7b9aabd4819d22a746033c8199.jpg
+2024-12-01 22:28:47,662 - INFO - Processing MCPS-Crown11_jpg.rf.c7bcfe0ab31c8e2db068d14873f7585b.jpg
+2024-12-01 22:28:48,119 - INFO - Completed processing MCPS-Crown11_jpg.rf.c7bcfe0ab31c8e2db068d14873f7585b.jpg
+2024-12-01 22:28:48,120 - INFO - Processing MCPS-Crown12_jpg.rf.7b04d4de6e8e14b3210418c48837ab5b.jpg
+2024-12-01 22:28:48,583 - INFO - Completed processing MCPS-Crown12_jpg.rf.7b04d4de6e8e14b3210418c48837ab5b.jpg
+2024-12-01 22:28:48,584 - INFO - Processing MCPS-Crown14_jpg.rf.b3f22739a63ae4adef5dba675b3fb4db.jpg
+2024-12-01 22:28:49,000 - INFO - Completed processing MCPS-Crown14_jpg.rf.b3f22739a63ae4adef5dba675b3fb4db.jpg
+2024-12-01 22:28:49,001 - INFO - Processing MCPS-Crown15_jpg.rf.4b54dd4502a00000e2088e0e0100d36b.jpg
+2024-12-01 22:28:49,428 - INFO - Completed processing MCPS-Crown15_jpg.rf.4b54dd4502a00000e2088e0e0100d36b.jpg
+2024-12-01 22:28:49,429 - INFO - Processing MCPS-Crown16_jpg.rf.564bef363ffa840130eb8d0426a4a89a.jpg
+2024-12-01 22:28:49,919 - INFO - Completed processing MCPS-Crown16_jpg.rf.564bef363ffa840130eb8d0426a4a89a.jpg
+2024-12-01 22:28:49,920 - INFO - Processing MCPS-Crown17_jpg.rf.6a56113369c0ed9109df8f0288f36f00.jpg
+2024-12-01 22:28:50,385 - INFO - Completed processing MCPS-Crown17_jpg.rf.6a56113369c0ed9109df8f0288f36f00.jpg
+2024-12-01 22:28:50,385 - INFO - Processing MCPS-Crown18_jpg.rf.fc08679c0de1525e21179a7051d2c7eb.jpg
+2024-12-01 22:28:50,764 - INFO - Completed processing MCPS-Crown18_jpg.rf.fc08679c0de1525e21179a7051d2c7eb.jpg
+2024-12-01 22:28:50,764 - INFO - Processing MCPS-Crown6_jpg.rf.d012d326ac6e01dc3baf2b33b0980cf3.jpg
+2024-12-01 22:28:51,155 - INFO - Completed processing MCPS-Crown6_jpg.rf.d012d326ac6e01dc3baf2b33b0980cf3.jpg
+2024-12-01 22:28:51,156 - INFO - Processing MCPS-Crown7_jpg.rf.c3f2312f60f450e7d3d85bcab96e912b.jpg
+2024-12-01 22:28:51,581 - INFO - Completed processing MCPS-Crown7_jpg.rf.c3f2312f60f450e7d3d85bcab96e912b.jpg
+2024-12-01 22:28:51,581 - INFO - Processing MCPS-Crown8_jpg.rf.f24e1aa3e6609a8ba1131a4c2f0c9963.jpg
+2024-12-01 22:28:52,079 - INFO - Completed processing MCPS-Crown8_jpg.rf.f24e1aa3e6609a8ba1131a4c2f0c9963.jpg
+2024-12-01 22:28:52,080 - INFO - Processing MCPS-Crown9_jpg.rf.64f5b451d92c164f60eff1bf1bf9fb13.jpg
+2024-12-01 22:28:52,601 - INFO - Completed processing MCPS-Crown9_jpg.rf.64f5b451d92c164f60eff1bf1bf9fb13.jpg
+2024-12-01 22:28:52,602 - INFO - Processing mech1_jpg.rf.dbfd19088506fd61e8ddc13f5ebc0136.jpg
+2024-12-01 22:28:53,133 - INFO - Completed processing mech1_jpg.rf.dbfd19088506fd61e8ddc13f5ebc0136.jpg
+2024-12-01 22:28:53,134 - INFO - Processing mech2_jpg.rf.9dc40f0f06462d6e4badc4d39670dc9d.jpg
+2024-12-01 22:28:53,527 - INFO - Completed processing mech2_jpg.rf.9dc40f0f06462d6e4badc4d39670dc9d.jpg
+2024-12-01 22:28:53,528 - INFO - Processing oncology_jpg.rf.f36c2a0435c4aa0d14399913857fe72e.jpg
+2024-12-01 22:28:54,018 - INFO - Completed processing oncology_jpg.rf.f36c2a0435c4aa0d14399913857fe72e.jpg
+2024-12-01 22:28:54,021 - INFO - Dataset splitting completed. Metadata saved to results/run_20241201_222847/train_splits/metadata.json
+2024-12-01 22:28:54,022 - INFO - 
+Processing Fold 1/5
+2024-12-01 22:32:26,935 - INFO - Completed fold 1 training
+2024-12-01 22:32:26,935 - INFO - 
+Processing Fold 2/5
+2024-12-01 22:34:30,322 - INFO - Completed fold 2 training
+2024-12-01 22:34:30,322 - INFO - 
+Processing Fold 3/5
+2024-12-01 22:39:22,932 - INFO - Completed fold 3 training
+2024-12-01 22:39:22,932 - INFO - 
+Processing Fold 4/5
+2024-12-01 22:43:16,541 - INFO - Completed fold 4 training
+2024-12-01 22:43:16,541 - INFO - 
+Processing Fold 5/5
+2024-12-01 22:48:07,990 - INFO - Completed fold 5 training
+2024-12-01 22:48:08,427 - INFO - Best performing model was from fold 3
+2024-12-01 22:48:08,427 - INFO - 
+Processing test set
+2024-12-01 22:48:08,428 - INFO - Initialized ImageSplitter with grid size (4, 4) and 10.0% overlap
+2024-12-01 22:48:08,428 - INFO - Starting dataset splitting process...
+2024-12-01 22:48:08,428 - INFO - Found 4 images to process
+2024-12-01 22:48:08,428 - INFO - Processing Boland_jpg.rf.fe2c57a372feddb77aa7de8c731a2c8e.jpg
+2024-12-01 22:48:09,104 - INFO - Completed processing Boland_jpg.rf.fe2c57a372feddb77aa7de8c731a2c8e.jpg
+2024-12-01 22:48:09,105 - INFO - Processing Inovapage_jpg.rf.a065feb8d350dcb6e14f54494fd7918a.jpg
+2024-12-01 22:48:09,521 - INFO - Completed processing Inovapage_jpg.rf.a065feb8d350dcb6e14f54494fd7918a.jpg
+2024-12-01 22:48:09,522 - INFO - Processing MCPS-Crown13_jpg.rf.288d9f847fa68775df9f56b5613e3fc7.jpg
+2024-12-01 22:48:09,937 - INFO - Completed processing MCPS-Crown13_jpg.rf.288d9f847fa68775df9f56b5613e3fc7.jpg
+2024-12-01 22:48:09,938 - INFO - Processing MCPS-Crown20_jpg.rf.b7418300e157387c826d1fb5050c740e.jpg
+2024-12-01 22:48:10,434 - INFO - Completed processing MCPS-Crown20_jpg.rf.b7418300e157387c826d1fb5050c740e.jpg
+2024-12-01 22:48:10,436 - INFO - Dataset splitting completed. Metadata saved to results/run_20241201_222847/test_splits/metadata.json
+2024-12-01 22:48:10,436 - INFO - Found best model at: results/fold_3/weights/best.pt
+2024-12-01 22:48:10,436 - INFO - Loading best model from results/fold_3/weights/best.pt
+2024-12-01 22:48:10,477 - ERROR - An error occurred: 'conf_threshold'
+Traceback (most recent call last):
+  File "/home/daniel/Documents/Fall2024/plan_classification/main.py", line 224, in main
+    conf=MODEL_CONFIG['conf_threshold'],
+KeyError: 'conf_threshold'
+2024-12-01 22:48:10,477 - INFO - Cleaning up failed run directory: results/run_20241201_222847
+2024-12-01 22:48:10,507 - INFO - Failed run cleanup completed successfully
+2024-12-01 22:48:10,507 - INFO - Cleaning up temporary directory: temp
+2024-12-01 22:48:10,574 - INFO - Cleanup completed successfully
+2024-12-01 23:08:06,249 - INFO - Created run directory: results/run_20241201_230806
+2024-12-01 23:08:06,249 - INFO - Cleaning up temporary directory: temp
+2024-12-01 23:08:06,249 - INFO - Cleanup completed successfully
+2024-12-01 23:08:06,249 - INFO - Step 1: Splitting dataset into train and test sets
+2024-12-01 23:08:06,249 - INFO - Processing large images up to 14400x10800 pixels
+2024-12-01 23:08:06,291 - INFO - Step 2: Splitting training images into grid
+2024-12-01 23:08:06,292 - INFO - Initialized ImageSplitter with grid size (4, 4) and 10.0% overlap
+2024-12-01 23:08:06,292 - INFO - Starting dataset splitting process...
+2024-12-01 23:08:06,292 - INFO - Found 15 images to process
+2024-12-01 23:08:06,293 - INFO - Processing MCPS-Crown10_jpg.rf.68e42e7b9aabd4819d22a746033c8199.jpg
+2024-12-01 23:08:06,749 - INFO - Completed processing MCPS-Crown10_jpg.rf.68e42e7b9aabd4819d22a746033c8199.jpg
+2024-12-01 23:08:06,750 - INFO - Processing MCPS-Crown11_jpg.rf.c7bcfe0ab31c8e2db068d14873f7585b.jpg
+2024-12-01 23:08:07,216 - INFO - Completed processing MCPS-Crown11_jpg.rf.c7bcfe0ab31c8e2db068d14873f7585b.jpg
+2024-12-01 23:08:07,217 - INFO - Processing MCPS-Crown12_jpg.rf.7b04d4de6e8e14b3210418c48837ab5b.jpg
+2024-12-01 23:08:07,700 - INFO - Completed processing MCPS-Crown12_jpg.rf.7b04d4de6e8e14b3210418c48837ab5b.jpg
+2024-12-01 23:08:07,700 - INFO - Processing MCPS-Crown14_jpg.rf.b3f22739a63ae4adef5dba675b3fb4db.jpg
+2024-12-01 23:08:08,138 - INFO - Completed processing MCPS-Crown14_jpg.rf.b3f22739a63ae4adef5dba675b3fb4db.jpg
+2024-12-01 23:08:08,139 - INFO - Processing MCPS-Crown15_jpg.rf.4b54dd4502a00000e2088e0e0100d36b.jpg
+2024-12-01 23:08:08,574 - INFO - Completed processing MCPS-Crown15_jpg.rf.4b54dd4502a00000e2088e0e0100d36b.jpg
+2024-12-01 23:08:08,575 - INFO - Processing MCPS-Crown16_jpg.rf.564bef363ffa840130eb8d0426a4a89a.jpg
+2024-12-01 23:08:09,073 - INFO - Completed processing MCPS-Crown16_jpg.rf.564bef363ffa840130eb8d0426a4a89a.jpg
+2024-12-01 23:08:09,073 - INFO - Processing MCPS-Crown17_jpg.rf.6a56113369c0ed9109df8f0288f36f00.jpg
+2024-12-01 23:08:09,545 - INFO - Completed processing MCPS-Crown17_jpg.rf.6a56113369c0ed9109df8f0288f36f00.jpg
+2024-12-01 23:08:09,545 - INFO - Processing MCPS-Crown18_jpg.rf.fc08679c0de1525e21179a7051d2c7eb.jpg
+2024-12-01 23:08:09,933 - INFO - Completed processing MCPS-Crown18_jpg.rf.fc08679c0de1525e21179a7051d2c7eb.jpg
+2024-12-01 23:08:09,934 - INFO - Processing MCPS-Crown6_jpg.rf.d012d326ac6e01dc3baf2b33b0980cf3.jpg
+2024-12-01 23:08:10,327 - INFO - Completed processing MCPS-Crown6_jpg.rf.d012d326ac6e01dc3baf2b33b0980cf3.jpg
+2024-12-01 23:08:10,328 - INFO - Processing MCPS-Crown7_jpg.rf.c3f2312f60f450e7d3d85bcab96e912b.jpg
+2024-12-01 23:08:10,754 - INFO - Completed processing MCPS-Crown7_jpg.rf.c3f2312f60f450e7d3d85bcab96e912b.jpg
+2024-12-01 23:08:10,755 - INFO - Processing MCPS-Crown8_jpg.rf.f24e1aa3e6609a8ba1131a4c2f0c9963.jpg
+2024-12-01 23:08:11,214 - INFO - Completed processing MCPS-Crown8_jpg.rf.f24e1aa3e6609a8ba1131a4c2f0c9963.jpg
+2024-12-01 23:08:11,215 - INFO - Processing MCPS-Crown9_jpg.rf.64f5b451d92c164f60eff1bf1bf9fb13.jpg
+2024-12-01 23:08:11,684 - INFO - Completed processing MCPS-Crown9_jpg.rf.64f5b451d92c164f60eff1bf1bf9fb13.jpg
+2024-12-01 23:08:11,685 - INFO - Processing mech1_jpg.rf.dbfd19088506fd61e8ddc13f5ebc0136.jpg
+2024-12-01 23:08:12,135 - INFO - Completed processing mech1_jpg.rf.dbfd19088506fd61e8ddc13f5ebc0136.jpg
+2024-12-01 23:08:12,137 - INFO - Processing mech2_jpg.rf.9dc40f0f06462d6e4badc4d39670dc9d.jpg
+2024-12-01 23:08:12,534 - INFO - Completed processing mech2_jpg.rf.9dc40f0f06462d6e4badc4d39670dc9d.jpg
+2024-12-01 23:08:12,536 - INFO - Processing oncology_jpg.rf.f36c2a0435c4aa0d14399913857fe72e.jpg
+2024-12-01 23:08:13,037 - INFO - Completed processing oncology_jpg.rf.f36c2a0435c4aa0d14399913857fe72e.jpg
+2024-12-01 23:08:13,040 - INFO - Dataset splitting completed. Metadata saved to results/run_20241201_230806/train_splits/metadata.json
+2024-12-01 23:08:13,041 - INFO - 
+Processing Fold 1/5
+2024-12-01 23:11:43,261 - INFO - Completed fold 1 training
+2024-12-01 23:11:43,261 - INFO - 
+Processing Fold 2/5
+2024-12-01 23:13:48,358 - INFO - Completed fold 2 training
+2024-12-01 23:13:48,358 - INFO - 
+Processing Fold 3/5
+2024-12-01 23:18:42,814 - INFO - Completed fold 3 training
+2024-12-01 23:18:42,814 - INFO - 
+Processing Fold 4/5
+2024-12-01 23:22:37,488 - INFO - Completed fold 4 training
+2024-12-01 23:22:37,488 - INFO - 
+Processing Fold 5/5
+2024-12-01 23:27:30,236 - INFO - Completed fold 5 training
+2024-12-01 23:27:30,669 - INFO - Best performing model was from fold 3
+2024-12-01 23:27:30,669 - INFO - 
+Processing test set
+2024-12-01 23:27:30,669 - INFO - Initialized ImageSplitter with grid size (4, 4) and 10.0% overlap
+2024-12-01 23:27:30,669 - INFO - Starting dataset splitting process...
+2024-12-01 23:27:30,670 - INFO - Found 4 images to process
+2024-12-01 23:27:30,670 - INFO - Processing Boland_jpg.rf.fe2c57a372feddb77aa7de8c731a2c8e.jpg
+2024-12-01 23:27:31,335 - INFO - Completed processing Boland_jpg.rf.fe2c57a372feddb77aa7de8c731a2c8e.jpg
+2024-12-01 23:27:31,336 - INFO - Processing Inovapage_jpg.rf.a065feb8d350dcb6e14f54494fd7918a.jpg
+2024-12-01 23:27:31,750 - INFO - Completed processing Inovapage_jpg.rf.a065feb8d350dcb6e14f54494fd7918a.jpg
+2024-12-01 23:27:31,750 - INFO - Processing MCPS-Crown13_jpg.rf.288d9f847fa68775df9f56b5613e3fc7.jpg
+2024-12-01 23:27:32,168 - INFO - Completed processing MCPS-Crown13_jpg.rf.288d9f847fa68775df9f56b5613e3fc7.jpg
+2024-12-01 23:27:32,168 - INFO - Processing MCPS-Crown20_jpg.rf.b7418300e157387c826d1fb5050c740e.jpg
+2024-12-01 23:27:32,657 - INFO - Completed processing MCPS-Crown20_jpg.rf.b7418300e157387c826d1fb5050c740e.jpg
+2024-12-01 23:27:32,659 - INFO - Dataset splitting completed. Metadata saved to results/run_20241201_230806/test_splits/metadata.json
+2024-12-01 23:27:32,659 - INFO - Found best model at: results/fold_3/weights/best.pt
+2024-12-01 23:27:32,659 - INFO - Loading best model from results/fold_3/weights/best.pt
+2024-12-01 23:27:35,151 - INFO - Loaded metadata for 4 images
+2024-12-01 23:27:35,151 - INFO - Reconstructing predictions for Boland_jpg.rf.fe2c57a372feddb77aa7de8c731a2c8e
+2024-12-01 23:27:35,152 - ERROR - An error occurred: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+Traceback (most recent call last):
+  File "/home/daniel/Documents/Fall2024/plan_classification/main.py", line 241, in main
+    final_predictions = reconstructor.reconstruct_predictions(
+  File "/home/daniel/Documents/Fall2024/plan_classification/src/data/prediction_reconstructor.py", line 98, in reconstruct_predictions
+    indices = non_max_suppression(
+  File "/home/daniel/Documents/Fall2024/plan_classification/venv/lib/python3.10/site-packages/ultralytics/utils/ops.py", line 213, in non_max_suppression
+    assert 0 <= conf_thres <= 1, f"Invalid Confidence threshold {conf_thres}, valid values are between 0.0 and 1.0"
+ValueError: The truth value of an array with more than one element is ambiguous. Use a.any() or a.all()
+2024-12-01 23:27:35,152 - INFO - Cleaning up failed run directory: results/run_20241201_230806
+2024-12-01 23:27:35,187 - INFO - Failed run cleanup completed successfully
+2024-12-01 23:27:35,187 - INFO - Cleaning up temporary directory: temp
+2024-12-01 23:27:35,254 - INFO - Cleanup completed successfully

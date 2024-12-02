@@ -219,10 +219,13 @@ def main():
         predictions_dir = run_dir / 'predictions'
         predictions_dir.mkdir(parents=True, exist_ok=True)
         
+        # Updated prediction parameters to match MODEL_CONFIG
         results = model.predict(
             source=str(test_split_dir / 'images'),
-            conf=MODEL_CONFIG['conf_threshold'],
-            iou=MODEL_CONFIG['iou_threshold'],
+            conf=MODEL_CONFIG['conf'],           # Updated from conf_threshold
+            iou=MODEL_CONFIG['iou'],            # Updated from iou_threshold
+            max_det=MODEL_CONFIG['max_det'],
+            agnostic_nms=MODEL_CONFIG['agnostic_nms'],
             save=True,
             save_txt=True,
             project=str(predictions_dir),
@@ -232,7 +235,7 @@ def main():
         # Reconstruct predictions for full images
         reconstructor = PredictionReconstructor(
             test_metadata_path,
-            iou_threshold=MODEL_CONFIG['iou_threshold']
+            iou_threshold=MODEL_CONFIG['iou']  # Updated from iou_threshold
         )
         
         final_predictions = reconstructor.reconstruct_predictions(
