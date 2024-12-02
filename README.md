@@ -1,31 +1,20 @@
-Here's a README file based on your content:
-
-```markdown
 # Technical Drawing Box Detection with YOLOv8
 
-This project implements a system for detecting boxes in large technical drawings using YOLOv8. It includes image splitting, model training, and prediction reconstruction capabilities.
+System for detecting boxes in large technical drawings using YOLOv8 with image tiling and reconstruction.
 
----
+## Requirements
+- NVIDIA GPU with 8GB+ VRAM
+- CUDA 11.7 or higher
+- Python 3.10+
 
-## Core Features
-
-- Splits large technical drawings into overlapping tiles.
-- Cross-validation training with 5 folds.
-- Automatic model selection based on validation metrics.
-- Prediction reconstruction from tiles to original image size.
-- Performance visualization and metrics tracking.
-
----
-
-## Setup
-
-### Install dependencies
+## Installation
 ```bash
 pip install -r requirements.txt
 ```
 
-### Directory structure
-```
+## Setup
+```bash
+# Directory structure
 ├── dataset/
 │   ├── images/
 │   └── labels/
@@ -33,28 +22,22 @@ pip install -r requirements.txt
 └── temp/
 ```
 
----
-
 ## Usage
-
-### Run training pipeline
 ```python
 python main.py
 ```
 
-### Make predictions on new images
-```python
-python predict.py
-```
-
----
-
 ## Configuration
-
 Key settings in `config.py`:
 
 ```python
 IMAGE_CONFIG = {
+    'original_sizes': {
+        'max_width': 14400,
+        'max_height': 10800,
+        'typical_width': 12600,
+        'typical_height': 9000
+    },
     'grid_size': (4, 4),
     'target_size': 1280
 }
@@ -62,36 +45,35 @@ IMAGE_CONFIG = {
 TRAIN_CONFIG = {
     'epochs': 50,
     'batch': 2,
-    'imgsz': 1280
+    'hsv_h': 0.01,
+    'hsv_s': 0.2,
+    'hsv_v': 0.3,
+    'degrees': 0.0,
+    'translate': 0.15,
+    'scale': 0.4,
+    'mosaic': 0.0,
+    'mixup': 0.0
 }
 
 MODEL_CONFIG = {
     'base_model': 'yolov8m.pt',
     'conf_threshold': 0.2,
-    'iou_threshold': 0.4
+    'iou_threshold': 0.4,
+    'max_det': 400,
+    'agnostic_nms': True
 }
 ```
 
----
-
 ## Components
-
-- **ImageSplitter**: Splits large images into overlapping tiles.
-- **DatasetManager**: Handles data organization and cross-validation splits.
-- **YOLOTrainer**: Manages model training and validation.
-- **PredictionReconstructor**: Reconstructs predictions on original images.
-- **MetricsManager**: Tracks and visualizes performance metrics.
-
----
+- `ImageSplitter`: Large image tiling
+- `DatasetManager`: Data and CV splits
+- `YOLOTrainer`: Training pipeline
+- `PredictionReconstructor`: Full-size reconstruction
+- `MetricsManager`: Performance tracking
 
 ## Data Format
-
-- **Images**: JPG format in `dataset/images/`
-- **Labels**: YOLO format text files in `dataset/labels/`
-
----
+- Images: JPG format in dataset/images/
+- Labels: YOLO format in dataset/labels/
 
 ## License
-
-This project is licensed under the MIT License.
-```
+MIT
