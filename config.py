@@ -81,7 +81,7 @@ TRAIN_CONFIG = {
 # Model configuration
 MODEL_CONFIG = {
     'base_model': 'yolov8s.pt',  # Using smaller model
-    'conf': 0.2,      # Lower confidence threshold
+    'conf': 0.45,      # Lower confidence threshold
     'iou': 0.4,       # Adjusted for overlapping boxes
     'max_det': 300,             # Reduced max detections
     'agnostic_nms': True,       # Class-agnostic NMS

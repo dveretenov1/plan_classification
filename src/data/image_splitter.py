@@ -2,10 +2,8 @@ import cv2
 import numpy as np
 from pathlib import Path
 import json
-import shutil
 import logging
 from tqdm import tqdm
-import os
 
 logger = logging.getLogger(__name__)
 
@@ -52,12 +50,7 @@ class ImageSplitter:
         return positions
 
     def process_dataset(self):
-        """
-        Process all images in the dataset, splitting them into tiles.
-        
-        Returns:
-            Path: Path to the metadata JSON file
-        """
+        """Process all images in the dataset, splitting them into tiles."""
         logger.info("Starting dataset splitting process...")
         self.setup_directories()
         
@@ -68,9 +61,6 @@ class ImageSplitter:
         # Process each image
         for img_path in tqdm(image_files, desc="Processing images"):
             label_path = self.dataset_path / 'labels' / f"{img_path.stem}.txt"
-            if not label_path.exists():
-                logger.warning(f"No label file found for {img_path.name}")
-                continue
             
             try:
                 self._process_single_image(img_path, label_path)
@@ -111,23 +101,24 @@ class ImageSplitter:
         x_positions = self._calculate_tile_dimensions(w, self.grid_size[1], self.overlap)
         y_positions = self._calculate_tile_dimensions(h, self.grid_size[0], self.overlap)
         
-        # Read labels
-        with open(label_path, 'r') as f:
-            labels = [line.strip().split() for line in f.readlines()]
-        
-        # Convert YOLO format to absolute coordinates
+        # Read labels if they exist
         boxes = []
-        for label in labels:
-            class_id = int(label[0])
-            x_center, y_center = float(label[1]) * w, float(label[2]) * h
-            width, height = float(label[3]) * w, float(label[4]) * h
-            boxes.append({
-                'class': class_id,
-                'x1': x_center - width/2,
-                'y1': y_center - height/2,
-                'x2': x_center + width/2,
-                'y2': y_center + height/2
-            })
+        if label_path.exists():
+            with open(label_path, 'r') as f:
+                labels = [line.strip().split() for line in f.readlines()]
+            
+            # Convert YOLO format to absolute coordinates
+            for label in labels:
+                class_id = int(label[0])
+                x_center, y_center = float(label[1]) * w, float(label[2]) * h
+                width, height = float(label[3]) * w, float(label[4]) * h
+                boxes.append({
+                    'class': class_id,
+                    'x1': x_center - width/2,
+                    'y1': y_center - height/2,
+                    'x2': x_center + width/2,
+                    'y2': y_center + height/2
+                })
         
         # Process each tile
         for i, (y1, y2) in enumerate(y_positions):
@@ -147,6 +138,9 @@ class ImageSplitter:
                 tile = image[y1:y2, x1:x2].copy()
                 tile_w = x2 - x1
                 tile_h = y2 - y1
+                
+                # Save tile image regardless of whether it contains objects
+                cv2.imwrite(str(self.output_images / f"{tile_name}.jpg"), tile)
                 
                 # Find boxes that intersect with this tile
                 tile_boxes = []
@@ -178,24 +172,13 @@ class ImageSplitter:
                             'h': height
                         })
                 
-                # Only save tiles that contain objects
+                # Save tile labels if there are any boxes
                 if tile_boxes:
-                    # Save tile image
-                    cv2.imwrite(str(self.output_images / f"{tile_name}.jpg"), tile)
-                    
-                    # Save tile labels
                     with open(self.output_labels / f"{tile_name}.txt", 'w') as f:
                         for box in tile_boxes:
                             f.write(f"{box['class']} {box['x']:.6f} {box['y']:.6f} {box['w']:.6f} {box['h']:.6f}\n")
-        
+                else:
+                    # Create an empty label file to indicate no objects
+                    (self.output_labels / f"{tile_name}.txt").touch()
+                
         logger.info(f"Completed processing {img_path.name}")
-
-    def cleanup_temp_files(self):
-        """Clean up any temporary files created during processing."""
-        temp_files = []  # Add any temp file patterns here
-        for pattern in temp_files:
-            for file_path in Path('.').glob(pattern):
-                try:
-                    os.remove(file_path)
-                except Exception as e:
-                    logger.warning(f"Could not remove temp file {file_path}: {e}")
